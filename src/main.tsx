@@ -3,8 +3,12 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./styles/globals.css";
 
+import { CartProvider } from "./context/CartContext.tsx";
+
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <CartProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </CartProvider>
 );
