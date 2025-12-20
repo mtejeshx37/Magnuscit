@@ -1,0 +1,33 @@
+/* Main Wrapper - Force Light Theme & System Cursor */
+.conference-wrapper {
+    background-color: #ffffff;
+    color: #111827;
+    /* gray-900 */
+    cursor: auto !important;
+    isolation: isolate;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Ensure text is readable and cursor behaves normally within the wrapper */
+.conference-wrapper * {
+    cursor: auto !important;
+}
+
+/* Restore pointer events for interactive elements */
+.conference-wrapper a,
+.conference-wrapper button,
+.conference-wrapper input,
+.conference-wrapper select,
+.conference-wrapper textarea,
+.conference-wrapper [role="button"] {
+    cursor: pointer !important;
+}
+
+/* Reset selection color */
+.conference-wrapper ::selection {
+    background-color: #2563eb;
+    color: white;
+}
