@@ -126,7 +126,7 @@ export function TimelineSection() {
         <div className="relative max-w-6xl mx-auto timeline-container">
           {/* Background Line (Static) */}
           <div
-            className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 timeline-line-bg"
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 timeline-line-bg"
             style={{
               background: 'rgba(100, 100, 100, 0.3)',
             }}
@@ -135,7 +135,7 @@ export function TimelineSection() {
           {/* Progress Line (Dynamic - Fills on Scroll) */}
           <div
             ref={progressBarRef}
-            className="absolute left-1/2 top-0 w-0.5 -translate-x-1/2 timeline-line-progress transition-none"
+            className="absolute left-4 md:left-1/2 top-0 w-0.5 -translate-x-1/2 timeline-line-progress transition-none"
             id="timeline-progressBar"
             style={{
               background: 'linear-gradient(180deg, #D500F9 0%, #7000FF 100%)',
@@ -158,11 +158,11 @@ export function TimelineSection() {
                 >
                   {/* Content Card */}
                   <div
-                    className={`w-full md:w-5/12 transition-all duration-700 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-30 ' + (isLeft ? '-translate-x-10' : 'translate-x-10')
+                    className={`w-full md:w-5/12 pl-12 md:pl-0 transition-all duration-700 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-30 ' + (isLeft ? '-translate-x-10' : 'translate-x-10')
                       }`}
                   >
                     {/* Phase Badge */}
-                    <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'} mb-4`}>
+                    <div className={`flex ${isLeft ? 'justify-start' : 'md:justify-end'} mb-4`}>
                       <div
                         className="inline-block px-6 py-2 rounded-full border border-white/20"
                         style={{
@@ -181,7 +181,7 @@ export function TimelineSection() {
 
                     {/* Card Content */}
                     <div
-                      className={`relative group ${isLeft ? 'text-left' : 'text-right'}`}
+                      className={`relative group ${isLeft ? 'text-left' : 'text-left md:text-right'}`}
                     >
                       {/* Glow Effect */}
                       <div
@@ -202,7 +202,7 @@ export function TimelineSection() {
                         }}
                       >
                         {/* Time Badge */}
-                        <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'} mb-4`}>
+                        <div className={`flex ${isLeft ? 'justify-start' : 'md:justify-end'} mb-4`}>
                           <span
                             className="text-[#D500F9]"
                             style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '14px' }}
@@ -212,7 +212,7 @@ export function TimelineSection() {
                         </div>
 
                         {/* Title and Icon */}
-                        <div className={`flex items-start gap-4 ${isLeft ? '' : 'flex-row-reverse'}`}>
+                        <div className={`flex items-start gap-4 ${isLeft ? '' : 'flex-row md:flex-row-reverse'}`}>
                           {/* Icon */}
                           <div
                             className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
@@ -225,7 +225,7 @@ export function TimelineSection() {
                           </div>
 
                           {/* Text Content */}
-                          <div className={`flex-1 ${isLeft ? 'text-left' : 'text-right'}`}>
+                          <div className={`flex-1 ${isLeft ? 'text-left' : 'text-left md:text-right'}`}>
                             <h3
                               className="text-2xl md:text-3xl text-white mb-2"
                               style={{ fontFamily: "'VCR OSD Mono', monospace" }}
@@ -244,19 +244,19 @@ export function TimelineSection() {
 
                       {/* Camera Shutter Brackets (Bottom Corners) */}
                       <div
-                        className={`absolute bottom-2 w-6 h-6 ${isLeft ? 'right-2' : 'left-2'
+                        className={`absolute bottom-2 w-6 h-6 ${isLeft ? 'right-2' : 'right-2 md:left-2'
                           } transition-opacity duration-500`}
                         style={{
                           opacity: isActive ? 1 : 0.3,
                         }}
                       >
                         <div
-                          className={`absolute bottom-0 w-6 h-0.5 ${isLeft ? 'right-0' : 'left-0'
+                          className={`absolute bottom-0 w-6 h-0.5 ${isLeft ? 'right-0' : 'right-0 md:left-0'
                             }`}
                           style={{ background: '#D500F9' }}
                         />
                         <div
-                          className={`absolute bottom-0 w-0.5 h-6 ${isLeft ? 'right-0' : 'left-0'
+                          className={`absolute bottom-0 w-0.5 h-6 ${isLeft ? 'right-0' : 'right-0 md:left-0'
                             }`}
                           style={{ background: '#D500F9' }}
                         />
@@ -266,9 +266,10 @@ export function TimelineSection() {
 
                   {/* Center Node (Camera Shutter Style) */}
                   <div
-                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-50'
+                    className={`absolute left-4 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-50'
                       }`}
                   >
+
                     {/* Outer Glow */}
                     <div
                       className="absolute inset-0 rounded-full blur-xl"
