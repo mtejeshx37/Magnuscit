@@ -1,11 +1,11 @@
-import { motion } from 'motion/react';
-import { useState } from 'react';
+import { motion, useInView } from 'motion/react';
+import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather } from 'lucide-react';
 
 type EventCategory = 'All' | 'Technical' | 'Non-Technical' | 'Workshops' | 'Online' | 'Conference';
 
 interface Event {
-  id: number | string; // Changed to allow string IDs for special events
+  id: number | string;
   title: string;
   category: EventCategory;
   date: string;
@@ -13,6 +13,110 @@ interface Event {
   description: string;
   aiRecommended?: boolean;
   icon: typeof Code;
+}
+
+interface EventCardProps {
+  event: Event;
+  index: number;
+  onEventSelect: (eventId: number) => void;
+  onConferenceSelect: () => void;
+}
+
+function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCardProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    margin: "-50% 0px -50% 0px", // Trigger when center of element hits center of viewport
+  });
+
+  // Simple mobile detection
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="group relative cursor-pointer"
+      onClick={() => {
+        if (event.id === 'conference') {
+          onConferenceSelect();
+        } else {
+          onEventSelect(event.id as number);
+        }
+      }}
+    >
+      {/* AI Recommended Badge */}
+      {event.aiRecommended && (
+        <div className="absolute -top-3 -right-3 z-20">
+          <div className="bg-gradient-to-r from-[#7000FF] to-[#9000FF] px-4 py-2 rounded-full border-2 border-[#7000FF] shadow-lg shadow-[#7000FF]/50 flex items-center gap-2 neon-glow">
+            <Sparkles className="w-4 h-4 text-white" />
+            <span className="text-white text-sm" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+              AI Pick
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Folder-Style Card */}
+      <div className="relative h-[450px] rounded-2xl overflow-hidden">
+        {/* Tab/Folder Cutout - Bottom Right Corner */}
+        <div
+          className="absolute inset-0 overflow-hidden"
+          style={{
+            clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)',
+          }}
+        >
+          {/* Event Image */}
+          <img
+            src={event.image}
+            alt={event.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+          {/* Black Overlay - Expands on Hover (Desktop) or Center View (Mobile) */}
+          <div
+            className={`absolute inset-0 bg-black/95 transition-transform duration-500 ease-out flex items-center justify-center p-8
+              ${(isMobile && isInView) ? 'translate-y-0' : 'translate-y-full'} 
+              group-hover:translate-y-0`}
+          >
+            <div className="text-center">
+              <event.icon className="w-12 h-12 text-[#D500F9] mx-auto mb-4" />
+              <h3
+                className="text-3xl mb-4 text-white"
+                style={{ fontFamily: 'VT323, monospace' }}
+              >
+                {event.title}
+              </h3>
+              <p className="text-[#94A3B8] text-lg">{event.description}</p>
+            </div>
+          </div>
+
+          {/* Border Effect */}
+          <div className={`absolute inset-0 border-2 rounded-2xl pointer-events-none transition-all duration-300 ${event.aiRecommended
+            ? 'border-[#7000FF]/50 group-hover:border-[#D500F9]/80'
+            : 'border-[#D500F9]/30 group-hover:border-[#D500F9]/80'
+            }`}
+            style={{
+              clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)',
+            }}
+          />
+        </div>
+
+        {/* Folder Tab Corner */}
+        <div
+          className="absolute bottom-0 right-0 w-12 h-12 bg-[#D500F9]/20 border-t-2 border-l-2 border-[#D500F9]/30"
+          style={{
+            clipPath: 'polygon(0 0, 100% 100%, 0 100%)',
+          }}
+        />
+      </div>
+    </motion.div>
+  );
 }
 
 interface EventsSectionProps {
@@ -223,86 +327,13 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
         {/* Events Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredEvents.map((event, index) => (
-            <motion.div
+            <EventCard
               key={event.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative cursor-pointer"
-              onClick={() => {
-                if (event.id === 'conference') {
-                  onConferenceSelect();
-                } else {
-                  onEventSelect(event.id as number);
-                }
-              }}
-            >
-              {/* AI Recommended Badge */}
-              {event.aiRecommended && (
-                <div className="absolute -top-3 -right-3 z-20">
-                  <div className="bg-gradient-to-r from-[#7000FF] to-[#9000FF] px-4 py-2 rounded-full border-2 border-[#7000FF] shadow-lg shadow-[#7000FF]/50 flex items-center gap-2 neon-glow">
-                    <Sparkles className="w-4 h-4 text-white" />
-                    <span className="text-white text-sm" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                      AI Pick
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              {/* Folder-Style Card */}
-              <div className="relative h-[450px] rounded-2xl overflow-hidden">
-                {/* Tab/Folder Cutout - Bottom Right Corner */}
-                <div
-                  className="absolute inset-0 overflow-hidden"
-                  style={{
-                    clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)',
-                  }}
-                >
-                  {/* Event Image */}
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-
-                  {/* Black Overlay - Expands on Hover */}
-                  <div className="absolute inset-0 bg-black/95 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out flex items-center justify-center p-8">
-                    <div className="text-center">
-                      <event.icon className="w-12 h-12 text-[#D500F9] mx-auto mb-4" />
-                      <h3
-                        className="text-3xl mb-4 text-white"
-                        style={{ fontFamily: 'VT323, monospace' }}
-                      >
-                        {event.title}
-                      </h3>
-                      <p className="text-[#94A3B8] text-lg">{event.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Border Effect */}
-                  <div className={`absolute inset-0 border-2 rounded-2xl pointer-events-none transition-all duration-300 ${event.aiRecommended
-                    ? 'border-[#7000FF]/50 group-hover:border-[#D500F9]/80'
-                    : 'border-[#D500F9]/30 group-hover:border-[#D500F9]/80'
-                    }`}
-                    style={{
-                      clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)',
-                    }}
-                  />
-                </div>
-
-                {/* Folder Tab Corner */}
-                <div
-                  className="absolute bottom-0 right-0 w-12 h-12 bg-[#D500F9]/20 border-t-2 border-l-2 border-[#D500F9]/30"
-                  style={{
-                    clipPath: 'polygon(0 0, 100% 100%, 0 100%)',
-                  }}
-                />
-              </div>
-            </motion.div>
+              event={event}
+              index={index}
+              onEventSelect={onEventSelect}
+              onConferenceSelect={onConferenceSelect}
+            />
           ))}
         </div>
       </div>
