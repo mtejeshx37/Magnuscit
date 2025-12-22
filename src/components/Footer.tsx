@@ -3,8 +3,8 @@ import { Linkedin, Instagram } from 'lucide-react';
 
 export function Footer() {
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/magnus-cit-7158a2287/', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/magnus.cit/', label: 'Instagram' },
   ];
 
   return (
