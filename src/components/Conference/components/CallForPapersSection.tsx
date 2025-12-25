@@ -41,9 +41,28 @@ export const CallForPapersSection = () => {
 
             {/* Publication */}
             <div className="mb-12">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Publication & Presentation</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Publication & Presentation</h3>
+                <p className="text-gray-600 leading-relaxed mb-8">
+                    Accepted papers will be published in the conference proceedings and will be indexed in major databases. Selected high-quality papers will be recommended for publication in the following prestigious journals:
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    {[
+                        "Engineering Applications of Artificial Intelligence",
+                        "Artificial Intelligence",
+                        "Knowledge-Based Systems"
+                    ].map((journal, index) => (
+                        <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start border-t-4 border-t-indigo-500">
+                            <div className="p-2 bg-indigo-50 rounded-lg mb-4">
+                                <FileText className="w-6 h-6 text-indigo-600" />
+                            </div>
+                            <h4 className="font-bold text-gray-900 text-lg leading-tight">{journal}</h4>
+                        </div>
+                    ))}
+                </div>
+
                 <p className="text-gray-600 leading-relaxed">
-                    Accepted papers will be published in the conference proceedings and will be indexed in major databases. At least one author of each accepted paper must register and present the work at the conference.
+                    At least one author of each accepted paper must register and present the work at the conference.
                 </p>
             </div>
 

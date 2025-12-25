@@ -40,7 +40,7 @@ export const VenueSection = () => {
                         </div>
 
                         <a
-                            href="https://maps.app.goo.gl/YourMapLinkHere"
+                            href="https://www.google.com/maps/dir//Chennai+Institute+of+Technology,+Sarathy+Nagar,+Kundrathur,+Chennai,+Tamil+Nadu+600069/@12.9715987,80.0434721,17z"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors shadow-sm"

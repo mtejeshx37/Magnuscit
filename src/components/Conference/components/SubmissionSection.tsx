@@ -108,10 +108,15 @@ export const SubmissionSection = () => {
                     Download the paper template and access the submission system
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button className="flex items-center gap-2 bg-white text-[#1a365d] px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                    <a
+                        href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://attend.ieee.org/procomm-2024/wp-content/uploads/sites/580/2024/03/Full-Paper-template.docx&ved=2ahUKEwi2uqK01NiRAxUsxTgGHVJgIxMQFnoECD4QAQ&usg=AOvVaw0-t0v0SBGwFaJW6Tj5zX3L"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-white text-[#1a365d] px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                    >
                         <Download className="w-4 h-4" />
                         Download IEEE Template
-                    </button>
+                    </a>
                     <a
                         href="https://forms.gle/uUsFtAgTSwh7ALWE7"
                         target="_blank"

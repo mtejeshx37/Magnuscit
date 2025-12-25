@@ -274,7 +274,6 @@
   iframe,
   embed,
   object {
-    vertical-align: middle;
     display: block;
   }
 
@@ -2562,12 +2561,14 @@ html {
 
 .glass {
   -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
   background: #ffffff0d;
   border: 1px solid #ffffff1a;
 }
 
 .glass-strong {
   -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
   background: #ffffff1a;
   border: 1px solid #fff3;
 }
