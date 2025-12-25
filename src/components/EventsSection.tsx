@@ -230,6 +230,15 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       description: 'Creative poster design competition',
       icon: Palette,
     },
+    {
+      id: 17,
+      title: 'ProtoPitch',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1080',
+      description: 'UI/UX design and prototyping challenge',
+      icon: Palette,
+    },
   ];
 
   const filteredEvents = activeFilter === 'All'

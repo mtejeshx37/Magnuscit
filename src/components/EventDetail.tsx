@@ -75,7 +75,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
             </div>
           </div>
 
-          <p className="text-lg text-[#94A3B8] leading-relaxed">
+          <p className="text-lg text-[#94A3B8] leading-relaxed whitespace-pre-wrap">
             {event.description}
           </p>
         </motion.div>

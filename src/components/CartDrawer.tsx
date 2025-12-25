@@ -1,116 +1,21 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Trash2, ShoppingBag, CreditCard } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { useState } from 'react';
+
 
 interface CartDrawerProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-declare global {
-  interface Window {
-    Razorpay: any;
-  }
-}
+
 
 export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { cartItems, removeFromCart, totalPrice, cartCount } = useCart();
-  const [isProcessing, setIsProcessing] = useState(false);
 
-  const loadRazorpay = () => {
-    return new Promise((resolve) => {
-      const script = document.createElement('script');
-      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-      script.onload = () => resolve(true);
-      script.onerror = () => resolve(false);
-      document.body.appendChild(script);
-    });
-  };
 
-  const handleProceedToPayment = async () => {
-    setIsProcessing(true);
-    const res = await loadRazorpay();
-
-    if (!res) {
-      alert('Razorpay SDK failed to load. Are you online?');
-      setIsProcessing(false);
-      return;
-    }
-
-    try {
-      // 1. Create Order
-      const response = await fetch('http://192.168.137.87:5000/api/payment/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ amount: totalPrice }),
-      });
-
-      const order = await response.json();
-
-      if (!order || !order.id) {
-        alert('Server error. Are you online?');
-        setIsProcessing(false);
-        return;
-      }
-
-      // 2. Open Razorpay Checkout
-      const options = {
-        key: 'rzp_test_RrwUU3e0jtjblF', // Enter the Key ID generated from the Dashboard
-        amount: order.amount,
-        currency: order.currency,
-        name: 'Magnus Symposium',
-        description: 'Event Registration Fees',
-        image: 'https://example.com/your_logo', // You can replace this
-        order_id: order.id,
-        handler: async function (response: any) {
-          // 3. Verify Payment
-          const verifyData = {
-            razorpay_order_id: response.razorpay_order_id,
-            razorpay_payment_id: response.razorpay_payment_id,
-            razorpay_signature: response.razorpay_signature,
-          };
-
-          const verifyRes = await fetch('/api/payment/verify', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(verifyData),
-          });
-
-          const verifyJson = await verifyRes.json();
-
-          if (verifyJson.message === 'Payment verified successfully') {
-            alert('Payment Successful! Registration confirmed.');
-            // Here you would typically clear the cart and redirect to success page
-          } else {
-            alert('Payment verification failed');
-          }
-        },
-        prefill: {
-          name: 'Student Name',
-          email: 'student@example.com',
-          contact: '9999999999',
-        },
-        notes: {
-          address: 'Magnus Symposium Office',
-        },
-        theme: {
-          color: '#D500F9',
-        },
-      };
-
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
-    } catch (error) {
-      console.error(error);
-      alert('Something went wrong during payment initialization');
-    } finally {
-      setIsProcessing(false);
-    }
+  const handleProceedToPayment = () => {
+    alert('Online registration is currently unavailable. Please contact the coordinators.');
   };
 
   return (
@@ -273,11 +178,10 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleProceedToPayment}
-                  disabled={isProcessing}
                   className="cursor-target w-full px-6 py-4 bg-gradient-to-r from-[#D500F9] via-[#9000FF] to-[#7000FF] rounded-xl shadow-lg shadow-[#D500F9]/40 hover:shadow-[#D500F9]/60 transition-all duration-300 group/btn relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {/* Animated Shine Effect */}
-                  {!isProcessing && <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
 
                   <div className="relative flex items-center justify-center gap-3">
                     <CreditCard className="w-5 h-5 text-black" />
@@ -285,21 +189,12 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                       className="text-black text-xl"
                       style={{ fontFamily: 'VT323, monospace' }}
                     >
-                      {isProcessing ? 'PROCESSING...' : 'PROCEED TO PAYMENT'}
+                      PROCEED TO PAYMENT
                     </span>
                   </div>
                 </motion.button>
 
-                {/* Razorpay Badge */}
-                <div className="mt-4 flex items-center justify-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <p
-                    className="text-white/40 text-xs"
-                    style={{ fontFamily: 'JetBrains Mono, monospace' }}
-                  >
-                    Secured by <span className="text-[#00F0FF]">Razorpay</span>
-                  </p>
-                </div>
+
               </div>
             )}
           </motion.div>
