@@ -92,16 +92,44 @@ NOTE:
     title: 'TECHIE XO',
     type: 'TECHNICAL',
     price: '₹200',
-    description: 'Techie XO is an interactive team-based event where two teams compete by answering technical questions. When a team answers a question correctly, they earn the chance to make a move on the XO game board. The game continues with teams alternating turns, combining technical knowledge with strategic gameplay to determine the winner.',
+    description: `Techie XO is a high-energy technical event that blends the classic XO (Tic-Tac-Toe) game with technical and logical problem-solving. Participants compete one-on-one, where each move on the board is earned by correctly answering technical or logic-based questions. Success depends on a combination of game strategy, technical knowledge, and quick analytical thinking, making Techie XO an engaging and competitive test of both skill and intellect.
+
+Game Format:
+● All rounds follow a knockout format.
+● For each round, questions will be announced or displayed to all participants simultaneously.
+● Turns will be decided using a buzzer system.
+● Only the participant who correctly answers a question gets the chance to place their mark on the XO board.
+● If a participant answers incorrectly, the opponent gets a chance to answer and place the mark if their answer is correct.
+● If both participants answer incorrectly or do not answer, the turn is skipped.
+
+Board & Questions:
+● All preliminary rounds use a 3×3 XO board (9 questions).
+● The final round uses a 4×4 XO board (16 questions).
+● All questions are strictly based on technical knowledge.
+
+Match Decisions:
+● If a match ends in a draw, the participant who has answered the highest number of questions correctly will qualify.
+● A leaderboard is maintained based on the number of moves used to win a game.
+● Participants who win using the least number of moves will rank higher on the leaderboard.
+
+Final Round Special Rules:
+● Before each question in the final round, the team must decide which teammate will answer.
+● Only one question in the final round allows both teammates to answer together.
+● If the final match ends in a draw and both teams have answered the same number of questions correctly, tie-breaker questions will be asked.
+● In a tie-breaker, the participant who answers correctly gets a chance to remove one opponent’s mark and place their own mark in that position.`,
     registrationRules: [
-      'Only college students are permitted to participate.',
-      'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
-      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
-      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
+      'Each team consists of 2 players.',
+      'Both players will compete separately in different groups during the initial rounds.',
+      'Both teammates are allowed to play together in the final round.',
+      'A maximum of 32 registrations will be accepted.',
+      'Early registration teams may receive advantages.',
+      'A total of 3–4 knockout rounds will be conducted before the final round.',
     ],
     eventRules: [
-      'Rules will be updated soon.',
+      'Arguments, disputes, or misuse of technology are strictly prohibited.',
+      'Use of external assistance, devices, or unfair means is not allowed.',
+      'The decision of the organizers is final and binding.',
+      'No changes or appeals will be entertained.',
     ],
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdjn5Iev8EzOypPFyFFwzt8LepeJ0fS71Dkv7N38F4WXVK_dg/viewform?usp=dialog',
