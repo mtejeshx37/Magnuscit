@@ -73,7 +73,7 @@ export const TopicsSection = () => {
     return (
         <section id="topics" className="py-20 px-6 max-w-7xl mx-auto">
             <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Topics of Interest</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Conference Tracks – Related to Artificial Intelligence</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
                     We welcome submissions on all aspects of artificial intelligence. The following list provides guidance on topics of particular interest, though submissions are not limited to these areas.
                 </p>

@@ -10,7 +10,7 @@ export function HackathonDetail() {
     const hackathonData = {
         title: 'HACKATHON',
         category: 'COMPETITION',
-        description: 'A 24-hour coding marathon where teams collaborate to build innovative solutions to real-world problems. Compete for prizes, network with industry professionals, and showcase your technical prowess in this high-energy event.',
+        description: 'Will Be Updated Soon',
 
         rounds: [
             {
@@ -106,129 +106,22 @@ export function HackathonDetail() {
                     </motion.div>
                 </div>
 
-                {/* Rounds Section */}
-                <div className="container mx-auto px-4 py-12">
-                    <motion.h2
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-3xl md:text-4xl mb-8 text-white"
-                        style={{ fontFamily: 'VT323, monospace' }}
-                    >
-                        EVENT STRUCTURE
-                    </motion.h2>
-                    <div className="space-y-6">
-                        {hackathonData.rounds.map((round, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="p-6 bg-white/5 border border-[#00D1FF]/20 rounded-lg hover:border-[#00D1FF]/50 transition-all duration-300"
-                            >
-                                <h3 className="text-xl text-[#00D1FF] mb-2 font-mono">{round.title}</h3>
-                                <p className="text-gray-400 leading-relaxed">{round.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Judging Criteria */}
-                <div className="container mx-auto px-4 py-12">
-                    <motion.h2
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-3xl md:text-4xl mb-8 text-white"
-                        style={{ fontFamily: 'VT323, monospace' }}
-                    >
-                        JUDGING CRITERIA
-                    </motion.h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {hackathonData.judgingCriteria.map((criteria, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: index * 0.05 }}
-                                className="p-4 bg-white/5 border border-[#00D1FF]/20 rounded-lg"
-                            >
-                                <p className="text-gray-300 font-mono text-sm">• {criteria}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Rules Section */}
-                <div className="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
-                    {/* Registration Rules */}
+                {/* Coming Soon Message */}
+                <div className="container mx-auto px-4 py-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="p-8 bg-[#0A0A0A] border border-[#00D1FF]/20 rounded-xl"
+                        className="p-12 bg-[#0A0A0A] border border-[#00D1FF]/20 rounded-xl text-center"
                     >
-                        <h3
-                            className="text-2xl md:text-3xl mb-6 text-[#00D1FF]"
+                        <h2
+                            className="text-3xl md:text-4xl mb-4 text-[#00D1FF]"
                             style={{ fontFamily: 'VT323, monospace' }}
                         >
-                            REGISTRATION
-                        </h3>
-                        <ul className="space-y-3">
-                            {hackathonData.registrationRules.map((rule, index) => (
-                                <li key={index} className="flex items-start gap-3">
-                                    <span className="text-[#00D1FF] mt-1">▸</span>
-                                    <span className="text-gray-400 text-sm leading-relaxed">{rule}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-
-                    {/* Event Rules */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="p-8 bg-[#0A0A0A] border border-[#00D1FF]/20 rounded-xl"
-                    >
-                        <h3
-                            className="text-2xl md:text-3xl mb-6 text-[#00D1FF]"
-                            style={{ fontFamily: 'VT323, monospace' }}
-                        >
-                            RULES
-                        </h3>
-                        <ul className="space-y-3">
-                            {hackathonData.eventRules.map((rule, index) => (
-                                <li key={index} className="flex items-start gap-3">
-                                    <span className="text-[#00D1FF] mt-1">▸</span>
-                                    <span className="text-gray-400 text-sm leading-relaxed">{rule}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                </div>
-
-                {/* Contact & Registration */}
-                <div className="container mx-auto px-4 py-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-8 bg-[#0A0A0A] border border-[#00D1FF]/20 rounded-xl"
-                    >
-                        <h3
-                            className="text-2xl md:text-3xl mb-6 text-[#00D1FF]"
-                            style={{ fontFamily: 'VT323, monospace' }}
-                        >
-                            CONTACT US!!
-                        </h3>
-                        <p className="text-gray-300 mb-8 font-mono">
-                            <span className="text-[#00D1FF]">▸</span> {hackathonData.contact}
+                            COMING SOON
+                        </h2>
+                        <p className="text-gray-300 text-lg font-mono">
+                            All details about the hackathon will be updated soon.
                         </p>
-                        <a
-                            href={hackathonData.registrationLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block px-8 py-4 bg-[#00D1FF] hover:bg-[#00D1FF]/80 text-black font-mono text-lg tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#00D1FF]/50"
-                        >
-                            REGISTER NOW
-                        </a>
                     </motion.div>
                 </div>
             </div>

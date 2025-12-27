@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send } from 'lucide-react';
+import { Phone, Send } from 'lucide-react';
 
 export const ContactSection = () => {
     const [formState, setFormState] = useState({
@@ -38,29 +38,44 @@ export const ContactSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 {/* Contact Info */}
                 <div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Conference Contact</h2>
                     <p className="text-gray-600 mb-10 text-lg">
-                        Have questions about submission, registration, or venue? Reach out to our organizing team.
+                        Have questions about the conference? Reach out to our organizing committee.
                     </p>
 
-                    <div className="space-y-6">
-                        <ContactItem
-                            icon={<Mail className="w-5 h-5" />}
-                            label="Email Us"
-                            value="magnus@citchennai.net"
-                            href="mailto:magnus@citchennai.net"
-                        />
-                        <ContactItem
-                            icon={<Phone className="w-5 h-5" />}
-                            label="Call Us"
-                            value="+91 9962524758"
-                            href="tel:+91 9962524758"
-                        />
-                        {/* <ContactItem
-                            icon={<MessageSquare className="w-5 h-5" />}
-                            label="Support Hours"
-                            value="Mon - Fri, 9:00 AM - 5:00 PM IST"
-                        /> */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                            <p className="text-lg font-semibold text-gray-900 mb-1">Charan Selva Dhanush</p>
+                            <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>
+                            <a href="tel:+919962524758" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                                <Phone className="w-4 h-4" />
+                                +91 99625 24758
+                            </a>
+                        </div>
+                        <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                            <p className="text-lg font-semibold text-gray-900 mb-1">Ramapriya Ramamoorthy</p>
+                            <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>
+                            <a href="tel:+919150622416" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                                <Phone className="w-4 h-4" />
+                                +91 91506 22416
+                            </a>
+                        </div>
+                        <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                            <p className="text-lg font-semibold text-gray-900 mb-1">Varshha</p>
+                            <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>
+                            <a href="tel:+918939777852" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                                <Phone className="w-4 h-4" />
+                                +91 89397 77852
+                            </a>
+                        </div>
+                        <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                            <p className="text-lg font-semibold text-gray-900 mb-1">Latheesh Saran</p>
+                            <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>
+                            <a href="tel:+916382235520" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                                <Phone className="w-4 h-4" />
+                                +91 6382235520
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -131,18 +146,3 @@ export const ContactSection = () => {
     );
 };
 
-const ContactItem = ({ icon, label, value, href }: { icon: React.ReactNode, label: string, value: string, href?: string }) => {
-    const Content = () => (
-        <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100 cursor-pointer">
-            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                {icon}
-            </div>
-            <div>
-                <p className="text-sm font-medium text-gray-500">{label}</p>
-                <p className="text-gray-900 font-semibold">{value}</p>
-            </div>
-        </div>
-    );
-
-    return href ? <a href={href}>{Content()}</a> : Content();
-};

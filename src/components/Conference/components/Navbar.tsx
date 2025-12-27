@@ -6,7 +6,6 @@ export const Navbar = () => {
         { label: 'Home', href: '#' },
         { label: 'Call for Papers', href: '#call-for-papers' },
         { label: 'Topics', href: '#topics' },
-        { label: 'Submission', href: '#submission' },
         { label: 'Important Dates', href: '#dates' },
         { label: 'Venue', href: '#venue' },
         { label: 'Committee', href: '#committee' },

@@ -21,7 +21,7 @@ export function PrimeDirectivesSection() {
         id: 'hackathon',
         title: 'HACKATHON',
         type: 'COMPETITION',
-        description: '24-hour coding marathon where teams build innovative solutions to real-world problems. Compete for prizes and showcase your technical prowess.',
+        description: 'Will Be Updated Soon',
         image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1080',
         icon: Code,
         route: '/hackathon'

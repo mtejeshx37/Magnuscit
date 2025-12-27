@@ -2,7 +2,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CallForPapersSection } from './components/CallForPapersSection';
 import { TopicsSection } from './components/TopicsSection';
-import { SubmissionSection } from './components/SubmissionSection';
 import { DatesSection } from './components/DatesSection';
 import { VenueSection } from './components/VenueSection';
 import { CommitteeSection } from './components/CommitteeSection';
@@ -17,7 +16,6 @@ export default function ConferenceApp() {
       <HeroSection />
       <CallForPapersSection />
       <TopicsSection />
-      <SubmissionSection />
       <DatesSection />
       <VenueSection />
       <CommitteeSection />
