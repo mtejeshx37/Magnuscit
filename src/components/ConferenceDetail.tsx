@@ -51,10 +51,7 @@ export function ConferenceDetail() {
         registrationRules: [
             'Open to researchers, faculty, and industry professionals.',
             'Students must provide valid student ID for discounted rates.',
-            'At least one author must register to present the paper.',
-            'Early bird registration closes 30 days before the conference.',
-            'Registration includes access to all sessions, workshops, and materials.',
-            'Certificate of participation provided to all registered attendees.'
+            'At least one author must register to present the paper.'
         ],
 
 
@@ -206,7 +203,12 @@ export function ConferenceDetail() {
                                 </a>
                             </div>
                         </div>
-                        <div className="flex flex-wrap gap-4">
+                        <div className="mt-8 mb-6 p-6 bg-[#BD00FF]/10 border-2 border-[#BD00FF]/30 rounded-xl text-center">
+                            <p className="text-white font-mono text-lg md:text-xl">
+                                💬 For further queries, click <span className="text-[#BD00FF] font-bold underline decoration-2 underline-offset-4">Register Now</span> below
+                            </p>
+                        </div>
+                        <div className="flex flex-wrap gap-4 justify-center">
                             <button
                                 onClick={() => {
                                     navigate('/conference-website');

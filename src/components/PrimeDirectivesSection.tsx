@@ -10,7 +10,7 @@ export function PrimeDirectivesSection() {
         id: 'conference',
         title: 'CONFERENCE',
         type: 'ACADEMIC',
-        description: 'International academic conference featuring cutting-edge research papers, keynote speakers, and collaborative discussions on emerging technologies.',
+        description: 'National academic conference featuring cutting-edge research papers, keynote speakers, and collaborative discussions on emerging technologies.',
         image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1080',
         icon: Users,
         route: '/conference'
