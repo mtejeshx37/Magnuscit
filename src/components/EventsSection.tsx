@@ -2,7 +2,7 @@ import { motion, useInView } from 'motion/react';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather } from 'lucide-react';
 
-type EventCategory = 'All' | 'Technical' | 'Non-Technical' | 'Workshops' | 'Online' | 'Conference';
+type EventCategory = 'All' | 'Technical' | 'Non-Technical' | 'Workshops' | 'Online';
 
 interface Event {
   id: number | string;
@@ -128,16 +128,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
   const [activeFilter, setActiveFilter] = useState<EventCategory>('All');
 
   const events: Event[] = [
-    {
-      id: 'conference',
-      title: 'National Conference on AI',
-      category: 'Conference',
-      date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1080',
-      description: 'Explore the future of Artificial Intelligence and its applications',
-      icon: Cpu,
-      aiRecommended: true,
-    },
+
 
 
     {
@@ -245,7 +236,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     ? events
     : events.filter(event => event.category === activeFilter);
 
-  const filters: EventCategory[] = ['All', 'Conference', 'Technical', 'Non-Technical', 'Workshops', 'Online'];
+  const filters: EventCategory[] = ['All', 'Technical', 'Non-Technical', 'Workshops', 'Online'];
 
   return (
     <div className="py-20 relative overflow-hidden">
