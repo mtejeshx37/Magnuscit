@@ -181,13 +181,7 @@ export function ConferenceDetail() {
                                     📞 +91 99625 24758
                                 </a>
                             </div>
-                            <div className="p-4 bg-white/5 rounded-lg border border-[#BD00FF]/10">
-                                <p className="text-white font-semibold mb-1">Ramapriya Ramamoorthy</p>
-                                <p className="text-gray-400 text-sm mb-2">Organizing Committee</p>
-                                <a href="tel:+919150622416" className="text-[#BD00FF] hover:text-[#BD00FF]/80 font-mono text-sm transition-colors">
-                                    📞 +91 91506 22416
-                                </a>
-                            </div>
+
                             <div className="p-4 bg-white/5 rounded-lg border border-[#BD00FF]/10">
                                 <p className="text-white font-semibold mb-1">Varshha</p>
                                 <p className="text-gray-400 text-sm mb-2">Organizing Committee</p>

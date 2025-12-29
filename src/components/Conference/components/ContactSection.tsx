@@ -52,14 +52,7 @@ export const ContactSection = () => {
                                 +91 99625 24758
                             </a>
                         </div>
-                        <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
-                            <p className="text-lg font-semibold text-gray-900 mb-1">Ramapriya Ramamoorthy</p>
-                            <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>
-                            <a href="tel:+919150622416" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
-                                <Phone className="w-4 h-4" />
-                                +91 91506 22416
-                            </a>
-                        </div>
+
                         <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
                             <p className="text-lg font-semibold text-gray-900 mb-1">Varshha</p>
                             <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>

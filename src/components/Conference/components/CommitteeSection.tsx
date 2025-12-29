@@ -7,11 +7,7 @@ export const CommitteeSection = () => {
             role: 'Organizing Committee',
             phone: '+91 99625 24758'
         },
-        {
-            name: 'Ramapriya Ramamoorthy',
-            role: 'Organizing Committee',
-            phone: '+91 91506 22416'
-        },
+
         {
             name: 'Varshha',
             role: 'Organizing Committee',

@@ -2,7 +2,7 @@ import { motion, useInView } from 'motion/react';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather } from 'lucide-react';
 
-type EventCategory = 'All' | 'Technical' | 'Non-Technical' | 'Workshops' | 'Online';
+type EventCategory = 'All' | 'Technical' | 'Workshops' | 'Online';
 
 interface Event {
   id: number | string;
@@ -236,7 +236,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     ? events
     : events.filter(event => event.category === activeFilter);
 
-  const filters: EventCategory[] = ['All', 'Technical', 'Non-Technical', 'Workshops', 'Online'];
+  const filters: EventCategory[] = ['All', 'Technical', 'Workshops', 'Online'];
 
   return (
     <div className="py-20 relative overflow-hidden">
