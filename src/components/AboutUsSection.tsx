@@ -1,17 +1,21 @@
 import { motion } from 'motion/react';
+import gallery1 from '../assets/gallery_1.png';
+import gallery2 from '../assets/gallery_2.png';
+import gallery3 from '../assets/gallery_3.png';
+import gallery4 from '../assets/gallery_4.png';
 
 // Unsplash images for the "Scattered Wall"
 const GALLERY_IMAGES = [
-    "https://images.unsplash.com/photo-1531297461136-8200b2a0a71e?q=80&w=800",
-    "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=800",
-    "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800",
-    "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800",
-    "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=800",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
-    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800",
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800",
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
-    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800", // Coding close up
+    "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=800", // Lab
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800", // Circuit
+    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800", // Tech
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800", // Globe
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800", // Code rain
 ];
 
 const randomRotations = [-3, 2, -2, 3, -1, 1, -2.5, 2.5, -1.5, 1.5];
@@ -87,6 +91,7 @@ export function AboutUsSection() {
                                 <img
                                     src={src}
                                     alt="Gallery"
+                                    loading="lazy"
                                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 />
                             </motion.div>
@@ -100,6 +105,7 @@ export function AboutUsSection() {
                                 <img
                                     src={src}
                                     alt="Gallery"
+                                    loading="lazy"
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">

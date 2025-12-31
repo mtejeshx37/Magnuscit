@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Calendar, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import heroPoster from '../assets/hero_poster.png';
 
 
 export function HeroSection() {
@@ -43,6 +44,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
+          poster={heroPoster}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
           <source src="/Magnus_Home.mp4" type="video/mp4" />

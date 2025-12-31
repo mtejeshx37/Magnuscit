@@ -1,4 +1,4 @@
-import { FileText, Users, Trophy } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export const CallForPapersSection = () => {
     return (
@@ -23,12 +23,7 @@ export const CallForPapersSection = () => {
                     subtitle="4-6 pages"
                     description="Work in progress, novel ideas, or focused contributions"
                 />
-                <PaperTypeCard
-                    icon={<Users className="w-6 h-6 text-blue-600" />}
-                    title="Posters"
-                    subtitle="2 pages"
-                    description="Demonstrations, preliminary results, or position papers"
-                />
+
             </div>
 
             {/* Review Process */}
@@ -66,18 +61,7 @@ export const CallForPapersSection = () => {
                 </p>
             </div>
 
-            {/* Awards Banner */}
-            <div className="bg-amber-50 border-l-4 border-amber-400 p-8 rounded-r-lg flex items-start gap-4">
-                <div className="w-10 h-10 bg-amber-100/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Trophy className="w-5 h-5 text-amber-600" />
-                </div>
-                <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">Best Paper Awards</h4>
-                    <p className="text-gray-600 leading-relaxed">
-                        Outstanding submissions will be selected for <span className="font-medium text-gray-900">Best Paper</span>, <span className="font-medium text-gray-900">Best Student Paper</span>, and <span className="font-medium text-gray-900">Best Application Paper</span> awards, with certificates and prizes.
-                    </p>
-                </div>
-            </div>
+
         </section>
     );
 };

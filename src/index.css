@@ -506,6 +506,11 @@
 }
 
 @layer utilities {
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
+
   .pointer-events-none {
     pointer-events: none;
   }

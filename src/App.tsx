@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
@@ -13,9 +13,11 @@ import { CustomCursor } from './components/CustomCursor';
 import { MatrixLoader } from './components/MatrixLoader';
 import { AboutUsSection } from './components/AboutUsSection';
 import { eventDetailsData } from './data/eventDetails';
-import { HackathonDetail } from './components/HackathonDetail';
-import { ConferenceDetail } from './components/ConferenceDetail';
-import ConferenceApp from './components/Conference/ConferenceApp';
+
+// Lazy load route components
+const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));
+const ConferenceDetail = lazy(() => import('./components/ConferenceDetail').then(module => ({ default: module.ConferenceDetail })));
+const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp'));
 
 function Home() {
   const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
@@ -59,16 +61,20 @@ function Home() {
       <Navigation />
       <HeroSection />
       <PrimeDirectivesSection />
-      <div id="events">
+      <div id="events" className="content-visibility-auto">
         <EventsSection
           onEventSelect={handleEventSelect}
           onConferenceSelect={handleConferenceSelect}
         />
       </div>
-      <TimelineSection />
+      <div className="content-visibility-auto">
+        <TimelineSection />
+      </div>
       <CTASection />
-      <AboutUsSection />
-      <VenueSection />
+      <div className="content-visibility-auto">
+        <AboutUsSection />
+        <VenueSection />
+      </div>
       <Footer />
     </div>
   );
@@ -76,11 +82,13 @@ function Home() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/conference" element={<ConferenceDetail />} />
-      <Route path="/conference-website" element={<ConferenceApp />} />
-      <Route path="/hackathon" element={<HackathonDetail />} />
-    </Routes>
+    <Suspense fallback={<MatrixLoader />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/conference" element={<ConferenceDetail />} />
+        <Route path="/conference-website" element={<ConferenceApp />} />
+        <Route path="/hackathon" element={<HackathonDetail />} />
+      </Routes>
+    </Suspense>
   );
 }

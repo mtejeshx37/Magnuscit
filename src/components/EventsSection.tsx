@@ -1,4 +1,15 @@
 import { motion, useInView } from 'motion/react';
+import logicRushImg from '../assets/logic_rush.png';
+import exposureImg from '../assets/exposure.png';
+import posterDesignImg from '../assets/poster_design.png';
+import promptPixelImg from '../assets/prompt_pixel.png';
+import podcastMonologueImg from '../assets/podcast_monologue.png';
+import techieXoImg from '../assets/techie_xo.png';
+import techTamashaImg from '../assets/tech_tamasha.png';
+import accuracyArenaImg from '../assets/accuracy_arena.png';
+import codeEuphoriaImg from '../assets/code_euphoria.png';
+import lifeOfWordsImg from '../assets/life_of_words.png';
+import protoPitchImg from '../assets/protopitch.png';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather } from 'lucide-react';
 
@@ -72,6 +83,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
           <img
             src={event.image}
             alt={event.title}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
@@ -136,7 +148,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Prompt Pixel',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1080',
+      image: promptPixelImg,
       description: 'AI visuals and creative prompting challenge',
       icon: Sparkles,
     },
@@ -145,7 +157,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Podcast Monologue',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1080',
+      image: podcastMonologueImg,
       description: 'Spontaneous speaking on random tech topics',
       icon: Users,
     },
@@ -154,7 +166,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Techie XO',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080',
+      image: techieXoImg,
       description: 'Strategic XO game powered by tech trivia',
       icon: Code,
     },
@@ -163,7 +175,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Tech Tamasha',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxxdWl6fGVufDB8fHx8MTc2NTEyMjM1NHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: techTamashaImg,
       description: 'Multi-round tech ecosystem challenge',
       icon: Users,
     },
@@ -172,7 +184,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Logic Rush',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1580541832626-d297a732f63b?q=80&w=1080',
+      image: logicRushImg,
       description: 'Fast-paced aptitude and logic battle',
       icon: Cpu,
     },
@@ -181,7 +193,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Accuracy Arena',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1080',
+      image: accuracyArenaImg,
       description: 'Design and optimize ML predictive models',
       icon: Award,
     },
@@ -190,7 +202,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Code Euphoria',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1080',
+      image: codeEuphoriaImg,
       description: 'Progressively complex coding challenges',
       icon: Code,
     },
@@ -199,7 +211,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Life of Words (Poetry)',
       category: 'Online',
       date: 'Jan 17, 2026',
-      image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1080',
+      image: lifeOfWordsImg,
       description: 'Craft and share original poems',
       icon: Feather, // Using Feather for writing/poetry
     },
@@ -208,7 +220,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Exposure (Photography)',
       category: 'Online',
       date: 'Jan 17, 2026',
-      image: 'https://images.unsplash.com/photo-1554048612-387768052bf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxjYW1lcmF8ZW58MHx8fHwxNzY1MTIyMzU0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: exposureImg,
       description: 'Photography contest on a given theme',
       icon: Camera,
     },
@@ -217,7 +229,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'Poster Design',
       category: 'Online',
       date: 'Jan 17, 2026',
-      image: 'https://images.unsplash.com/photo-1626785774573-4b799314346d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxncmFwaGljJTIwZGVzaWdufGVufDB8fHx8MTc2NTEyMjM1NHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: posterDesignImg,
       description: 'Creative poster design competition',
       icon: Palette,
     },
@@ -226,7 +238,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       title: 'ProtoPitch',
       category: 'Technical',
       date: 'Jan 16, 2026',
-      image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1080',
+      image: protoPitchImg,
       description: 'UI/UX design and prototyping challenge',
       icon: Palette,
     },
