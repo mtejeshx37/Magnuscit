@@ -1,8 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { CustomCursor } from './CustomCursor';
-import { MatrixLoader } from './MatrixLoader';
+
 
 export function HackathonDetail() {
     const navigate = useNavigate();
@@ -63,68 +62,63 @@ export function HackathonDetail() {
     };
 
     return (
-        <>
-            <MatrixLoader />
-            <CustomCursor />
-            <div className="min-h-screen bg-[#050505] text-white">
-                {/* Back Button */}
-                <div className="container mx-auto px-4 py-6">
-                    <motion.button
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        onClick={() => navigate('/')}
-                        className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#00D1FF]/20 border border-white/10 hover:border-[#00D1FF] rounded transition-all duration-300"
-                    >
-                        <ArrowLeft className="w-4 h-4" />
-                        <span className="font-mono text-sm">Back to Events</span>
-                    </motion.button>
-                </div>
+        <div className="min-h-screen bg-[#050505] text-white">
+            <div className="container mx-auto px-4 py-6">
+                <motion.button
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    onClick={() => navigate('/')}
+                    className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#00D1FF]/20 border border-white/10 hover:border-[#00D1FF] rounded transition-all duration-300"
+                >
+                    <ArrowLeft className="w-4 h-4" />
+                    <span className="font-mono text-sm">Back to Events</span>
+                </motion.button>
+            </div>
 
-                {/* Header */}
-                <div className="container mx-auto px-4 py-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-start justify-between flex-wrap gap-4"
-                    >
-                        <div>
-                            <h1
-                                className="text-6xl md:text-8xl mb-4 text-[#00D1FF]"
-                                style={{ fontFamily: 'VT323, monospace' }}
-                            >
-                                {hackathonData.title}
-                            </h1>
-                            <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
-                                {hackathonData.description}
-                            </p>
-                        </div>
-                        <div className="px-6 py-3 bg-[#00D1FF]/10 border border-[#00D1FF] rounded-lg">
-                            <span className="text-[#00D1FF] font-mono text-sm tracking-wider">
-                                {hackathonData.category}
-                            </span>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* Coming Soon Message */}
-                <div className="container mx-auto px-4 py-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-12 bg-[#0A0A0A] border border-[#00D1FF]/20 rounded-xl text-center"
-                    >
-                        <h2
-                            className="text-3xl md:text-4xl mb-4 text-[#00D1FF]"
+            {/* Header */}
+            <div className="container mx-auto px-4 py-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-start justify-between flex-wrap gap-4"
+                >
+                    <div>
+                        <h1
+                            className="text-6xl md:text-8xl mb-4 text-[#00D1FF]"
                             style={{ fontFamily: 'VT323, monospace' }}
                         >
-                            COMING SOON
-                        </h2>
-                        <p className="text-gray-300 text-lg font-mono">
-                            All details about the hackathon will be updated soon.
+                            {hackathonData.title}
+                        </h1>
+                        <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
+                            {hackathonData.description}
                         </p>
-                    </motion.div>
-                </div>
+                    </div>
+                    <div className="px-6 py-3 bg-[#00D1FF]/10 border border-[#00D1FF] rounded-lg">
+                        <span className="text-[#00D1FF] font-mono text-sm tracking-wider">
+                            {hackathonData.category}
+                        </span>
+                    </div>
+                </motion.div>
             </div>
-        </>
+
+            {/* Coming Soon Message */}
+            <div className="container mx-auto px-4 py-20">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-12 bg-[#0A0A0A] border border-[#00D1FF]/20 rounded-xl text-center"
+                >
+                    <h2
+                        className="text-3xl md:text-4xl mb-4 text-[#00D1FF]"
+                        style={{ fontFamily: 'VT323, monospace' }}
+                    >
+                        COMING SOON
+                    </h2>
+                    <p className="text-gray-300 text-lg font-mono">
+                        All details about the hackathon will be updated soon.
+                    </p>
+                </motion.div>
+            </div>
+        </div>
     );
 }

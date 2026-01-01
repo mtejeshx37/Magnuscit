@@ -1,8 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowLeft, Calendar, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { CustomCursor } from './CustomCursor';
-import { MatrixLoader } from './MatrixLoader';
+
 
 export function ConferenceDetail() {
     const navigate = useNavigate();
@@ -39,8 +38,6 @@ export function ConferenceDetail() {
 
     return (
         <>
-            <MatrixLoader />
-            <CustomCursor />
             <div className="h-screen w-full bg-[#050505] text-white overflow-hidden flex flex-col">
                 {/* Top Bar - Back Button */}
                 <div className="shrink-0 container mx-auto px-4 py-6">

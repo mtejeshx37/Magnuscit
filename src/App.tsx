@@ -10,7 +10,6 @@ import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
 import { CustomCursor } from './components/CustomCursor';
-import { MatrixLoader } from './components/MatrixLoader';
 import { AboutUsSection } from './components/AboutUsSection';
 import { eventDetailsData } from './data/eventDetails';
 
@@ -46,8 +45,6 @@ function Home() {
     const eventData = eventDetailsData[selectedEventId as keyof typeof eventDetailsData];
     return (
       <>
-        <MatrixLoader />
-        <CustomCursor />
         <Navigation />
         <EventDetail event={eventData} onBack={handleBackToEvents} />
       </>
@@ -56,8 +53,6 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-[#050505] overflow-x-hidden">
-      <MatrixLoader />
-      <CustomCursor />
       <Navigation />
       <HeroSection />
       <PrimeDirectivesSection />
@@ -82,7 +77,8 @@ function Home() {
 
 export default function App() {
   return (
-    <Suspense fallback={<MatrixLoader />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/conference" element={<ConferenceDetail />} />

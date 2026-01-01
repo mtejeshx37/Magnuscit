@@ -129,8 +129,6 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
             }}
             className="w-full md:w-[48%] lg:w-[650px] relative group"
             style={{ transform: 'scale(1.3)' }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
         >
             {/* Breathing Glow Effect */}
             <motion.div
@@ -204,6 +202,8 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
                         <button
                             onClick={handleClick}
                             className="px-8 py-4 bg-gradient-to-r from-[#00D1FF] to-[#BD00FF] text-black rounded-full font-mono font-bold text-lg tracking-wider flex items-center gap-3 shadow-[0_0_20px_rgba(0,209,255,0.3)] hover:shadow-[0_0_30px_rgba(189,0,255,0.5)] hover:scale-105 transition-all duration-300 group/btn"
+                            onMouseEnter={() => setIsHovering(true)}
+                            onMouseLeave={() => setIsHovering(false)}
                         >
                             <Terminal className="w-5 h-5" />
                             <span>{text}</span>

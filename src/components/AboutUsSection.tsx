@@ -37,24 +37,21 @@ export function AboutUsSection() {
 
     return (
         <div id="about-us" className="min-h-screen bg-[#050505] relative py-20 overflow-hidden">
-            <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 h-screen">
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 min-h-screen">
 
                 {/* Content Column */}
-                <div className="lg:w-1/3 flex flex-col justify-center z-20 pointer-events-none lg:pointer-events-auto">
+                <div className="lg:w-[45%] flex flex-col justify-center z-20 pointer-events-none lg:pointer-events-auto py-12 lg:py-0">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-5xl md:text-7xl mb-8" style={{ fontFamily: 'VT323, monospace' }}>
+                        <h2 className="text-5xl md:text-7xl mb-8 whitespace-nowrap" style={{ fontFamily: 'VT323, monospace' }}>
                             <span className="text-white">ABOUT</span> <span className="text-[#00D1FF]">US</span>
                         </h2>
-                        <div className="space-y-6 text-gray-300 font-mono text-lg backdrop-blur-md bg-black/40 p-6 rounded-xl border border-white/10">
+                        <div className="space-y-6 text-gray-300 font-mono text-lg backdrop-blur-md bg-black/40 p-6 rounded-xl border border-white/10 w-full">
                             <p>
-                                Welcome to Magnus 2k26, where organic intelligence interfaces with synthetic evolution. We are more than a technical symposium; we are a testing ground for the future.
-                            </p>
-                            <p>
-                                Join a network of innovators, dreamers, and architects of the digital age as we explore the boundaries of AI, creativity, and logic.
+                                Magnus is the technical symposium of the department of CSE (Artificial Intelligence and Machine Learning) at Chennai Institute of Technology which was founded in 2023. With over a footfall of 500 in its first year, it is an event that celebrates the achievements in the field of AI along with Machine Learning. At Magnus, participants get to immerse themselves in various activities such as workshops on AI and Open-Source platforms, non-technical events like Weeb Trivia and Film Fusion along with technical events like paper and project presentations, motivating them to think outside the box and incorporate AI in real life.
                             </p>
                             <div className="pt-4">
                                 <span className="text-[#00D1FF] text-xl">
@@ -67,13 +64,13 @@ export function AboutUsSection() {
                 </div>
 
                 {/* Gallery Column (Desktop: Scattered / Mobile: Carousel) */}
-                <div className="lg:w-2/3 relative h-[50vh] lg:h-full">
+                <div className="lg:w-[55%] relative h-[50vh] lg:h-full">
                     {/* Desktop Scatter */}
                     <div className="hidden lg:block absolute inset-0">
                         {GALLERY_IMAGES.map((src, idx) => (
                             <motion.div
                                 key={idx}
-                                className="absolute w-64 aspect-[3/4] border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl"
+                                className="absolute w-56 aspect-[3/4] border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl"
                                 style={{
                                     top: randomPositions[idx].top,
                                     left: randomPositions[idx].left,

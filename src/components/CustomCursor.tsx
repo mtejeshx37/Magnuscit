@@ -20,7 +20,6 @@ export function CustomCursor() {
       return;
     }
 
-
     setIsVisible(true);
     document.body.classList.add('custom-cursor-enabled');
 
@@ -47,9 +46,10 @@ export function CustomCursor() {
           x: rect.left + rect.width / 2,
           y: rect.top + rect.height / 2
         });
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
       }
-
-      setIsHovering(isInteractive);
     };
 
     window.addEventListener('mousemove', updateMousePosition);
@@ -72,9 +72,14 @@ export function CustomCursor() {
   const bracketLength = 12;
   const dotSize = isHovering ? 8 : 5;
 
+  // White base colors; mix-blend-mode: difference will invert them
+  const cursorColor = '#FFFFFF';
+  const accentColor = '#00F0FF';
+
   return (
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-[9999]"
+      style={{ mixBlendMode: 'difference' }}
       animate={{
         x: targetX - width / 2,
         y: targetY - height / 2,
@@ -83,111 +88,38 @@ export function CustomCursor() {
         rotate: !isHovering ? 360 : 0,
       }}
       transition={{
-        x: {
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
-        },
-        y: {
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
-        },
-        width: {
-          type: "spring",
-          stiffness: 400,
-          damping: 30,
-        },
-        height: {
-          type: "spring",
-          stiffness: 400,
-          damping: 30,
-        },
-        rotate: !isHovering ? {
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-        } : {
-          duration: 0.3,
-          ease: "easeOut"
-        },
+        x: { type: "spring", stiffness: 500, damping: 28, mass: 0.5 },
+        y: { type: "spring", stiffness: 500, damping: 28, mass: 0.5 },
+        width: { type: "spring", stiffness: 400, damping: 30 },
+        height: { type: "spring", stiffness: 400, damping: 30 },
+        rotate: !isHovering ? { duration: 8, repeat: Infinity, ease: "linear" } : { duration: 0.3, ease: "easeOut" },
       }}
     >
       {/* Top-Left Bracket */}
-      <div
-        className="absolute"
-        style={{
-          top: 0,
-          left: 0,
-        }}
-      >
+      <div className="absolute" style={{ top: 0, left: 0 }}>
         <svg width={bracketLength} height={bracketLength} viewBox="0 0 12 12">
-          <path
-            d="M 12 3 L 12 0 L 0 0 L 0 12 L 3 12"
-            fill="none"
-            stroke="#FFFFFF"
-            strokeWidth="2.5"
-            strokeLinecap="square"
-          />
+          <path d="M 12 3 L 12 0 L 0 0 L 0 12 L 3 12" fill="none" stroke={cursorColor} strokeWidth="2.5" strokeLinecap="square" />
         </svg>
       </div>
 
       {/* Top-Right Bracket */}
-      <div
-        className="absolute"
-        style={{
-          top: 0,
-          right: 0,
-        }}
-      >
+      <div className="absolute" style={{ top: 0, right: 0 }}>
         <svg width={bracketLength} height={bracketLength} viewBox="0 0 12 12">
-          <path
-            d="M 0 3 L 0 0 L 12 0 L 12 12 L 9 12"
-            fill="none"
-            stroke="#FFFFFF"
-            strokeWidth="2.5"
-            strokeLinecap="square"
-          />
+          <path d="M 0 3 L 0 0 L 12 0 L 12 12 L 9 12" fill="none" stroke={cursorColor} strokeWidth="2.5" strokeLinecap="square" />
         </svg>
       </div>
 
       {/* Bottom-Left Bracket */}
-      <div
-        className="absolute"
-        style={{
-          bottom: 0,
-          left: 0,
-        }}
-      >
+      <div className="absolute" style={{ bottom: 0, left: 0 }}>
         <svg width={bracketLength} height={bracketLength} viewBox="0 0 12 12">
-          <path
-            d="M 12 9 L 12 12 L 0 12 L 0 0 L 3 0"
-            fill="none"
-            stroke="#FFFFFF"
-            strokeWidth="2.5"
-            strokeLinecap="square"
-          />
+          <path d="M 12 9 L 12 12 L 0 12 L 0 0 L 3 0" fill="none" stroke={cursorColor} strokeWidth="2.5" strokeLinecap="square" />
         </svg>
       </div>
 
       {/* Bottom-Right Bracket */}
-      <div
-        className="absolute"
-        style={{
-          bottom: 0,
-          right: 0,
-        }}
-      >
+      <div className="absolute" style={{ bottom: 0, right: 0 }}>
         <svg width={bracketLength} height={bracketLength} viewBox="0 0 12 12">
-          <path
-            d="M 0 9 L 0 12 L 12 12 L 12 0 L 9 0"
-            fill="none"
-            stroke="#FFFFFF"
-            strokeWidth="2.5"
-            strokeLinecap="square"
-          />
+          <path d="M 0 9 L 0 12 L 12 12 L 12 0 L 9 0" fill="none" stroke={cursorColor} strokeWidth="2.5" strokeLinecap="square" />
         </svg>
       </div>
 
@@ -201,23 +133,17 @@ export function CustomCursor() {
         }}
         animate={{
           scale: isHovering ? 1.6 : 1,
-          backgroundColor: isHovering ? '#00F0FF' : '#FFFFFF',
+          backgroundColor: isHovering ? accentColor : cursorColor,
           boxShadow: isHovering
-            ? '0 0 12px rgba(0, 240, 255, 1), 0 0 24px rgba(0, 240, 255, 0.8), 0 0 36px rgba(0, 240, 255, 0.6)'
-            : '0 0 4px rgba(255, 255, 255, 0.6)',
+            ? `0 0 12px ${accentColor}, 0 0 24px ${accentColor}cc, 0 0 36px ${accentColor}99`
+            : `0 0 4px ${cursorColor}99`,
         }}
         transition={{
           duration: 0.2,
           ease: "easeOut",
         }}
       >
-        <div
-          style={{
-            width: dotSize,
-            height: dotSize,
-            borderRadius: '50%',
-          }}
-        />
+        <div style={{ width: dotSize, height: dotSize, borderRadius: '50%' }} />
       </motion.div>
     </motion.div>
   );
