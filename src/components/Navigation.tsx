@@ -14,6 +14,10 @@ export function Navigation() {
     if (isHoveringRegister) {
       let iteration = 0;
       const originalText = "REGISTER";
+      const duration = 700; // 0.7 seconds
+      const totalSteps = originalText.length * 2; // derived from iteration += 1/2
+      const intervalTime = duration / totalSteps;
+
       interval = setInterval(() => {
         setRegisterText(
           originalText
@@ -32,7 +36,7 @@ export function Navigation() {
         }
 
         iteration += 1 / 2;
-      }, 30);
+      }, intervalTime);
     } else {
       setRegisterText("REGISTER");
     }
@@ -117,7 +121,7 @@ export function Navigation() {
           {/* RIGHT: Register Button (Desktop) */}
           <div className="hidden md:block">
             <motion.a
-              href="#register"
+              href="#prime-directives"
               className="relative px-6 py-2 overflow-hidden group flex items-center justify-center font-bold tracking-widest text-[#BD00FF]"
               style={{ fontFamily: 'JetBrains Mono, monospace', border: '1px solid transparent' }}
               onMouseEnter={() => setIsHoveringRegister(true)}
@@ -169,7 +173,7 @@ export function Navigation() {
                 </a>
               ))}
               <a
-                href="#register"
+                href="#prime-directives"
                 className="block text-[#BD00FF] font-bold hover:text-white transition-colors duration-300 py-3 text-center tracking-widest bg-[#BD00FF]/10 mt-4"
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}
