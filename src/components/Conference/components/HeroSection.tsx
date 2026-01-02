@@ -35,7 +35,7 @@ export const HeroSection = () => {
                 {/* Hybrid Mode Alert */}
                 <div className="max-w-2xl mb-10 p-4 bg-amber-50 border border-amber-200 rounded-lg flex gap-3 text-amber-900 text-sm md:text-base leading-relaxed">
                     <span className="shrink-0 text-xl">⚠️</span>
-                    <p>Paper can be present in online or offline.The conference is hybrid, paper can be presented in online or offline.
+                    <p>The conference is hybrid, paper can be presented in online or offline.
                     </p>
                 </div>
 
