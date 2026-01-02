@@ -28,11 +28,17 @@ export const HeroSection = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+                <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
                     Organized by Chennai Institute of Technology, NCAI 2026 invites original research contributions addressing theoretical, experimental, and applied aspects of artificial intelligence and machine learning.
                 </p>
 
-                {/* CTA Button */}
+                {/* Hybrid Mode Alert */}
+                <div className="max-w-2xl mb-10 p-4 bg-amber-50 border border-amber-200 rounded-lg flex gap-3 text-amber-900 text-sm md:text-base leading-relaxed">
+                    <span className="shrink-0 text-xl">⚠️</span>
+                    <p>Paper can be present in online or offline.The conference is hybrid, paper can be presented in online or offline.
+                    </p>
+                </div>
+
                 {/* CTA Button */}
                 <a
                     href="https://forms.gle/uUsFtAgTSwh7ALWE7"
