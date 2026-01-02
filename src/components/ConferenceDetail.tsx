@@ -197,7 +197,7 @@ export function ConferenceDetail() {
 
                             <button
                                 onClick={() => {
-                                    navigate('/conference-website');
+                                    navigate('/conference');
                                     window.scrollTo(0, 0);
                                 }}
                                 className="w-full py-5 bg-[#BD00FF] hover:bg-[#A000Dbe] text-white font-mono text-xl tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#BD00FF]/50 cursor-pointer transform hover:scale-[1.02]"

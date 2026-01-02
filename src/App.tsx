@@ -29,7 +29,7 @@ function Home() {
   };
 
   const handleConferenceSelect = () => {
-    navigate('/conference');
+    navigate('/conference-details');
     window.scrollTo(0, 0);
   };
 
@@ -85,8 +85,8 @@ export default function App() {
     <Suspense fallback={<MatrixLoader />}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/conference" element={<ConferenceDetail />} />
-        <Route path="/conference-website" element={<ConferenceApp />} />
+        <Route path="/conference-details" element={<ConferenceDetail />} />
+        <Route path="/conference" element={<ConferenceApp />} />
         <Route path="/hackathon" element={<HackathonDetail />} />
       </Routes>
     </Suspense>
