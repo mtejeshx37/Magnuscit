@@ -8,7 +8,6 @@ export const Navbar = () => {
         { label: 'Topics', href: '#topics' },
         { label: 'Important Dates', href: '#dates' },
         { label: 'Venue', href: '#venue' },
-        { label: 'Committee', href: '#committee' },
         { label: 'Contact Us', href: '#contact' },
     ];
 
