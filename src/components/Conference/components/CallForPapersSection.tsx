@@ -72,19 +72,19 @@ export const CallForPapersSection = () => {
                     </div>
 
                     {/* Elsevier (Mendeley) Card */}
-                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 h-full flex flex-col">
+                    {/* <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 h-full flex flex-col">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="p-2 bg-indigo-50 rounded-lg">
                                 <FileText className="w-6 h-6 text-indigo-600" />
                             </div>
-                            <h4 className="font-bold text-gray-900 text-2xl">Elsevier (Mendeley)</h4>
+                            <h4 className="font-bold text-gray-900 text-2xl">IJSDR'S</h4>
                         </div>
 
                         <ul className="space-y-4 mb-6 flex-1">
                             {[
-                                { title: "International Journal of Innovative Research in Advanced Engineering", issn: "ISSN: 2349-2163" },
-                                { title: "International Research Journal of Computer Science", issn: "ISSN: 2349-9842" },
-                                { title: "International Journal Innovative Research In Information Security", issn: "P-ISSN: 2349-7009 / E-ISSN: 2349-701" }
+                                { title: "International Journal of Scientific Development and Research", issn: "ISSN: 2455-2631" },
+                                // { title: "International Research Journal of Computer Science", issn: "ISSN: 2349-9842" },
+                                // { title: "International Journal Innovative Research In Information Security", issn: "P-ISSN: 2349-7009 / E-ISSN: 2349-701" }
                             ].map((journal, idx) => (
                                 <li key={idx} className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
                                     <p className="font-semibold text-gray-800 text-base leading-tight mb-1">{journal.title}</p>
@@ -97,7 +97,7 @@ export const CallForPapersSection = () => {
                             <span className="text-amber-600 text-lg">★</span>
                             <span className="mt-0.5">Cost will be 2.5k</span>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* International Journals Card */}
                     <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 h-full flex flex-col">
@@ -105,7 +105,7 @@ export const CallForPapersSection = () => {
                             <div className="p-2 bg-indigo-50 rounded-lg">
                                 <FileText className="w-6 h-6 text-indigo-600" />
                             </div>
-                            <h4 className="font-bold text-gray-900 text-2xl">International Journals</h4>
+                            <h4 className="font-bold text-gray-900 text-2xl">UGC</h4>
                         </div>
 
                         <ul className="space-y-4 mb-6 flex-1">
@@ -117,7 +117,14 @@ export const CallForPapersSection = () => {
                             <li className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
                                 <p className="font-semibold text-gray-800 text-base leading-tight mb-1">International Journal of Scientific Development</p>
                                 <p className="text-xs text-indigo-600 font-mono font-medium">ISSN: 2455-2631</p>
+                                <br />
+                                <p className="text-xs text-gray-600 font-mono font-medium"><strong>Impact factor 9.15 (Calculate by google scholar and Semantic Scholar | AI-Powered Research Tool)</strong>
+                                    <br />
+                                    <br />
+                                    <strong>ESTD Year: 2016</strong>
+                                </p>
                             </li>
+
                         </ul>
                         <div className="mt-auto bg-amber-50 text-amber-900 p-3 rounded-lg text-sm font-medium border border-amber-100 flex items-start gap-2">
                             <span className="text-amber-600 text-lg">★</span>
