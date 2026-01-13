@@ -1,8 +1,7 @@
 import { motion } from 'motion/react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Calendar, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { CustomCursor } from './CustomCursor';
-import { MatrixLoader } from './MatrixLoader';
+
 
 export function ConferenceDetail() {
     const navigate = useNavigate();
@@ -10,39 +9,17 @@ export function ConferenceDetail() {
     const conferenceData = {
         title: 'CONFERENCE',
         category: 'ACADEMIC',
-        description: 'An international academic conference bringing together researchers, scholars, and industry professionals to present cutting-edge research papers, engage in collaborative discussions, and explore emerging technologies shaping the future of computer science and engineering.',
+        description: 'A national academic conference bringing together researchers, scholars, and industry professionals to present cutting-edge research papers, engage in collaborative discussions, and explore emerging technologies shaping the future of computer science and engineering.',
 
-        tracks: [
-            {
-                title: 'Machine Learning & Deep Learning',
-                description: 'Papers on deep learning, neural networks, supervised and unsupervised learning, reinforcement learning, transfer learning, generative models (GANs, VAEs, Diffusion models), and graph neural networks. Focus on novel algorithms and theoretical advances in ML/DL domains.'
-            },
-            {
-                title: 'Natural Language Processing',
-                description: 'Research on large language models and transformers, machine translation, multilingual NLP, text generation and summarization, sentiment analysis, question answering, conversational AI, and information extraction.'
-            },
-            {
-                title: 'Computer Vision & Image Processing',
-                description: 'Studies on object detection and recognition, image segmentation and generation, video analysis and action recognition, 3D vision and scene understanding, medical image analysis, and visual question answering.'
-            },
-            {
-                title: 'AI for Social Good & Applications',
-                description: 'Papers on healthcare and medical diagnosis AI, agricultural AI and precision farming, educational technology and intelligent tutoring, environmental monitoring and climate AI, smart cities and urban computing, and disaster response applications.'
-            },
-            {
-                title: 'Trustworthy & Responsible AI',
-                description: 'Research on AI ethics and fairness, explainable and interpretable AI, privacy-preserving machine learning, robustness and adversarial learning, AI safety and alignment, and bias detection and mitigation.'
-            },
-            {
-                title: 'Emerging AI Topics',
-                description: 'Studies on quantum machine learning, neuromorphic computing, AI on edge devices and IoT, federated and distributed learning, AutoML and neural architecture search, and AI-assisted scientific discovery.'
-            }
+        // Updated dates
+        dates: [
+            { label: 'Paper Submission', date: 'Jan 20th, 2026', icon: FileText },
+            { label: 'Conference Date', date: 'Feb 02nd, 2026', icon: Calendar }
         ],
 
         submissionGuidelines: [
             'Original research papers (6-8 pages)',
             'Extended abstracts (2-4 pages)',
-            'Poster presentations',
             'Workshop proposals',
             'Tutorial submissions',
             'Industry case studies'
@@ -54,8 +31,6 @@ export function ConferenceDetail() {
             'At least one author must register to present the paper.'
         ],
 
-
-
         contact: 'Conference Chair: Dr. Rajesh Kumar | Email: conference@magnus2k26.edu',
         conferenceWebsite: 'https://magnus2k26.edu/conference',
         registrationLink: 'https://magnus2k26.edu/conference/register'
@@ -63,41 +38,39 @@ export function ConferenceDetail() {
 
     return (
         <>
-            <MatrixLoader />
-            <CustomCursor />
-            <div className="min-h-screen bg-[#050505] text-white">
-                {/* Back Button */}
-                <div className="container mx-auto px-4 py-6">
+            <div className="h-screen w-full bg-[#050505] text-white overflow-hidden flex flex-col">
+                {/* Top Bar - Back Button */}
+                <div className="shrink-0 container mx-auto px-4 py-6">
                     <motion.button
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         onClick={() => navigate('/')}
-                        className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#BD00FF]/20 border border-white/10 hover:border-[#BD00FF] rounded transition-all duration-300"
+                        className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#BD00FF]/20 border border-white/10 hover:border-[#BD00FF] rounded transition-all duration-300 group"
                     >
-                        <ArrowLeft className="w-4 h-4" />
+                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                         <span className="font-mono text-sm">Back to Events</span>
                     </motion.button>
                 </div>
 
                 {/* Header */}
-                <div className="container mx-auto px-4 py-12">
+                <div className="shrink-0 container mx-auto px-4 mb-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-start justify-between flex-wrap gap-4"
+                        className="flex items-end justify-between gap-4 border-b border-white/10 pb-6"
                     >
                         <div>
                             <h1
-                                className="text-6xl md:text-8xl mb-4 text-[#BD00FF]"
+                                className="text-5xl md:text-7xl mb-2 text-[#BD00FF] leading-none"
                                 style={{ fontFamily: 'VT323, monospace' }}
                             >
                                 {conferenceData.title}
                             </h1>
-                            <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
+                            <p className="text-gray-400 text-sm max-w-2xl leading-relaxed">
                                 {conferenceData.description}
                             </p>
                         </div>
-                        <div className="px-6 py-3 bg-[#BD00FF]/10 border border-[#BD00FF] rounded-lg">
+                        <div className="hidden md:block px-6 py-2 bg-[#BD00FF]/10 border border-[#BD00FF] rounded-lg">
                             <span className="text-[#BD00FF] font-mono text-sm tracking-wider">
                                 {conferenceData.category}
                             </span>
@@ -105,116 +78,149 @@ export function ConferenceDetail() {
                     </motion.div>
                 </div>
 
-                {/* Conference Tracks */}
-                <div className="container mx-auto px-4 py-12">
-                    <motion.h2
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-3xl md:text-4xl mb-8 text-white"
-                        style={{ fontFamily: 'VT323, monospace' }}
-                    >
-                        CONFERENCE TRACKS – RELATED TO ARTIFICIAL INTELLIGENCE
-                    </motion.h2>
+                {/* Main Content - 2 Column Layout */}
+                <div className="flex-1 min-h-0 container mx-auto px-4 grid md:grid-cols-2 gap-6 items-stretch pb-12 overflow-y-auto custom-scrollbar">
+
+                    {/* Left Column: Dates, Registration & Contact Stacked */}
                     <div className="space-y-6">
-                        {conferenceData.tracks.map((track, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="p-6 bg-white/5 border border-[#BD00FF]/20 rounded-lg hover:border-[#BD00FF]/50 transition-all duration-300"
-                            >
-                                <h3 className="text-xl text-[#BD00FF] mb-2 font-mono">{track.title}</h3>
-                                <p className="text-gray-400 leading-relaxed">{track.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
 
-
-
-                {/* Rules Section */}
-                <div className="container mx-auto px-4 py-12">
-                    {/* Registration Rules */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-8 bg-[#0A0A0A] border border-[#BD00FF]/20 rounded-xl"
-                    >
-                        <h3
-                            className="text-2xl md:text-3xl mb-6 text-[#BD00FF]"
-                            style={{ fontFamily: 'VT323, monospace' }}
+                        {/* Important Dates */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="grid grid-cols-2 gap-4"
                         >
-                            REGISTRATION
-                        </h3>
-                        <ul className="space-y-3">
-                            {conferenceData.registrationRules.map((rule, index) => (
-                                <li key={index} className="flex items-start gap-3">
-                                    <span className="text-[#BD00FF] mt-1">▸</span>
-                                    <span className="text-gray-400 text-sm leading-relaxed">{rule}</span>
-                                </li>
+                            {conferenceData.dates.map((item, index) => (
+                                <div key={index} className="p-4 bg-[#0A0A0A] border border-[#BD00FF]/20 rounded-xl flex flex-col items-center text-center group hover:border-[#BD00FF]/50 transition-colors">
+                                    <item.icon className="w-6 h-6 text-[#BD00FF] mb-2 group-hover:scale-110 transition-transform" />
+                                    <span className="text-gray-400 text-xs uppercase tracking-wider mb-1">{item.label}</span>
+                                    <span className="text-white font-mono text-lg font-bold">{item.date}</span>
+                                </div>
                             ))}
-                        </ul>
-                    </motion.div>
+                        </motion.div>
 
-
-                </div>
-
-                {/* Contact & Registration */}
-                <div className="container mx-auto px-4 py-12 pb-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-8 bg-[#0A0A0A] border border-[#BD00FF]/20 rounded-xl"
-                    >
-                        <h3
-                            className="text-2xl md:text-3xl mb-6 text-[#BD00FF]"
-                            style={{ fontFamily: 'VT323, monospace' }}
+                        {/* Registration Rules */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="flex flex-col p-6 bg-[#0A0A0A] border border-[#BD00FF]/20 rounded-xl"
                         >
-                            CONFERENCE CONTACT
-                        </h3>
-                        <div className="grid md:grid-cols-2 gap-6 mb-8">
-                            <div className="p-4 bg-white/5 rounded-lg border border-[#BD00FF]/10">
-                                <p className="text-white font-semibold mb-1">Charan Selva Dhanush</p>
-                                <p className="text-gray-400 text-sm mb-2">Organizing Committee</p>
-                                <a href="tel:+919962524758" className="text-[#BD00FF] hover:text-[#BD00FF]/80 font-mono text-sm transition-colors">
-                                    📞 +91 99625 24758
-                                </a>
+                            <h3 className="text-2xl mb-4 text-[#BD00FF] shrink-0" style={{ fontFamily: 'VT323, monospace' }}>
+                                REGISTRATION
+                            </h3>
+                            <ul className="space-y-3">
+                                {conferenceData.registrationRules.map((rule, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                        <span className="text-[#BD00FF] mt-1 text-xs">▸</span>
+                                        <span className="text-gray-300 text-sm leading-relaxed">{rule}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+
+                        {/* Contact Section */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="flex flex-col p-6 bg-[#0A0A0A] border border-[#BD00FF]/20 rounded-xl"
+                        >
+                            <h3 className="text-2xl mb-4 text-[#BD00FF] shrink-0" style={{ fontFamily: 'VT323, monospace' }}>
+                                CONTACT
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="p-3 bg-white/5 rounded border border-[#BD00FF]/10 hover:border-[#BD00FF]/30 transition-colors">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <p className="text-white font-semibold text-sm">Charan Selva Dhanush</p>
+                                    </div>
+                                    <p className="text-gray-500 text-xs mb-1">Organizing Committee</p>
+                                    <a href="tel:+919962524758" className="text-[#BD00FF] hover:underline font-mono text-sm block">
+                                        +91 99625 24758
+                                    </a>
+                                </div>
+
+                                <div className="p-3 bg-white/5 rounded border border-[#BD00FF]/10 hover:border-[#BD00FF]/30 transition-colors">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <p className="text-white font-semibold text-sm">Varshha</p>
+                                    </div>
+                                    <p className="text-gray-500 text-xs mb-1">Organizing Committee</p>
+                                    <a href="tel:+918939777852" className="text-[#BD00FF] hover:underline font-mono text-sm block">
+                                        +91 89397 77852
+                                    </a>
+                                </div>
+
+                                <div className="p-3 bg-white/5 rounded border border-[#BD00FF]/10 hover:border-[#BD00FF]/30 transition-colors">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <p className="text-white font-semibold text-sm">Latheesh Saran</p>
+                                    </div>
+                                    <p className="text-gray-500 text-xs mb-1">Organizing Committee</p>
+                                    <a href="tel:+916382235520" className="text-[#BD00FF] hover:underline font-mono text-sm block">
+                                        +91 6382235520
+                                    </a>
+                                </div>
+
+                                <div className="p-3 bg-white/5 rounded border border-[#BD00FF]/10 hover:border-[#BD00FF]/30 transition-colors">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <p className="text-white font-semibold text-sm">Swetha</p>
+                                    </div>
+                                    <p className="text-gray-500 text-xs mb-1">Organizing Committee</p>
+                                    <a href="tel:+917397444395" className="text-[#BD00FF] hover:underline font-mono text-sm block">
+                                        +91 73974 44395
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Column: Register CTA (Centered Vertically) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="flex flex-col justify-center h-full pb-24"
+                    >
+                        <div className="flex flex-col items-center text-center relative z-10 w-full">
+                            <h3 className="text-4xl mb-8 text-white" style={{ fontFamily: 'VT323, monospace' }}>
+                                READY TO JOIN?
+                            </h3>
+
+                            <div className="mb-10">
+                                <p className="text-white font-mono text-lg">
+                                    Have queries? <br />
+                                    <span className="text-[#BD00FF] font-bold">Click Register</span>
+                                </p>
                             </div>
 
-                            <div className="p-4 bg-white/5 rounded-lg border border-[#BD00FF]/10">
-                                <p className="text-white font-semibold mb-1">Varshha</p>
-                                <p className="text-gray-400 text-sm mb-2">Organizing Committee</p>
-                                <a href="tel:+918939777852" className="text-[#BD00FF] hover:text-[#BD00FF]/80 font-mono text-sm transition-colors">
-                                    📞 +91 89397 77852
-                                </a>
-                            </div>
-                            <div className="p-4 bg-white/5 rounded-lg border border-[#BD00FF]/10">
-                                <p className="text-white font-semibold mb-1">Latheesh Saran</p>
-                                <p className="text-gray-400 text-sm mb-2">Organizing Committee</p>
-                                <a href="tel:+916382235520" className="text-[#BD00FF] hover:text-[#BD00FF]/80 font-mono text-sm transition-colors">
-                                    📞 +91 6382235520
-                                </a>
-                            </div>
-                        </div>
-                        <div className="mt-8 mb-6 p-6 bg-[#BD00FF]/10 border-2 border-[#BD00FF]/30 rounded-xl text-center">
-                            <p className="text-white font-mono text-lg md:text-xl">
-                                💬 For further queries, click <span className="text-[#BD00FF] font-bold underline decoration-2 underline-offset-4">Register Now</span> below
-                            </p>
-                        </div>
-                        <div className="flex flex-wrap gap-4 justify-center">
                             <button
                                 onClick={() => {
-                                    navigate('/conference-website');
+                                    navigate('/conference');
                                     window.scrollTo(0, 0);
                                 }}
-                                className="inline-block px-8 py-4 bg-[#BD00FF] hover:bg-[#BD00FF]/80 text-white font-mono text-lg tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#BD00FF]/50 cursor-pointer"
+                                className="w-full py-5 bg-[#BD00FF] hover:bg-[#A000Dbe] text-white font-mono text-xl tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#BD00FF]/50 cursor-pointer transform hover:scale-[1.02]"
                             >
-                                REGISTER NOW
+                                REGISTER
                             </button>
                         </div>
                     </motion.div>
                 </div>
+
+                {/* Scrollbar Styles */}
+                <style>{`
+                    .custom-scrollbar::-webkit-scrollbar {
+                        width: 4px;
+                    }
+                    .custom-scrollbar::-webkit-scrollbar-track {
+                        background: rgba(255, 255, 255, 0.02);
+                    }
+                    .custom-scrollbar::-webkit-scrollbar-thumb {
+                        background: rgba(189, 0, 255, 0.3);
+                        border-radius: 2px;
+                    }
+                    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                        background: rgba(189, 0, 255, 0.5);
+                    }
+                `}</style>
             </div>
         </>
     );

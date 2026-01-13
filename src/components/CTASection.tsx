@@ -32,7 +32,7 @@ export function CTASection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              const eventsSection = document.getElementById('events');
+              const eventsSection = document.getElementById('prime-directives');
               if (eventsSection) {
                 eventsSection.scrollIntoView({ behavior: 'smooth' });
               }

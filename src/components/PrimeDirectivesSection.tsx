@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Terminal, Users, Code } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -60,8 +61,47 @@ export function PrimeDirectivesSection() {
     );
 }
 
+
 function FloatingCard({ event, color, delay, navigate }: { event: any, color: string, delay: number, navigate: any }) {
     const Icon = event.icon;
+    const [text, setText] = useState("INITIATE_PROTOCOL");
+    const [isHovering, setIsHovering] = useState(false);
+
+    // Binary Decode Effect
+    useEffect(() => {
+        let interval: NodeJS.Timeout;
+        if (isHovering) {
+            let iteration = 0;
+            const originalText = "INITIATE_PROTOCOL";
+            const duration = 700; // 0.7 seconds
+            const totalSteps = originalText.length * 2;
+            const intervalTime = duration / totalSteps;
+
+            interval = setInterval(() => {
+                setText(
+                    originalText
+                        .split("")
+                        .map((_char, index) => {
+                            if (index < iteration) {
+                                return originalText[index];
+                            }
+                            return Math.random() > 0.5 ? "1" : "0";
+                        })
+                        .join("")
+                );
+
+                if (iteration >= originalText.length) {
+                    clearInterval(interval);
+                }
+
+                iteration += 1 / 2;
+            }, intervalTime);
+        } else {
+            setText("INITIATE_PROTOCOL");
+        }
+
+        return () => clearInterval(interval);
+    }, [isHovering]);
 
     const handleClick = () => {
         navigate(event.route);
@@ -117,6 +157,7 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
                     <img
                         src={event.image}
                         alt={event.title}
+                        loading="lazy"
                         className="w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
@@ -160,12 +201,13 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
                     <div className="flex items-center gap-4">
                         <button
                             onClick={handleClick}
-                            className="px-6 py-3 bg-white/5 hover:bg-[color:var(--highlight)] hover:text-black border border-white/10 rounded transition-all duration-300 flex items-center gap-2 group/btn"
-                            style={{ '--highlight': color } as any}
+                            className="px-8 py-4 bg-gradient-to-r from-[#00D1FF] to-[#BD00FF] text-black rounded-full font-mono font-bold text-lg tracking-wider flex items-center gap-3 shadow-[0_0_20px_rgba(0,209,255,0.3)] hover:shadow-[0_0_30px_rgba(189,0,255,0.5)] hover:scale-105 transition-all duration-300 group/btn"
+                            onMouseEnter={() => setIsHovering(true)}
+                            onMouseLeave={() => setIsHovering(false)}
                         >
-                            <Terminal className="w-4 h-4" />
-                            <span className="font-mono text-sm tracking-wider">INITIATE_PROTOCOL</span>
-                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            <Terminal className="w-5 h-5" />
+                            <span>{text}</span>
+                            <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                         </button>
                     </div>
                 </div>

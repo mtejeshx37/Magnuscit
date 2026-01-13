@@ -69,6 +69,14 @@ export const ContactSection = () => {
                                 +91 6382235520
                             </a>
                         </div>
+                        <div className="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                            <p className="text-lg font-semibold text-gray-900 mb-1">Swetha</p>
+                            <p className="text-sm text-gray-500 mb-3">Organizing Committee</p>
+                            <a href="tel:+917397444395" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                                <Phone className="w-4 h-4" />
+                                +91 73974 44395
+                            </a>
+                        </div>
                     </div>
                 </div>
 

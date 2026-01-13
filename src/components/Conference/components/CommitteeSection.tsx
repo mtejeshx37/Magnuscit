@@ -17,6 +17,11 @@ export const CommitteeSection = () => {
             name: 'Latheesh Saran',
             role: 'Organizing Committee',
             phone: '+91 6382235520'
+        },
+        {
+            name: 'Swetha',
+            role: 'Organizing Committee',
+            phone: '+91 73974 44395'
         }
     ];
 

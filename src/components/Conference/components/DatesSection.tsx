@@ -4,14 +4,14 @@ export const DatesSection = () => {
     const dates = [
         {
             icon: <Calendar className="w-6 h-6 text-blue-600" />,
-            title: "Abstract Submission",
-            date: "October 15, 2025",
+            title: "Paper Submission",
+            date: "January 20, 2026",
             status: "completed"
         },
         {
             icon: <Clock className="w-6 h-6 text-blue-600" />,
-            title: "Conference Dates",
-            date: "February 02-03, 2026",
+            title: "Conference Date",
+            date: "February 02, 2026",
             status: "upcoming"
         }
     ];

@@ -1,4 +1,4 @@
-import { FileText, Users, Trophy } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export const CallForPapersSection = () => {
     return (
@@ -23,12 +23,7 @@ export const CallForPapersSection = () => {
                     subtitle="4-6 pages"
                     description="Work in progress, novel ideas, or focused contributions"
                 />
-                <PaperTypeCard
-                    icon={<Users className="w-6 h-6 text-blue-600" />}
-                    title="Posters"
-                    subtitle="2 pages"
-                    description="Demonstrations, preliminary results, or position papers"
-                />
+
             </div>
 
             {/* Review Process */}
@@ -41,43 +36,109 @@ export const CallForPapersSection = () => {
 
             {/* Publication */}
             <div className="mb-12">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Publication & Presentation</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Publications</h3>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                    Accepted papers will be published in the conference proceedings and will be indexed in major databases. Selected high-quality papers will be recommended for publication in the following prestigious journals:
+                    Accepted papers will be published in the conference proceedings and will be indexed in major databases. Selected high-quality papers will be recommended for publication in the following:
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    {[
-                        "Engineering Applications of Artificial Intelligence",
-                        "Artificial Intelligence",
-                        "Knowledge-Based Systems"
-                    ].map((journal, index) => (
-                        <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start border-t-4 border-t-indigo-500">
-                            <div className="p-2 bg-indigo-50 rounded-lg mb-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    {/* Elsevier Card */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 h-full flex flex-col">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-indigo-50 rounded-lg">
                                 <FileText className="w-6 h-6 text-indigo-600" />
                             </div>
-                            <h4 className="font-bold text-gray-900 text-lg leading-tight">{journal}</h4>
+                            <h4 className="font-bold text-gray-900 text-2xl">Elsevier</h4>
                         </div>
-                    ))}
+
+                        <ul className="space-y-4 mb-6 flex-1">
+                            {[
+                                { title: "Artificial Intelligence", issn: "0004-3702" },
+                                { title: "Engineering Applications of Artificial Intelligence", issn: "0952-1976" },
+                                { title: "AI Open", issn: "2666-6510" },
+                                { title: "Knowledge-Based Systems", issn: "0950-7051" }
+                            ].map((journal, idx) => (
+                                <li key={idx} className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
+                                    <p className="font-semibold text-gray-800 text-base leading-tight mb-1">{journal.title}</p>
+                                    <p className="text-xs text-indigo-600 font-mono font-medium">ISSN: {journal.issn}</p>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="mt-auto bg-amber-50 text-amber-900 p-3 rounded-lg text-sm font-medium border border-amber-100 flex items-start gap-2">
+                            <span className="text-amber-600 text-lg">★</span>
+                            <span className="mt-0.5">Cost will be 14k only to top 5 papers</span>
+                        </div>
+                    </div>
+
+                    {/* Elsevier (Mendeley) Card */}
+                    {/* <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 h-full flex flex-col">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-indigo-50 rounded-lg">
+                                <FileText className="w-6 h-6 text-indigo-600" />
+                            </div>
+                            <h4 className="font-bold text-gray-900 text-2xl">IJSDR'S</h4>
+                        </div>
+
+                        <ul className="space-y-4 mb-6 flex-1">
+                            {[
+                                { title: "International Journal of Scientific Development and Research", issn: "ISSN: 2455-2631" },
+                                // { title: "International Research Journal of Computer Science", issn: "ISSN: 2349-9842" },
+                                // { title: "International Journal Innovative Research In Information Security", issn: "P-ISSN: 2349-7009 / E-ISSN: 2349-701" }
+                            ].map((journal, idx) => (
+                                <li key={idx} className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
+                                    <p className="font-semibold text-gray-800 text-base leading-tight mb-1">{journal.title}</p>
+                                    <p className="text-xs text-indigo-600 font-mono font-medium">{journal.issn}</p>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="mt-auto bg-amber-50 text-amber-900 p-3 rounded-lg text-sm font-medium border border-amber-100 flex items-start gap-2">
+                            <span className="text-amber-600 text-lg">★</span>
+                            <span className="mt-0.5">Cost will be 2.5k</span>
+                        </div>
+                    </div> */}
+
+                    {/* International Journals Card */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 h-full flex flex-col">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-indigo-50 rounded-lg">
+                                <FileText className="w-6 h-6 text-indigo-600" />
+                            </div>
+                            <h4 className="font-bold text-gray-900 text-2xl">UGC</h4>
+                        </div>
+
+                        <ul className="space-y-4 mb-6 flex-1">
+                            {/* <li className="border-b border-gray-100 pb-3">
+                                <p className="font-semibold text-gray-800 text-base leading-tight mb-1">Journal of Artificial Intelligence Research (JAIR)</p>
+                                <p className="text-xs text-indigo-600 font-mono font-medium">ISSN: 1076-9757</p>
+                                <p className="text-xs text-gray-500 mt-1">Publisher: AI Access Foundation</p>
+                            </li> */}
+                            <li className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
+                                <p className="font-semibold text-gray-800 text-base leading-tight mb-1">International Journal of Scientific Development</p>
+                                <p className="text-xs text-indigo-600 font-mono font-medium">ISSN: 2455-2631</p>
+                                <br />
+                                <p className="text-xs text-gray-600 font-mono font-medium"><strong>Impact factor 9.15 (Calculate by google scholar and Semantic Scholar | AI-Powered Research Tool)</strong>
+                                    <br />
+                                    <br />
+                                    <strong>ESTD Year: 2016</strong>
+                                </p>
+                            </li>
+
+                        </ul>
+                        <div className="mt-auto bg-amber-50 text-amber-900 p-3 rounded-lg text-sm font-medium border border-amber-100 flex items-start gap-2">
+                            <span className="text-amber-600 text-lg">★</span>
+                            <span className="mt-0.5">Cost will be 1.75k</span>
+                        </div>
+                    </div>
                 </div>
 
                 <p className="text-gray-600 leading-relaxed">
-                    At least one author of each accepted paper must register and present the work at the conference.
+                    The conference is hybrid, paper can be presented in online or offline.
                 </p>
             </div>
 
-            {/* Awards Banner */}
-            <div className="bg-amber-50 border-l-4 border-amber-400 p-8 rounded-r-lg flex items-start gap-4">
-                <div className="w-10 h-10 bg-amber-100/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Trophy className="w-5 h-5 text-amber-600" />
-                </div>
-                <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">Best Paper Awards</h4>
-                    <p className="text-gray-600 leading-relaxed">
-                        Outstanding submissions will be selected for <span className="font-medium text-gray-900">Best Paper</span>, <span className="font-medium text-gray-900">Best Student Paper</span>, and <span className="font-medium text-gray-900">Best Application Paper</span> awards, with certificates and prizes.
-                    </p>
-                </div>
-            </div>
+
         </section>
     );
 };

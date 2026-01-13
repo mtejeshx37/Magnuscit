@@ -1,17 +1,21 @@
 import { motion } from 'motion/react';
+import gallery1 from '../assets/gallery_1.png';
+import gallery2 from '../assets/gallery_2.png';
+import gallery3 from '../assets/gallery_3.png';
+import gallery4 from '../assets/gallery_4.png';
 
 // Unsplash images for the "Scattered Wall"
 const GALLERY_IMAGES = [
-    "https://images.unsplash.com/photo-1531297461136-8200b2a0a71e?q=80&w=800",
-    "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=800",
-    "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800",
-    "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800",
-    "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=800",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
-    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800",
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800",
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
-    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800", // Coding close up
+    "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=800", // Lab
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800", // Circuit
+    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800", // Tech
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800", // Globe
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800", // Code rain
 ];
 
 const randomRotations = [-3, 2, -2, 3, -1, 1, -2.5, 2.5, -1.5, 1.5];
@@ -33,24 +37,21 @@ export function AboutUsSection() {
 
     return (
         <div id="about-us" className="min-h-screen bg-[#050505] relative py-20 overflow-hidden">
-            <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 h-screen">
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 min-h-screen">
 
                 {/* Content Column */}
-                <div className="lg:w-1/3 flex flex-col justify-center z-20 pointer-events-none lg:pointer-events-auto">
+                <div className="lg:w-[45%] flex flex-col justify-center z-20 pointer-events-none lg:pointer-events-auto py-12 lg:py-0">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-5xl md:text-7xl mb-8" style={{ fontFamily: 'VT323, monospace' }}>
+                        <h2 className="text-5xl md:text-7xl mb-8 whitespace-nowrap" style={{ fontFamily: 'VT323, monospace' }}>
                             <span className="text-white">ABOUT</span> <span className="text-[#00D1FF]">US</span>
                         </h2>
-                        <div className="space-y-6 text-gray-300 font-mono text-lg backdrop-blur-md bg-black/40 p-6 rounded-xl border border-white/10">
+                        <div className="space-y-6 text-gray-300 font-mono text-lg backdrop-blur-md bg-black/40 p-6 rounded-xl border border-white/10 w-full">
                             <p>
-                                Welcome to Magnus 2k26, where organic intelligence interfaces with synthetic evolution. We are more than a technical symposium; we are a testing ground for the future.
-                            </p>
-                            <p>
-                                Join a network of innovators, dreamers, and architects of the digital age as we explore the boundaries of AI, creativity, and logic.
+                                Magnus is the technical symposium of the department of CSE (Artificial Intelligence and Machine Learning) at Chennai Institute of Technology which was founded in 2023. With over a footfall of 500 in its first year, it is an event that celebrates the achievements in the field of AI along with Machine Learning. At Magnus, participants get to immerse themselves in various activities such as workshops on AI and Open-Source platforms, non-technical events like Weeb Trivia and Film Fusion along with technical events like paper and project presentations, motivating them to think outside the box and incorporate AI in real life.
                             </p>
                             <div className="pt-4">
                                 <span className="text-[#00D1FF] text-xl">
@@ -63,13 +64,13 @@ export function AboutUsSection() {
                 </div>
 
                 {/* Gallery Column (Desktop: Scattered / Mobile: Carousel) */}
-                <div className="lg:w-2/3 relative h-[50vh] lg:h-full">
+                <div className="lg:w-[55%] relative h-[50vh] lg:h-full">
                     {/* Desktop Scatter */}
                     <div className="hidden lg:block absolute inset-0">
                         {GALLERY_IMAGES.map((src, idx) => (
                             <motion.div
                                 key={idx}
-                                className="absolute w-64 aspect-[3/4] border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl"
+                                className="absolute w-56 aspect-[3/4] border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl"
                                 style={{
                                     top: randomPositions[idx].top,
                                     left: randomPositions[idx].left,
@@ -87,6 +88,7 @@ export function AboutUsSection() {
                                 <img
                                     src={src}
                                     alt="Gallery"
+                                    loading="lazy"
                                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 />
                             </motion.div>
@@ -100,6 +102,7 @@ export function AboutUsSection() {
                                 <img
                                     src={src}
                                     alt="Gallery"
+                                    loading="lazy"
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
