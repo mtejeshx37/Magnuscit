@@ -6,19 +6,37 @@ export const eventDetailsData = {
     title: 'PROMPT PIXEL',
     type: 'TECHNICAL',
     price: '₹200',
-    description: `An innovative event where participants type creative prompts and extract critical information from AI-generated visuals.
+    description: `An innovative event where participants type creative prompts and extract critical information from AI-generated visuals and tackle a series of engaging tasks and navigate to their final destination.
+
+General rules:
+• PROMPT PIXEL is an individual event unless specified otherwise.
+• Participants must use only the AI tool/platform announced by the organizers.
+• Use of external tools, pre-written prompts, mobile phones, internet access, or browsing is strictly prohibited.
+• Copying, plagiarism, or any form of malpractice will result in immediate disqualification.
+• Participants must follow the instructions of judges and event coordinators at all times.
+• Judges’ decisions are final and binding.
+• Time limits are strict for all rounds; no extra time will be provided.
+• Only one submission per task/prompt is allowed unless stated otherwise.
+• Editing or resubmitting content after submission is not permitted.
+• Participants must ensure their work is original and relevant to the given task.
+• Any violation of rules at any stage of the event may lead to disqualification.
+• Organizers reserve the right to modify rules or round structure if required.
 
 Round 1: Prompt Genesis
-Description: Participants are provided with a scenario. They must analyze it, craft an appropriate AI prompt, and generate the most accurate and relevant output.
+Description:
+Participants are provided with a scenario. They must analyze it, craft an appropriate AI prompt, and generate the most accurate and relevant output.
 
 Round 2: Pixel Hunt
-Description: A complex image containing multiple visual elements will be displayed for 20 seconds. Participants must quickly observe the details and write a precise prompt to recreate the image.
+Description:
+A complex image containing multiple visual elements will be displayed for 20 seconds. Participants must quickly observe the details and write a precise prompt to recreate the image.
 
 Round 3: One Prompt, Three Outputs
-Description: Participants are given a single base prompt. Using creative prompt variations, they must generate three visually different images while maintaining the same core idea.
+Description:
+Participants are given a single base prompt. Using creative prompt variations, they must generate three visually different images while maintaining the same core idea.
 
 Round 4: Storyboard Showdown (Final Round – Winner Selection)
-Description: Participants must create a storyboard using AI-generated visuals based on a given theme or prompt. Judging will be based on creativity, coherence, storytelling, and prompt effectiveness.
+Description:
+Participants must create a storyboard using AI-generated visuals based on a given theme or prompt. Judging will be based on creativity, coherence, storytelling, and prompt effectiveness.
 
 Judging Criteria:
 • Prompt clarity & structure
@@ -34,7 +52,13 @@ Judging Criteria:
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
-      'Rules will be updated soon.',
+      'PROMPT PIXEL is an individual event unless specified otherwise.',
+      'Participants must use only the AI tool/platform announced by the organizers.',
+      'Use of external tools, pre-written prompts, mobile phones, internet access, or browsing is strictly prohibited.',
+      'Copying, plagiarism, or any form of malpractice will result in immediate disqualification.',
+      'Time limits are strict for all rounds; no extra time will be provided.',
+      'Only one submission per task/prompt is allowed unless stated otherwise.',
+      'Organizers reserve the right to modify rules or round structure if required.',
     ],
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
@@ -44,7 +68,16 @@ Judging Criteria:
     title: 'PODCAST MONOLOGUE',
     type: 'TECHNICAL',
     price: '₹200',
-    description: `Podcast Monologue is a technical JAM-style event where participants pick a topic and speak for 1–2 minutes in a podcast format. It tests clarity of thought, spontaneity, and how well technical ideas can be delivered as an engaging solo podcast episode.
+    description: `PODCAST MONOLOGUE:
+
+Rules:
+1. There are a total of 3 rounds in the game where players participate individually.
+2. The time given for preparation and the actual speech timings will vary among the rounds.
+3. The participants will be given 5 main topics and under each topic there will be 5 differing concepts related to it, which the participants will be speaking about.
+4. Participants' access to the internet will be allowed or restricted based on each round's rules.
+5. The participants will be provided with a laptop for the span of their preparation time and they will not be allowed to use their own devices.
+6. In addition to presenting their monologue, participants will be given certain constraints/tasks randomly assigned by the organizers during each round. These tasks must be followed simultaneously while delivering the monologue.
+The nature and difficulty of these tasks will vary from round to round and may be grouped based on the round (for example, performance-based, vocal, physical, or stylistic constraints). Exact tasks for each round will be revealed on the spot.
 
 Game structure:
 
@@ -52,7 +85,7 @@ Round 1:
 ➢ Each participant can choose their own topic and then they will spin a wheel to pick a concept from that topic.
 ➢ Each participant will have 3 minutes to prepare for the round after picking the concept.
 ➢ Access to the internet and AI Tools is permitted in this round.
-➢ After preparation, they have to speak for exactly a minute
+➢ After preparation, they have to speak for exactly a minute.
 
 Round 2:
 ➢ Each participant will be allotted a topic randomly by the organizers and then they will spin a wheel to pick a concept from that topic.
@@ -66,10 +99,15 @@ Round 3:
 ➢ Access to the internet and AI Tools are both not allowed in this round.
 ➢ After preparation, they have to speak for exactly two minutes
 
+Judging Criteria:
+Participants will be judged on both:
+• The quality of their monologue (clarity, creativity, structure, engagement, and relevance to the topic)
+• How effectively they complete and incorporate the assigned task/constraint while speaking
+Failure to follow the assigned task may result in point deductions.
+
 NOTE:
 ● Points will be taken off if the participant does not stick to the time limit.
-● The elimination in each round and the no. of slots will be based on the initial intake count.
-● Participants will be given certain constraints in each round.`,
+● The elimination in each round and the no. of slots will be based on the initial intake count.`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -82,7 +120,8 @@ NOTE:
       'The time given for preparation and the actual speech timings will vary among the rounds.',
       'The participants will be given 5 main topics and under each topic there will be 5 differing concepts related to it.',
       'Participants\' access to the internet will be allowed or restricted based on each round\'s rules.',
-      'All the participants will be provided with a laptop for their preparation.',
+      'The participants will be provided with a laptop for their preparation.',
+      'Participants will be given certain constraints/tasks randomly assigned by the organizers during each round.',
     ],
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe11empF-2fIwwWBoVZTTxc3XY6RuKBwppsicvXYcSvds8nKg/viewform?usp=publish-editor',
@@ -139,23 +178,42 @@ Final Round Special Rules:
     title: 'TECH TAMASHA',
     type: 'TECHNICAL',
     price: '₹200',
-    description: `Tech Tamasha is an exciting multi-round technical event designed to test participants’ tech knowledge, observation skills, creativity, and quick thinking through engaging and entertaining challenges. The event emphasizes thinking beyond the screen, combining knowledge, and brings technology to life with thrilling rounds. It’s a stage where innovation meets excitement in a competitive yet fun atmosphere.
+    description: `Tech Tamasha is an exciting multi-round technical event designed to test participants’ tech knowledge, observation skills, creativity, and quick thinking through engaging and entertaining challenges. The event emphasizes thinking beyond the screen, combining knowledges, brings technology to life with thrilling rounds. It’s a stage where innovation meets excitement in a competitive yet fun atmosphere.
 
-Team Format:
-Participants compete in teams (2 members per team). Each round eliminates teams based on performance.
+Team Format
+Participants compete in teams (2 members per team).
+Each round eliminates teams based on performance.
 
-Round 1: Tech Logo Identification (Time-Based Round)
-Participants will be shown various technology-related logos on the screen. They must identify each logo correctly within a limited time. Scoring is based on the number of correct answers.
+Round 1: Tech Logo Identification
+Time-Based Round
+Participants will be shown various technology-related logos on the screen.
+They must identify each logo correctly within a limited time.
+Scoring is based on the number of correct answers.
 
-Round 2: Tech Audio & Jumbled Words (Dual Challenge Round)
-• Tech Audio Guessing: Participants listen to short technology-related audio clips and identify them correctly.
-• Jumbled Words: Participants solve scrambled technical terms within the given time.
+Round 2: Tech Audio & Jumbled Words
+Dual Challenge Round
+⦁ Tech Audio Guessing: Participants listen to short technology-related audio clips and identify them correctly.
+⦁ Jumbled Words: Participants solve scrambled technical terms within the given time.
 
-Round 3: Pick, Draw & Guess (Final & Fun Round)
-One participant from the team picks a random technical term from a box and draws clues related to it. The other participant must guess the correct technical term based only on the drawing. RULES: No words, letters, numbers, or verbal hints are allowed.
+Round 3: Pick, Draw & Guess
+Final & Fun Round
+One participant from the team picks a random technical term from a box and draws clues related to it.
+The other participant must guess the correct technical term based only on the drawing.
+RULES: No words, letters, numbers, or verbal hints are allowed.
 
-Winning Criteria:
-Teams with the highest scores and fastest correct answers advance. The final round determines the winner of Tech Tamasha.`,
+GENERAL RULES
+⦁ Team size: 2 participants.
+⦁ Event is time-bound for all rounds.
+⦁ No mobile phones or external help allowed.
+⦁ Answers must be given within the allotted time.
+⦁ No discussion with other teams during the event.
+⦁ In Round 3, no words, letters, numbers, or verbal hints are allowed while drawing.
+⦁ Judges’ decision is final.
+⦁ Any rule violation will lead to disqualification.
+
+Winning Criteria
+Teams with the highest scores and fastest correct answers advance.
+The final round determines the winner of Tech Tamasha`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -332,46 +390,48 @@ Requirements:
     title: 'PROTOPITCH',
     type: 'TECHNICAL',
     price: '₹200',
-    description: `ProtoPitch is a hands-on design challenge aimed at testing students’ creativity, problem-solving skills, and UI/UX thinking through rapid prototyping. Participants will use Figma to design a website based on a given real-world problem statement. The event encourages innovation, teamwork, and effective visual communication under time constraints.
-This event is ideal for students interested in design, product thinking, UI/UX, and technology, regardless of prior professional experience.
+    description: `ProtoPitch– AI Automation
+Challenge
+ProtoPitch is an innovation-driven event where participants design and pitch a working prototype using n8n, a powerful low-code automation tool. The event focuses on transforming real-world problems into automated and AI-enabled solutions through visual workflows.
+In this edition, participants will build a basic AI Chat Box that accepts user input, processes it using an AI model, and delivers intelligent responses automatically. The event encourages creativity, logical thinking, and practical implementation rather than heavy coding.
+Participants will gain hands-on exposure to workflow automation, AI integration, and real-time data processing, making this event ideal for beginners as well as tech enthusiasts. Teams or individuals will present their prototype, explain the workflow, and pitch its real-world impact to the judging panel.
+ProtoPitch aims to bridge the gap between ideas and implementation by empowering students to build industry-relevant automation solutions using modern low-code Technology.
 
-Task Details:
-• Participants must design a website UI based on the problem statement provided on the spot.
-• The entire design must be created within the given time limit using Figma only.
-• The design should primarily focus on:
-  o Layout clarity – clean structure and proper alignment
-  o User experience (UX) – ease of navigation and usability
-  o Visual consistency – consistent colors, fonts, and components
-• Participants are expected to create multiple screens/pages as required by the problem statement.
-• The final output should be a clickable Figma prototype that demonstrates the complete user flow.
+RULES
+Participation Rules
+• Participants can take part individually or in teams (2–3 members)
+• Only one submission per team / participant
+• All designs must be created during the event time
 
-Round 1: Website Design Challenge
-Objective: To design a clear, visually consistent, and user-friendly website UI using Figma that effectively addresses the given problem statement.
-Participants are expected to demonstrate:
-• Strong layout structure
-• Intuitive user experience (UX)
-• Consistent visual design elements
-The focus is on translating the problem statement into a well-organized, multi-page website interface within the allotted time.
+Tool Rules
+• Only n8n is allowed
 
-Judging Criteria (Total: 100 Marks):
-1️ Problem Understanding – 20 Marks
-2️ UI Design (Visual Quality) – 20 Marks
-3️ UX & Usability – 20 Marks
-4️ Creativity & Innovation – 15 Marks
-5️ Figma Usage & Design Skills – 15 Marks
-6️ Pitch & Explanation – 10 Marks
-TOTAL = 100 MARKS`,
+Pitch Rules
+• Pitch time: 2–3 minutes per team
+• Explanation must include:
+• Problem understanding
+• Target users
+• Design solution
+
+General Rules
+• Judges’ decision will be final
+• Any form of misconduct leads to disqualification
+• Participants must follow event coordinator instructions`,
     registrationRules: [
       'Participants can take part individually or in teams (2–3 members).',
       'Only one submission per team / participant.',
       'A valid college ID is mandatory.',
     ],
     eventRules: [
-      'Tool Rules: Only Figma is allowed.',
-      'Time Rules: Total time 90 minutes. Late submissions will not be accepted. Time includes design + prototype.',
-      'Design Rules: Design must be based on the given problem statement. Focus on UI clarity, UX flow, and Creativity. Number of screens: 1–5 (as specified).',
-      'Pitch Rules: Pitch time 2–3 minutes per team. Explanation must include Problem understanding, Target users, and Design solution.',
-      'General Rules: Judges’ decision will be final. Any form of misconduct leads to disqualification. Participants must follow event coordinator instructions.',
+      'Participants can take part individually or in teams (2–3 members).',
+      'Only one submission per team / participant.',
+      'All designs must be created during the event time.',
+      'Only n8n is allowed.',
+      'Pitch time: 2–3 minutes per team.',
+      'Explanation must include: Problem understanding, Target users, Design solution.',
+      'Judges’ decision will be final.',
+      'Any form of misconduct leads to disqualification.',
+      'Participants must follow event coordinator instructions.',
     ],
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
