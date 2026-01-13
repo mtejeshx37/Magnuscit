@@ -1,4 +1,4 @@
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock, CheckCircle } from 'lucide-react';
 
 export const DatesSection = () => {
     const dates = [
@@ -7,6 +7,12 @@ export const DatesSection = () => {
             title: "Paper Submission",
             date: "January 20, 2026",
             status: "completed"
+        },
+        {
+            icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
+            title: "Confirmation of Paper",
+            date: "January 31, 2026",
+            status: "upcoming"
         },
         {
             icon: <Clock className="w-6 h-6 text-blue-600" />,
