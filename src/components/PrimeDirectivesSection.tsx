@@ -25,7 +25,7 @@ export function PrimeDirectivesSection() {
         description: 'Will Be Updated Soon',
         image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1080',
         icon: Code,
-        route: '/hackathon'
+        route: 'https://athera-hackathon.vercel.app/'
     };
 
     return (
