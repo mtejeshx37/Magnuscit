@@ -1,35 +1,56 @@
 import { motion } from 'motion/react';
-import gallery1 from '../assets/gallery_1.png';
-import gallery2 from '../assets/gallery_2.png';
-import gallery3 from '../assets/gallery_3.png';
-import gallery4 from '../assets/gallery_4.png';
+// Importing images from the gallery folder
+import galleryImg1 from '../assets/gallery/_MG_0004_2_(8).jpg';
+import galleryImg2 from '../assets/gallery/_MG_0007.jpg';
+import galleryImg3 from '../assets/gallery/_MG_0052.jpg';
+import galleryImg3b from '../assets/gallery/_MG_0009.JPG'; // New Image
+import galleryImg4 from '../assets/gallery/IMG_0885.jpg';
+import galleryImg5 from '../assets/gallery/IMG_0967.jpg';
+import galleryImg6 from '../assets/gallery/IMG_0958.png';
+import galleryImg7 from '../assets/gallery/IMG_2017.jpg';
+import galleryImg8 from '../assets/gallery/IMG_2111.jpg';
 
-// Unsplash images for the "Scattered Wall"
+// 9 Images for the 9-grid layout
 const GALLERY_IMAGES = [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800", // Coding close up
-    "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=800", // Lab
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800", // Circuit
-    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800", // Tech
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800", // Globe
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800", // Code rain
+    galleryImg1,
+    galleryImg2,
+    galleryImg3,
+    galleryImg3b,
+    galleryImg4,
+    galleryImg5,
+    galleryImg6,
+    galleryImg7,
+    galleryImg8,
 ];
 
-const randomRotations = [-3, 2, -2, 3, -1, 1, -2.5, 2.5, -1.5, 1.5];
-const randomPositions = [
-    { top: '10%', left: '5%' },
-    { top: '20%', left: '25%' },
-    { top: '15%', left: '50%' },
-    { top: '5%', left: '75%' },
-    { top: '40%', left: '10%' },
-    { top: '35%', left: '80%' },
-    { top: '60%', left: '15%' },
-    { top: '55%', left: '40%' },
-    { top: '70%', left: '70%' },
-    { top: '50%', left: '60%' },
+// Grid layout configuration mapping to Tailwind classes
+const GRID_LAYOUT = [
+    // 1. Left Tall Block (row 3-6, col 1) - ENLARGED (Span 3)
+    { className: 'col-start-1 col-end-2 row-start-3 row-end-6' },
+
+    // 2. Left Large Block (row 3-5, col 2-4)
+    { className: 'col-start-2 col-end-4 row-start-3 row-end-5' },
+
+    // 3a. Bottom-Left SPLIT 1 (row 5-6, col 2-3) - Square
+    { className: 'col-start-2 col-end-3 row-start-5 row-end-6' },
+
+    // 3b. Bottom-Left SPLIT 2 (row 5-6, col 3-4) - Square (New Slot)
+    { className: 'col-start-3 col-end-4 row-start-5 row-end-6' },
+
+    // 4. Top-Center Small Vertical Block (row 1-3, col 4-5)
+    { className: 'col-start-4 col-end-5 row-start-1 row-end-3' },
+
+    // 5. Top-Right Wide Block (row 1-3, col 5-7)
+    { className: 'col-start-5 col-end-7 row-start-1 row-end-3' },
+
+    // 6. Central Primary Block (row 3-6, col 4-7)
+    { className: 'col-start-4 col-end-7 row-start-3 row-end-6' },
+
+    // 7. Bottom-Center Large Vertical Block (row 6-8, col 4-6)
+    { className: 'col-start-4 col-end-6 row-start-6 row-end-8' },
+
+    // 8. Bottom-Right Small Vertical Block (row 6-8, col 6-7) - ENLARGED (Span 2)
+    { className: 'col-start-6 col-end-7 row-start-6 row-end-8' },
 ];
 
 export function AboutUsSection() {
@@ -63,36 +84,33 @@ export function AboutUsSection() {
                     </motion.div>
                 </div>
 
-                {/* Gallery Column (Desktop: Scattered / Mobile: Carousel) */}
-                <div className="lg:w-[55%] relative h-[50vh] lg:h-full">
-                    {/* Desktop Scatter */}
-                    <div className="hidden lg:block absolute inset-0">
-                        {GALLERY_IMAGES.map((src, idx) => (
-                            <motion.div
-                                key={idx}
-                                className="absolute w-56 aspect-[3/4] border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl"
-                                style={{
-                                    top: randomPositions[idx].top,
-                                    left: randomPositions[idx].left,
-                                    rotate: randomRotations[idx],
-                                    zIndex: 10
-                                }}
-                                whileHover={{
-                                    scale: 1.1,
-                                    rotate: 0,
-                                    zIndex: 50,
-                                    borderColor: '#00D1FF',
-                                    transition: { duration: 0.3 }
-                                }}
-                            >
-                                <img
-                                    src={src}
-                                    alt="Gallery"
-                                    loading="lazy"
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                                />
-                            </motion.div>
-                        ))}
+                {/* Gallery Column (Desktop: CSS Grid / Mobile: Carousel) */}
+                <div className="lg:w-[55%] relative h-[50vh] lg:h-full flex items-center justify-center">
+                    {/* Desktop Grid Layout */}
+                    <div className="hidden lg:grid w-[90%] aspect-[1.8] grid-cols-6 grid-rows-7 gap-3 p-2 mt-32">
+                        {GRID_LAYOUT.map((style, idx) => {
+                            const imageSrc = GALLERY_IMAGES[idx % GALLERY_IMAGES.length];
+                            return (
+                                <motion.div
+                                    key={idx}
+                                    className={`relative border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl rounded-lg ${style.className}`}
+                                    whileHover={{
+                                        scale: 1.05,
+                                        zIndex: 50,
+                                        borderColor: '#00D1FF',
+                                        transition: { duration: 0.2 }
+                                    }}
+                                    layoutId={`gallery-item-${idx}`}
+                                >
+                                    <img
+                                        src={imageSrc}
+                                        alt="Gallery"
+                                        loading="lazy"
+                                        className="w-full h-full object-cover transition-all duration-500"
+                                    />
+                                </motion.div>
+                            );
+                        })}
                     </div>
 
                     {/* Mobile Carousel */}
