@@ -72,7 +72,7 @@ export function AboutUsSection() {
                         </h2>
                         <div className="space-y-6 text-gray-300 font-mono text-lg backdrop-blur-md bg-black/40 p-6 rounded-xl border border-white/10 w-full">
                             <p>
-                                Magnus is the technical symposium of the department of CSE (Artificial Intelligence and Machine Learning) at Chennai Institute of Technology which was founded in 2023. With over a footfall of 500 in its first year, it is an event that celebrates the achievements in the field of AI along with Machine Learning. At Magnus, participants get to immerse themselves in various activities such as workshops on AI and Open-Source platforms, non-technical events like Weeb Trivia and Film Fusion along with technical events like paper and project presentations, motivating them to think outside the box and incorporate AI in real life.
+                                Magnus is the technical symposium of the department of CSE (Artificial Intelligence and Machine Learning) at Chennai Institute of Technology which was founded in 2023. With over a footfall of 500 in its first year, it is an event that celebrates the achievements in the field of AI along with Machine Learning. At Magnus, participants get to immerse themselves in various activities such as workshops on AI and Open-Source platforms, non-technical events like Web Trivia and Film Fusion along with technical events like paper and project presentations, motivating them to think outside the box and incorporate AI in real life.
                             </p>
                             <div className="pt-4">
                                 <span className="text-[#00D1FF] text-xl">

@@ -10,8 +10,12 @@ import accuracyArenaImg from '../assets/accuracy_arena.png';
 import codeEuphoriaImg from '../assets/code_euphoria.png';
 import lifeOfWordsImg from '../assets/life_of_words.png';
 import protoPitchImg from '../assets/protopitch.png';
+import gallery1Img from '../assets/gallery_1.png';
+import gallery2Img from '../assets/gallery_2.png';
+import gallery3Img from '../assets/gallery_3.png';
+import gallery4Img from '../assets/gallery_4.png';
 import { useState, useRef } from 'react';
-import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather } from 'lucide-react';
+import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot } from 'lucide-react';
 
 type EventCategory = 'All' | 'Technical' | 'Workshops' | 'Online';
 
@@ -241,6 +245,51 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       image: protoPitchImg,
       description: 'UI/UX design and prototyping challenge',
       icon: Palette,
+    },
+    {
+      id: 18,
+      title: 'CV (Computer Vision) Workshop',
+      category: 'Workshops',
+      date: 'Jan 17, 2026',
+      image: gallery1Img,
+      description: 'Build vision models from scratch',
+      icon: Eye,
+    },
+    {
+      id: 19,
+      title: 'Inside a Blockchain',
+      category: 'Workshops',
+      date: 'Jan 17, 2026',
+      image: gallery2Img,
+      description: 'Understand transactions, blocks & hashes',
+      icon: Link,
+    },
+    {
+      id: 20,
+      title: 'Cloud Quest',
+      category: 'Workshops',
+      date: 'Jan 17, 2026',
+      image: gallery3Img,
+      description: 'Beginner-friendly Azure/AWS workshop',
+      icon: Cloud,
+    },
+    {
+      id: 21,
+      title: 'Hacking GPT',
+      category: 'Workshops',
+      date: 'Jan 17, 2026',
+      image: gallery4Img,
+      description: 'How LLMs can be broken & manipulated',
+      icon: ShieldAlert,
+    },
+    {
+      id: 22,
+      title: 'Agentic AI',
+      category: 'Workshops',
+      date: 'Jan 17, 2026',
+      image: gallery4Img,
+      description: 'Build an AI that can act, not just chat',
+      icon: Bot,
     },
   ];
 

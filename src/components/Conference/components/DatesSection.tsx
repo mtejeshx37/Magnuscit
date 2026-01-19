@@ -5,13 +5,13 @@ export const DatesSection = () => {
         {
             icon: <Calendar className="w-6 h-6 text-blue-600" />,
             title: "Paper Submission",
-            date: "January 20, 2026",
+            date: "January 28, 2026",
             status: "completed"
         },
         {
             icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
             title: "Confirmation of Paper",
-            date: "January 31, 2026",
+            date: "Two days from Submission.",
             status: "upcoming"
         },
         {
