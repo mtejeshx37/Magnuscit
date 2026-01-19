@@ -436,4 +436,210 @@ General Rules
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
+  18: {
+    id: 18,
+    title: 'CV (COMPUTER VISION) WORKSHOP',
+    type: 'WORKSHOP',
+    price: '₹200',
+    description: `Workshop Overview:
+This is a hands-on Computer Vision workshop focused on building intuition and implementing vision models from scratch rather than just using black-box libraries. Participants will learn how computers see images, understand core vision concepts, explore modern CNNs and Vision Transformers, compare popular deep learning frameworks, and build working computer vision models using TinyGrad. The workshop bridges theory, architecture-level understanding, and practical implementation.
+
+What You will Learn:
+● Fundamentals of Computer Vision: images, filters, and convolution.
+● How neural networks learn visual features.
+● CNN architectures: AlexNet, VGG, ResNet, MobileNet, EfficientNet.
+● Object detection and segmentation basics (YOLO, R-CNN, UNet concepts).
+● Vision Transformers (ViT) and how they differ from CNNs.
+● Differences between PyTorch, TensorFlow, and TinyGrad.
+● Understanding TinyGrad’s internal architecture.
+● Building and training vision models from scratch using TinyGrad.
+
+Agenda:
+0 to 10 min: Introduction to Computer Vision & workshop setup.
+10 to 25 min: How computers see images: pixels, channels, and representations.
+25 to 45 min: Core vision theory: filters, convolution, feature extraction & CNN intuition.
+45 to 65 min: From theory to practice: neural networks for vision (hands-on walkthrough).
+65 to 85 min: Evolution of vision models: CNNs to Vision Transformers (practical insights).
+85 to 100 min: Framework comparison: PyTorch vs TensorFlow vs TinyGrad (with examples).
+100 to 120 min: TinyGrad architecture explained and code walkthrough.
+120 to 145 min: Building a computer vision model from scratch using TinyGrad.
+145 to 150 min: Wrap-up, learning roadmap & next steps.
+
+Takeaways:
+● Strong intuition of how computer vision systems work.
+● Clear understanding of CNNs and Vision Transformers.
+● Knowledge of real-world CV architectures used in industry.
+● Hands-on experience building models without high-level abstractions.
+● Understanding of deep learning frameworks and their trade-offs.
+● Practical exposure to TinyGrad and minimalist ML design.
+● Code examples and learning resources for continued practice.
+● Certificate of participation.
+
+Why Attend?
+This workshop is designed for learners who want to truly understand computer vision, not just call prebuilt APIs. Instead of treating deep learning frameworks as magic, you will break down how vision models work internally from pixels and convolutions to transformers and modern architectures. By comparing PyTorch, TensorFlow, and TinyGrad, and building models directly in TinyGrad, you will gain a rare, low-level perspective on deep learning systems. No prior computer vision experience is required, only basic programming knowledge.`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+    ],
+    eventRules: [
+      'Participants are recommended to bring their own laptops.',
+      'Basic programming knowledge is required.',
+    ],
+    contact: 'Latheesh Saran: +916382235520',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+  },
+  19: {
+    id: 19,
+    title: 'INSIDE A BLOCKCHAIN',
+    type: 'WORKSHOP',
+    price: '₹200',
+    description: `Workshop Objective:
+This workshop explains how blockchain works internally by focusing on transactions, blocks, and hashing. Participants will manually simulate a mini blockchain to understand immutability and trust.
+
+session Breakdown:
+1. Theory Session (45 mins): Transactions, blocks, hashes, and chaining
+2. Live Demo (30 mins): Hash generation and block linking
+3. Hands-On Session (60 mins): Build a mini blockchain manually
+4. Concept Reinforcement (15 mins): Real-world relevance
+5. Wrap-Up & Q&A (20 mins): Career scope and recap
+
+Hands-On Activity Overview:
+Participants will create transactions, generate hashes using SHA-256, combine them into blocks, link blocks using previous hashes, and test tampering to observe immutability.
+
+Key Learning Outcomes:
+1. Understand how transactions are created
+2. Learn how blocks store and link data
+3. See how hashing secures blockchain
+4. Experience tamper detection practically
+5. Build strong blockchain fundamentals
+
+Conclusion:
+This workshop provides a strong foundation in blockchain fundamentals and helps students visually and practically understand why blockchain is trusted and secure.`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+    ],
+    eventRules: [
+      'Workshop Duration: 2.5 Hours.',
+      'Target Audience: Beginners / College Students.',
+    ],
+    contact: 'Latheesh Saran: +916382235520',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+  },
+  20: {
+    id: 20,
+    title: 'CLOUD QUEST',
+    type: 'WORKSHOP',
+    price: '₹200',
+    description: `Overview:
+Cloud computing powers everyday applications like Google Drive, Netflix, and Instagram. This workshop introduces absolute beginners to cloud computing using AWS / Microsoft Azure through teamwork, live demonstrations, and engaging challenges — no prior cloud knowledge required.
+
+What Makes This Workshop Unique?
+✔ No individual account creation stress
+✔ Team-based participation
+✔ Live cloud demonstrations
+✔ Games, quizzes, and real-world scenarios
+
+Technical Concepts Covered (Beginner Level):
+• Compute – Understanding cloud-based computers and how applications run online
+• Storage – How data is stored securely in the cloud
+• Web Hosting – Hosting websites and applications on cloud platforms
+• Networking – Secure communication between cloud resources
+• Database – Managing structured data in the cloud
+• AI & Machine Learning – Introduction to cloud-powered AI services such as chatbots, image recognition, and voice assistants
+
+Workshop Structure (2.5 – 3 Hours):
+• Icebreaker: Cloud in daily life
+• Cloud basics using college-life analogies
+• Live AWS/Azure platform walkthrough
+• Team-based cloud challenges
+• Simulation games & quizzes
+• Cloud careers & certification roadmap
+
+Learning Outcomes:
+Participants will understand core cloud concepts, observe real cloud deployments, collaborate on problem-solving tasks, and gain clarity on cloud career paths.`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+    ],
+    eventRules: [
+      'Requirements: Enthusiasm to learn.',
+      'Optional: 1–2 laptops per team.',
+    ],
+    contact: 'Latheesh Saran: +916382235520',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+  },
+  21: {
+    id: 21,
+    title: 'HACKING GPT',
+    type: 'WORKSHOP',
+    price: '₹200',
+    description: `Workshop Write-Up:
+Large Language Models like GPT are often seen as intelligent, safe, and reliable systems. But under the hood, they are predictive machines driven by prompts, patterns, and probabilities—and that makes them hackable in non-traditional ways.
+This workshop dives into the concept of hacking GPT, not by exploiting servers or writing malware, but by manipulating behavior through language itself. Participants will explore how carefully crafted prompts can bypass restrictions, influence outputs, extract unintended information, or cause the model to behave in unsafe or misleading ways.
+
+What Will Be Covered:
+- What “Hacking GPT” Really Means
+- How GPT Interprets Prompts Internally
+- Prompt Injection and Manipulation Techniques
+- Bypassing Rules and Behavioral Constraints
+- Data Inference and Indirect Information Extraction
+- Abuse Cases of GPT in the Real World
+- Why LLMs Are Hard to Secure
+
+Key Takeaways:
+- Understanding GPT as a system that can be manipulated through language
+- Insight into real prompt-based attack techniques
+- Awareness of how attackers misuse LLMs
+- Ability to recognize weak points in GPT-style systems
+- Strong foundation for further study in AI security and red teaming`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+    ],
+    eventRules: [
+      'This workshop is designed to shift the mindset from “AI is smart” to “AI is predictable—and predictability can be abused.”',
+    ],
+    contact: 'Latheesh Saran: +916382235520',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+  },
+  22: {
+    id: 22,
+    title: 'AGENTIC AI',
+    type: 'WORKSHOP',
+    price: '₹200',
+    description: `Workshop Overview:
+Chatbots are impressive — they can answer questions, write text, and hold conversations. But what if AI could do more than just reply? What if it could take actions, use tools, make decisions, and work toward goals?
+That’s where Agentic AI comes in. In this beginner-friendly workshop, you’ll be introduced to the world of AI agents — systems that go beyond chatting and actually act. You’ll learn how modern AI agents think, plan, and interact with tools, and by the end of the session, you’ll build your very first AI agent.
+No heavy theory. No complex math. Just clear concepts, intuitive design, and a simple hands-on experience to get you started.
+
+What You’ll Learn:
+1. Why Chatbots Are Not Enough: Understand the limitations of traditional chat-based AI and why real-world tasks need more than responses.
+2. What Is Agentic AI?: Learn what makes an AI system “agentic” — goals, actions, tools, and autonomy.
+3. Chatbots vs AI Agents: Clearly distinguish between a chatbot and an AI agent using simple examples and visual thinking.
+4. Core Building Blocks of an AI Agent: Explore the basic components of an agent: instructions, tools, decision flow, and simple memory.
+5. Build Your First AI Agent: Create a small but functional AI agent that can act, not just respond.
+
+Agenda (1.5-Hour Workshop):
+0:00 – 0:15 | Warm-Up & Introduction
+0:15 – 1:00 | Understanding Agentic AI
+1:00 – 1:30 | Hands-On: Build Your First Agent
+
+Takeaways:
+- A clear understanding of what Agentic AI is and why it matters
+- Ability to differentiate chatbots from AI agents
+- Hands-on experience building a basic AI agent
+- Starter code and templates to continue exploring on your own`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+    ],
+    eventRules: [
+      'Who Should Attend? Computer Science students, AI/ML enthusiasts, Beginners.',
+      'No prior experience with agents required.',
+    ],
+    contact: 'Latheesh Saran: +916382235520',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+  },
 };
