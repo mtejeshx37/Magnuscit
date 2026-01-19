@@ -10,7 +10,7 @@ interface EventDetailProps {
     price: string;
     description: string;
     registrationRules: string[];
-    eventRules: string[];
+    eventRules?: string[];
     contact: string;
     registrationLink?: string;
   };
@@ -108,24 +108,26 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           </div>
 
           {/* Event Rules */}
-          <div className="glass-strong rounded-2xl p-8 border border-[#7000FF]/30">
-            <h2
-              className="text-3xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#7000FF] to-[#D500F9]"
-              style={{ fontFamily: 'VT323, monospace' }}
-            >
-              RULES
-            </h2>
-            <div className="space-y-4">
-              {event.eventRules.map((rule, index) => (
-                <div key={index} className="flex gap-3">
-                  <span className="text-[#7000FF] flex-shrink-0" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                    {index + 1}.
-                  </span>
-                  <p className="text-white leading-relaxed">{rule}</p>
-                </div>
-              ))}
+          {event.eventRules && event.eventRules.length > 0 && (
+            <div className="glass-strong rounded-2xl p-8 border border-[#7000FF]/30">
+              <h2
+                className="text-3xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#7000FF] to-[#D500F9]"
+                style={{ fontFamily: 'VT323, monospace' }}
+              >
+                RULES
+              </h2>
+              <div className="space-y-4">
+                {event.eventRules.map((rule, index) => (
+                  <div key={index} className="flex gap-3">
+                    <span className="text-[#7000FF] flex-shrink-0" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                      {index + 1}.
+                    </span>
+                    <p className="text-white leading-relaxed">{rule}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
 
         {/* Contact Section */}

@@ -482,10 +482,7 @@ This workshop is designed for learners who want to truly understand computer vis
       'A valid college ID is mandatory.',
       'Participants must wear the registration throughout the day.',
     ],
-    eventRules: [
-      'Participants are recommended to bring their own laptops.',
-      'Basic programming knowledge is required.',
-    ],
+
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
@@ -520,10 +517,7 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
     ],
-    eventRules: [
-      'Workshop Duration: 2.5 Hours.',
-      'Target Audience: Beginners / College Students.',
-    ],
+
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
@@ -563,10 +557,7 @@ Participants will understand core cloud concepts, observe real cloud deployments
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
     ],
-    eventRules: [
-      'Requirements: Enthusiasm to learn.',
-      'Optional: 1–2 laptops per team.',
-    ],
+
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
@@ -598,9 +589,7 @@ Key Takeaways:
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
     ],
-    eventRules: [
-      'This workshop is designed to shift the mindset from “AI is smart” to “AI is predictable—and predictability can be abused.”',
-    ],
+
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
@@ -635,10 +624,7 @@ Takeaways:
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
     ],
-    eventRules: [
-      'Who Should Attend? Computer Science students, AI/ML enthusiasts, Beginners.',
-      'No prior experience with agents required.',
-    ],
+
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
