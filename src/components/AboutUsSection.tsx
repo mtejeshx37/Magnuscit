@@ -1,12 +1,13 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 // Importing images from the gallery folder
 import galleryImg1 from '../assets/gallery/_MG_0004_2_(8).jpg';
 import galleryImg2 from '../assets/gallery/_MG_0007.jpg';
-import galleryImg3 from '../assets/gallery/_MG_0052.JPG';
-import galleryImg3b from '../assets/gallery/_MG_0009.JPG'; // New Image
+import galleryImg3 from '../assets/gallery/_MG_0052.jpg';
+import galleryImg3b from '../assets/gallery/_MG_0009.jpg';
 import galleryImg4 from '../assets/gallery/IMG_0885.jpg';
 import galleryImg5 from '../assets/gallery/IMG_0967.jpg';
-import galleryImg6 from '../assets/gallery/IMG_0958.png';
+import galleryImg6 from '../assets/gallery/IMG_0958.jpg';
 import galleryImg7 from '../assets/gallery/IMG_2017.jpg';
 import galleryImg8 from '../assets/gallery/IMG_2111.jpg';
 
@@ -53,9 +54,30 @@ const GRID_LAYOUT = [
     { className: 'col-start-6 col-end-7 row-start-6 row-end-8' },
 ];
 
+// Image component with loading state
+const GalleryImage = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    return (
+        <div className={`relative w-full h-full bg-[#1A1A1A] overflow-hidden ${className}`}>
+            {!isLoaded && (
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent shimmer animate-shimmer" />
+            )}
+            <motion.img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => setIsLoaded(true)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isLoaded ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-full object-cover"
+            />
+        </div>
+    );
+};
+
 export function AboutUsSection() {
-
-
     return (
         <div id="about-us" className="min-h-screen bg-[#050505] relative py-20 overflow-hidden">
             <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 min-h-screen">
@@ -102,12 +124,7 @@ export function AboutUsSection() {
                                     }}
                                     layoutId={`gallery-item-${idx}`}
                                 >
-                                    <img
-                                        src={imageSrc}
-                                        alt="Gallery"
-                                        loading="lazy"
-                                        className="w-full h-full object-cover transition-all duration-500"
-                                    />
+                                    <GalleryImage src={imageSrc} alt={`Gallery Image ${idx + 1}`} />
                                 </motion.div>
                             );
                         })}
@@ -117,13 +134,8 @@ export function AboutUsSection() {
                     <div className="lg:hidden flex overflow-x-auto gap-4 py-8 snap-x snap-mandatory h-full items-center no-scrollbar">
                         {GALLERY_IMAGES.map((src, idx) => (
                             <div key={idx} className="flex-shrink-0 w-[80vw] h-[60vh] snap-center border-2 border-white/20 rounded-xl overflow-hidden relative">
-                                <img
-                                    src={src}
-                                    alt="Gallery"
-                                    loading="lazy"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                <GalleryImage src={src} alt={`Gallery Image ${idx + 1}`} />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 pointer-events-none">
                                     <span className="text-[#00D1FF] font-mono">IMAGE_{idx + 1} // CAPTURED</span>
                                 </div>
                             </div>

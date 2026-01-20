@@ -1,19 +1,19 @@
 import { motion, useInView } from 'motion/react';
-import logicRushImg from '../assets/logic_rush.png';
-import exposureImg from '../assets/exposure.png';
-import posterDesignImg from '../assets/poster_design.png';
-import promptPixelImg from '../assets/prompt_pixel.png';
-import podcastMonologueImg from '../assets/podcast_monologue.png';
-import techieXoImg from '../assets/techie_xo.png';
-import techTamashaImg from '../assets/tech_tamasha.png';
-import accuracyArenaImg from '../assets/accuracy_arena.png';
-import codeEuphoriaImg from '../assets/code_euphoria.png';
-import lifeOfWordsImg from '../assets/life_of_words.png';
-import protoPitchImg from '../assets/protopitch.png';
-import gallery1Img from '../assets/gallery_1.png';
-import gallery2Img from '../assets/gallery_2.png';
-import gallery3Img from '../assets/gallery_3.png';
-import gallery4Img from '../assets/gallery_4.png';
+import logicRushImg from '../assets/logic_rush.jpg';
+import exposureImg from '../assets/exposure.jpg';
+import posterDesignImg from '../assets/poster_design.jpg';
+import promptPixelImg from '../assets/prompt_pixel.jpg';
+import podcastMonologueImg from '../assets/podcast_monologue.jpg';
+import techieXoImg from '../assets/techie_xo.jpg';
+import techTamashaImg from '../assets/tech_tamasha.jpg';
+import accuracyArenaImg from '../assets/accuracy_arena.jpg';
+import codeEuphoriaImg from '../assets/code_euphoria.jpg';
+import lifeOfWordsImg from '../assets/life_of_words.jpg';
+import protoPitchImg from '../assets/protopitch.jpg';
+import gallery1Img from '../assets/gallery_1.jpg';
+import gallery2Img from '../assets/gallery_2.jpg';
+import gallery3Img from '../assets/gallery_3.jpg';
+import gallery4Img from '../assets/gallery_4.jpg';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot } from 'lucide-react';
 
@@ -38,6 +38,7 @@ interface EventCardProps {
 }
 
 function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCardProps) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: "-50% 0px -50% 0px", // Trigger when center of element hits center of viewport
@@ -75,7 +76,12 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
       )}
 
       {/* Folder-Style Card */}
-      <div className="relative h-[450px] rounded-2xl overflow-hidden">
+      <div className="relative h-[450px] rounded-2xl overflow-hidden bg-[#1A1A1A]">
+        {/* Loading Shimmer */}
+        {!isImageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent shimmer animate-shimmer" />
+        )}
+
         {/* Tab/Folder Cutout - Bottom Right Corner */}
         <div
           className="absolute inset-0 overflow-hidden"
@@ -84,10 +90,15 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
           }}
         >
           {/* Event Image */}
-          <img
+          <motion.img
             src={event.image}
             alt={event.title}
             loading="lazy"
+            decoding="async"
+            onLoad={() => setIsImageLoaded(true)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isImageLoaded ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
