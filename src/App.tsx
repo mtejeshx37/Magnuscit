@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
@@ -11,7 +11,9 @@ import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
 import { CustomCursor } from './components/CustomCursor';
 import { AboutUsSection } from './components/AboutUsSection';
-import { eventDetailsData } from './data/eventDetails';
+import { eventSlugMap } from './data/eventDetails';
+import { useParams, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 // Lazy load route components
 const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));
@@ -19,11 +21,22 @@ const ConferenceDetail = lazy(() => import('./components/ConferenceDetail').then
 const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp'));
 
 function Home() {
-  const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleEventSelect = (eventId: number) => {
-    setSelectedEventId(eventId);
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }, [location.hash]);
+
+  const handleEventSelect = (slug: string) => {
+    navigate(`/${slug}`);
     window.scrollTo(0, 0);
   };
 
@@ -31,25 +44,6 @@ function Home() {
     navigate('/conference-details');
     window.scrollTo(0, 0);
   };
-
-  const handleBackToEvents = () => {
-    setSelectedEventId(null);
-    // Scroll to events section
-    const eventsSection = document.querySelector('#events');
-    if (eventsSection) {
-      eventsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  if (selectedEventId !== null) {
-    const eventData = eventDetailsData[selectedEventId as keyof typeof eventDetailsData];
-    return (
-      <>
-        <Navigation />
-        <EventDetail event={eventData} onBack={handleBackToEvents} />
-      </>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-[#050505] overflow-x-hidden">
@@ -75,15 +69,66 @@ function Home() {
   );
 }
 
+function EventDetailPage() {
+  const { eventSlug } = useParams<{ eventSlug: string }>();
+  const navigate = useNavigate();
+  const eventData = eventSlug ? eventSlugMap[eventSlug] : null;
+
+  if (!eventData) {
+    return <div className="min-h-screen bg-[#050505] text-white flex items-center justify-center">Event not found</div>;
+  }
+
+  const handleBackToEvents = () => {
+    navigate('/events');
+  };
+
+  return (
+    <>
+      <Navigation />
+      <EventDetail event={eventData} onBack={handleBackToEvents} />
+      <Footer />
+    </>
+  );
+}
+
+function EventsListPage() {
+  const navigate = useNavigate();
+
+  const handleEventSelect = (slug: string) => {
+    navigate(`/${slug}`);
+    window.scrollTo(0, 0);
+  };
+
+  const handleConferenceSelect = () => {
+    navigate('/conference-details');
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-20">
+      <Navigation />
+      <div className="container mx-auto px-4 py-12">
+        <EventsSection
+          onEventSelect={handleEventSelect}
+          onConferenceSelect={handleConferenceSelect}
+        />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
       <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/events" element={<EventsListPage />} />
         <Route path="/conference-details" element={<ConferenceDetail />} />
         <Route path="/conference" element={<ConferenceApp />} />
         <Route path="/hackathon" element={<HackathonDetail />} />
+        <Route path="/:eventSlug" element={<EventDetailPage />} />
       </Routes>
     </Suspense>
   );

@@ -67,7 +67,7 @@ export function HackathonDetail() {
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate('/#prime-directives')}
                     className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#00D1FF]/20 border border-white/10 hover:border-[#00D1FF] rounded transition-all duration-300"
                 >
                     <ArrowLeft className="w-4 h-4" />

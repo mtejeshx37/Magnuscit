@@ -44,7 +44,7 @@ export function ConferenceDetail() {
                     <motion.button
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/#prime-directives')}
                         className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#BD00FF]/20 border border-white/10 hover:border-[#BD00FF] rounded transition-all duration-300 group"
                     >
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

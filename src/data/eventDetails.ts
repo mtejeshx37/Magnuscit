@@ -3,6 +3,7 @@ export const eventDetailsData = {
 
   7: {
     id: 7,
+    slug: 'promptpixel',
     title: 'PROMPT PIXEL',
     type: 'TECHNICAL',
     price: '',
@@ -62,9 +63,15 @@ Judging Criteria:
     ],
     contact: 'Anu Krina (8778296891) ,Kanika M(8667509641)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    rewards: {
+      first: '₹1500',
+      second: '₹1000',
+      third: '₹750'
+    },
   },
   8: {
     id: 8,
+    slug: 'podcastmonologue',
     title: 'PODCAST MONOLOGUE',
     type: 'TECHNICAL',
     price: '',
@@ -125,9 +132,14 @@ NOTE:
     ],
     contact: 'Shreya M (9384605252), Shweta K T S (9789055914)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe11empF-2fIwwWBoVZTTxc3XY6RuKBwppsicvXYcSvds8nKg/viewform?usp=publish-editor',
+    rewards: {
+      winner: '₹1500',
+      runner: '₹1000'
+    },
   },
   9: {
     id: 9,
+    slug: 'techiexo',
     title: 'TECHIE XO',
     type: 'TECHNICAL',
     price: '',
@@ -174,9 +186,15 @@ Final Round Special Rules:
     ],
     contact: 'Rahul R (8939650849), Latheesh Saran S(6382235520)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdjn5Iev8EzOypPFyFFwzt8LepeJ0fS71Dkv7N38F4WXVK_dg/viewform?usp=dialog',
+    rewards: {
+      first: '₹1500',
+      second: '₹1000',
+      third: '₹750'
+    },
   },
   10: {
     id: 10,
+    slug: 'techtamasha',
     title: 'TECH TAMASHA',
     type: 'TECHNICAL',
     price: '',
@@ -235,9 +253,15 @@ The final round determines the winner of Tech Tamasha`,
     ],
     contact: 'Madhumitha S (9677649110), Dharun (9655115397)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSda54Zq4UWy5Be92FVe3gr_QyRBvKFfRhjGlE1DuoOnqhQdtQ/viewform?usp=publish-editor',
+    rewards: {
+      first: '₹1500',
+      second: '₹1000',
+      third: '₹750'
+    },
   },
   11: {
     id: 11,
+    slug: 'logicrush',
     title: 'LOGIC RUSH',
     type: 'TECHNICAL',
     price: '',
@@ -266,9 +290,14 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     ],
     contact: 'Rakshana P (8668194010), Latheesh Saran S(6382235520)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdBKPP3JrfybRIaautugMxf5GpPdt50cXFboM6fnye8sOu7yg/viewform?usp=publish-editor',
+    rewards: {
+      winner: '₹2000',
+      runner: '₹1500'
+    },
   },
   12: {
     id: 12,
+    slug: 'accuracyarena',
     title: 'ACCURACY ARENA',
     type: 'TECHNICAL',
     price: '₹200',
@@ -285,9 +314,15 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     ],
     contact: 'Eashwar Kumar T (9655771179), Latheesh Saran S (6382235520) ',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdiHiwLYrlM1ICuEum-dB-Y_kf6scaehGCFlCj41kiQmOTFFA/viewform?usp=publish-editor',
+    rewards: {
+      internship: 'Exclusive Internship Opportunity for Top Performers',
+      winner: '₹2000',
+      runner: '₹1500'
+    },
   },
   13: {
     id: 13,
+    slug: 'codeeuphoria',
     title: 'CODE EUPHORIA',
     type: 'TECHNICAL',
     price: '',
@@ -331,9 +366,15 @@ Requirements:
     ],
     contact: 'Kavya M (9043102445), Pavithra R (8939897569)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeHejC7wNrgbZDDRh4gmxks3rs1T9WgPfCdiUB9VSqWkTHPeQ/viewform?usp=publish-editor',
+    rewards: {
+      internship: 'Career-defining Internship Opportunity for Top Performers',
+      winner: '₹2000',
+      runner: '₹1500'
+    },
   },
   14: {
     id: 14,
+    slug: 'lifeofwords',
     title: 'LIFE OF WORDS (POETRY)',
     type: 'ONLINE',
     price: '',
@@ -353,6 +394,7 @@ Requirements:
   },
   15: {
     id: 15,
+    slug: 'exposure',
     title: 'EXPOSURE (PHOTOGRAPHY)',
     type: 'ONLINE',
     price: '',
@@ -372,6 +414,7 @@ Requirements:
   },
   16: {
     id: 16,
+    slug: 'posterdesign',
     title: 'POSTER DESIGN',
     type: 'ONLINE',
     price: '',
@@ -391,36 +434,11 @@ Requirements:
   },
   17: {
     id: 17,
+    slug: 'protopitch',
     title: 'PROTOPITCH',
     type: 'TECHNICAL',
     price: '',
-    description: `ProtoPitch– AI Automation
-Challenge
-ProtoPitch is an innovation-driven event where participants design and pitch a working prototype using n8n, a powerful low-code automation tool. The event focuses on transforming real-world problems into automated and AI-enabled solutions through visual workflows.
-In this edition, participants will build a basic AI Chat Box that accepts user input, processes it using an AI model, and delivers intelligent responses automatically. The event encourages creativity, logical thinking, and practical implementation rather than heavy coding.
-Participants will gain hands-on exposure to workflow automation, AI integration, and real-time data processing, making this event ideal for beginners as well as tech enthusiasts. Teams or individuals will present their prototype, explain the workflow, and pitch its real-world impact to the judging panel.
-ProtoPitch aims to bridge the gap between ideas and implementation by empowering students to build industry-relevant automation solutions using modern low-code Technology.
-
-RULES
-Participation Rules
-• Participants can take part individually or in teams (2–3 members)
-• Only one submission per team / participant
-• All designs must be created during the event time
-
-Tool Rules
-• Only n8n is allowed
-
-Pitch Rules
-• Pitch time: 2–3 minutes per team
-• Explanation must include:
-• Problem understanding
-• Target users
-• Design solution
-
-General Rules
-• Judges’ decision will be final
-• Any form of misconduct leads to disqualification
-• Participants must follow event coordinator instructions`,
+    description: 'A dynamic event that blends the creativity of UI/UX design with the competitive spirit of a hackathon. Participants will be tasked with building a functional prototype in Figma based on exciting themes provided at the start of the event. Working within a limited timeframe, teams will brainstorm, design, and iterate on their concepts to create user-friendly and visually appealing prototypes. Once the designs are complete, each team will present their prototype to a panel of judges, explaining their design process, key features, and the rationale behind their choices.',
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -429,18 +447,29 @@ General Rules
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
-      'Team Size: Solo or 2-3 members.',
-      'Tools: Only the use of n8n is allowed.',
-      'Live Build: Everything must be created during the event.',
-      'The Pitch: 2-3 minutes to explain the Problem, User, and Solution.',
-      'One Entry: Only one submission per team.',
-      'Fair Play: The decisions made by the judges are final. Misconduct = Disqualification.',
+      'Team Size: Teams can consist of 1–3 members.',
+      'Event Duration: Will vary depending on participant/team count. (Est. Time: 2-2.5hrs)',
+      'Participants are supposed to bring their own laptops.',
+      'Teams must use Figma for designing.',
+      'Teams will be given a theme for their design building which will be disclosed on the day of event.',
+      'Participants will have 90 minutes to complete their design.',
+      'After designing, participant/teams may get 3-4 minutes to explain their design to the judges.',
+      'Evaluation Criteria: Alignment with the theme, Creativity & Innovation, User Experience, Functionality, Aesthetics, Completion and Presentation.',
+      'All work must be original; plagiarism will lead to disqualification.',
+      'The judge\'s decisions are final.',
+      'Participants who fail to follow the rules or any sort of plagiarism will be disqualified.',
     ],
     contact: 'Pragyasree K (9080144211), Latheesh Saran S (6382235520)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    rewards: {
+      first: '₹1500',
+      second: '₹1000',
+      third: '₹750'
+    },
   },
   18: {
     id: 18,
+    slug: 'cvworkshop',
     title: 'CV (COMPUTER VISION) WORKSHOP',
     type: 'WORKSHOP',
     price: '₹150',
@@ -493,6 +522,7 @@ This workshop is designed for learners who want to truly understand computer vis
   },
   19: {
     id: 19,
+    slug: 'blockchain',
     title: 'INSIDE A BLOCKCHAIN',
     type: 'WORKSHOP',
     price: '₹250',
@@ -531,6 +561,7 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
   },
   20: {
     id: 20,
+    slug: 'cloudquest',
     title: 'CLOUD QUEST',
     type: 'WORKSHOP',
     price: '₹250',
@@ -574,6 +605,7 @@ Participants will understand core cloud concepts, observe real cloud deployments
   },
   21: {
     id: 21,
+    slug: 'hackinggpt',
     title: 'HACKING GPT',
     type: 'WORKSHOP',
     price: '₹250',
@@ -609,6 +641,7 @@ Key Takeaways:
   },
   22: {
     id: 22,
+    slug: 'agenticai',
     title: 'AGENTIC AI',
     type: 'WORKSHOP',
     price: '₹200',
@@ -647,6 +680,7 @@ Takeaways:
   },
   23: {
     id: 23,
+    slug: 'ideathon',
     title: 'IDEATHON',
     type: 'TECHNICAL',
     price: '',
@@ -663,5 +697,40 @@ Takeaways:
     ],
     contact: '',
     registrationLink: '',
+    rewards: {
+      winner: '₹1500',
+      runner: '₹1000'
+    },
+  },
+  24: {
+    id: 24,
+    slug: 'techtradewars',
+    title: 'TECH TRADE WARS',
+    type: 'TECHNICAL',
+    price: '',
+    description: 'A strategic battle of technical knowledge and trading acumen. Test your ability to navigate the tech market and emerge as the ultimate tech trader.',
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
+    ],
+    eventRules: [
+      'Rules will be revealed on the spot.',
+    ],
+    contact: 'Latheesh Saran S (6382235520)',
+    registrationLink: '',
+    rewards: {
+      winner: '₹1500',
+      runner: '₹1000'
+    },
   },
 };
+
+export const eventSlugMap: Record<string, any> = {};
+Object.values(eventDetailsData).forEach((event: any) => {
+  if (event.slug) {
+    eventSlugMap[event.slug] = event;
+  }
+});

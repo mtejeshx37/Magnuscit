@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowLeft, Phone, ShoppingCart, Check } from 'lucide-react';
+import { ArrowLeft, Phone, ShoppingCart, Check, Trophy, TrendingUp } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 interface EventDetailProps {
@@ -13,6 +13,14 @@ interface EventDetailProps {
     eventRules?: string[];
     contact: string;
     registrationLink?: string;
+    rewards?: {
+      winner?: string;
+      runner?: string;
+      first?: string;
+      second?: string;
+      third?: string;
+      internship?: string;
+    };
   };
   onBack: () => void;
 }
@@ -79,6 +87,74 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
             {event.description}
           </p>
         </motion.div>
+
+        {/* Rewards & Recognition Section */}
+        {event.rewards && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="mb-8"
+          >
+            <div className="glass-strong rounded-2xl p-8 border border-yellow-400/20 relative overflow-hidden group">
+              {/* Animated Background Glow */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-yellow-400/10 transition-colors duration-500" />
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Trophy className="w-8 h-8 text-yellow-500" />
+                    <h2
+                      className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600 uppercase"
+                      style={{ fontFamily: 'VT323, monospace' }}
+                    >
+                      Rewards & Recognition
+                    </h2>
+                  </div>
+
+                  {event.rewards.internship && (
+                    <div className="flex items-center gap-3 text-[#00D9FF] bg-[#00D9FF]/10 px-4 py-2 rounded-xl border border-[#00D9FF]/20 w-fit mb-6">
+                      <TrendingUp className="w-5 h-5" />
+                      <span className="font-bold tracking-wide uppercase text-sm">
+                        {event.rewards.internship}
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {(event.rewards.winner || event.rewards.first) && (
+                      <div className="bg-white/5 border border-yellow-400/30 p-4 rounded-xl flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-yellow-400/20 flex items-center justify-center text-yellow-400 font-bold text-xl">1</div>
+                        <div>
+                          <p className="text-yellow-400/60 text-xs uppercase font-bold tracking-widest">First Prize</p>
+                          <p className="text-white text-xl font-bold font-mono">{event.rewards.winner || event.rewards.first}</p>
+                        </div>
+                      </div>
+                    )}
+                    {(event.rewards.runner || event.rewards.second) && (
+                      <div className="bg-white/5 border border-slate-400/30 p-4 rounded-xl flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-slate-400/20 flex items-center justify-center text-slate-300 font-bold text-xl">2</div>
+                        <div>
+                          <p className="text-slate-400/60 text-xs uppercase font-bold tracking-widest">Second Prize</p>
+                          <p className="text-white text-xl font-bold font-mono">{event.rewards.runner || event.rewards.second}</p>
+                        </div>
+                      </div>
+                    )}
+                    {event.rewards.third && (
+                      <div className="bg-white/5 border border-amber-800/30 p-4 rounded-xl flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-amber-800/20 flex items-center justify-center text-amber-600 font-bold text-xl">3</div>
+                        <div>
+                          <p className="text-amber-800/60 text-xs uppercase font-bold tracking-widest">Third Prize</p>
+                          <p className="text-white text-xl font-bold font-mono">{event.rewards.third}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Registration & Rules Grid */}
         <motion.div
@@ -155,14 +231,23 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           </div>
         </motion.div>
 
-        {/* Register Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          {event.registrationLink ? (
+          {event.type.toUpperCase() === 'WORKSHOP' ? (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-16 py-5 bg-gradient-to-r from-[#D500F9] to-[#9000FF] rounded-2xl shadow-2xl shadow-[#D500F9]/60 hover:shadow-[#D500F9]/80 transition-all duration-300 text-black text-xl group relative overflow-hidden neon-glow cursor-default"
+              style={{ fontFamily: 'VT323, monospace' }}
+            >
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="relative">REGISTER NOW</span>
+            </motion.div>
+          ) : event.registrationLink ? (
             <motion.a
               href={event.registrationLink}
               target="_blank"

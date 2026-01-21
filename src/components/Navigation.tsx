@@ -45,11 +45,11 @@ export function Navigation() {
   }, [isHoveringRegister]);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Prime Directives', href: '#prime-directives' },
-    { label: 'About Us', href: '#about-us' },
-    { label: 'Schedule', href: '#schedule' },
-    { label: 'Events', href: '#events' },
+    { label: 'Home', href: '/#home' },
+    { label: 'Prime Directives', href: '/#prime-directives' },
+    { label: 'About Us', href: '/#about-us' },
+    { label: 'Schedule', href: '/#schedule' },
+    { label: 'Events', href: '/events' },
   ];
 
   return (

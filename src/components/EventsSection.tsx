@@ -11,17 +11,19 @@ import codeEuphoriaImg from '../assets/code_euphoria.jpg';
 import lifeOfWordsImg from '../assets/life_of_words.jpg';
 import protoPitchImg from '../assets/protopitch.jpg';
 import gallery1Img from '../assets/gallery_1.jpg';
-import gallery2Img from '../assets/gallery_2.jpg';
-import gallery3Img from '../assets/gallery_3.jpg';
 import gallery4Img from '../assets/gallery_4.jpg';
+import blockchainImg from '../assets/blockchain_new.jpg';
+import cloudQuestImg from '../assets/cloud_quest_new.jpg';
+import agenticAiImg from '../assets/agentic_ai_new.jpg';
 import ideathonImg from '../assets/ideathon.jpg';
 import { useState, useRef } from 'react';
-import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot } from 'lucide-react';
+import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot, Trophy, TrendingUp } from 'lucide-react';
 
 type EventCategory = 'All' | 'Technical' | 'Workshops' | 'Online';
 
 interface Event {
   id: number | string;
+  slug: string;
   title: string;
   category: EventCategory;
   date: string;
@@ -29,12 +31,20 @@ interface Event {
   description: string;
   aiRecommended?: boolean;
   icon: typeof Code;
+  rewards?: {
+    winner?: string;
+    runner?: string;
+    first?: string;
+    second?: string;
+    third?: string;
+    internship?: string;
+  };
 }
 
 interface EventCardProps {
   event: Event;
   index: number;
-  onEventSelect: (eventId: number) => void;
+  onEventSelect: (slug: string) => void;
   onConferenceSelect: () => void;
 }
 
@@ -60,7 +70,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
         if (event.id === 'conference') {
           onConferenceSelect();
         } else {
-          onEventSelect(event.id as number);
+          onEventSelect(event.slug);
         }
       }}
     >
@@ -120,7 +130,50 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
               >
                 {event.title}
               </h3>
-              <p className="text-[#94A3B8] text-lg">{event.description}</p>
+              <p className="text-[#94A3B8] text-lg mb-6">{event.description}</p>
+
+              {/* Rewards Display */}
+              {event.rewards && (
+                <div className="flex flex-col gap-2 items-center">
+                  {event.rewards.internship && (
+                    <div className="flex items-center gap-2 text-[#00D9FF] font-medium bg-[#00D9FF]/10 px-3 py-1.5 rounded-lg border border-[#00D9FF]/20 text-center">
+                      <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span className="text-[11px] sm:text-sm uppercase tracking-tight leading-tight whitespace-normal max-w-[220px]">
+                        Exclusive Internship Opportunity for Top Performers
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex flex-wrap justify-center gap-3 mt-2">
+                    {event.rewards.winner && (
+                      <div className="flex items-center gap-2 text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-lg border border-yellow-400/20">
+                        <Trophy className="w-4 h-4" />
+                        <span className="text-sm font-bold">Winner: {event.rewards.winner}</span>
+                      </div>
+                    )}
+                    {event.rewards.first && (
+                      <div className="flex items-center gap-2 text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-lg border border-yellow-400/20">
+                        <Trophy className="w-4 h-4" />
+                        <span className="text-sm font-bold">1st: {event.rewards.first}</span>
+                      </div>
+                    )}
+                    {event.rewards.runner && (
+                      <div className="flex items-center gap-2 text-slate-300 bg-slate-300/10 px-3 py-1 rounded-lg border border-slate-300/20">
+                        <span className="text-sm font-bold">Runner: {event.rewards.runner}</span>
+                      </div>
+                    )}
+                    {event.rewards.second && (
+                      <div className="flex items-center gap-2 text-slate-300 bg-slate-300/10 px-3 py-1 rounded-lg border border-slate-300/20">
+                        <span className="text-sm font-bold">2nd: {event.rewards.second}</span>
+                      </div>
+                    )}
+                    {event.rewards.third && (
+                      <div className="flex items-center gap-2 text-amber-700 bg-amber-700/10 px-3 py-1 rounded-lg border border-amber-700/20">
+                        <span className="text-sm font-bold">3rd: {event.rewards.third}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -148,7 +201,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
 }
 
 interface EventsSectionProps {
-  onEventSelect: (eventId: number) => void;
+  onEventSelect: (slug: string) => void;
   onConferenceSelect: () => void;
 }
 
@@ -161,69 +214,110 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
 
     {
       id: 7,
+      slug: 'promptpixel',
       title: 'Prompt Pixel',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: promptPixelImg,
       description: 'AI visuals and creative prompting challenge',
       icon: Sparkles,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
     },
     {
       id: 8,
+      slug: 'podcastmonologue',
       title: 'Podcast Monologue',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: podcastMonologueImg,
       description: 'Spontaneous speaking on random tech topics',
       icon: Users,
+      rewards: {
+        winner: '₹1500',
+        runner: '₹1000'
+      }
     },
     {
       id: 9,
+      slug: 'techiexo',
       title: 'Techie XO',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: techieXoImg,
       description: 'Strategic XO game powered by tech trivia',
       icon: Code,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
     },
     {
       id: 10,
+      slug: 'techtamasha',
       title: 'Tech Tamasha',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: techTamashaImg,
       description: 'Multi-round tech ecosystem challenge',
       icon: Users,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
     },
     {
       id: 11,
+      slug: 'logicrush',
       title: 'Logic Rush',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: logicRushImg,
       description: 'Fast-paced aptitude and logic battle',
       icon: Cpu,
+      rewards: {
+        winner: '₹2000',
+        runner: '₹1500'
+      }
     },
     {
       id: 12,
+      slug: 'accuracyarena',
       title: 'Accuracy Arena',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: accuracyArenaImg,
       description: 'Design and optimize ML predictive models',
       icon: Award,
+      rewards: {
+        internship: 'Exclusive Internship Opportunity for Top Performers',
+        winner: '₹2000',
+        runner: '₹1500'
+      }
     },
     {
       id: 13,
+      slug: 'codeeuphoria',
       title: 'Code Euphoria',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: codeEuphoriaImg,
       description: 'Progressively complex coding challenges',
       icon: Code,
+      rewards: {
+        internship: 'Exclusive Internship Opportunity for Top Performers',
+        winner: '₹2000',
+        runner: '₹1500'
+      }
     },
     {
       id: 14,
+      slug: 'lifeofwords',
       title: 'Life of Words (Poetry)',
       category: 'Online',
       date: 'Jan 17, 2026',
@@ -233,6 +327,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     },
     {
       id: 15,
+      slug: 'exposure',
       title: 'Exposure (Photography)',
       category: 'Online',
       date: 'Jan 17, 2026',
@@ -242,6 +337,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     },
     {
       id: 16,
+      slug: 'posterdesign',
       title: 'Poster Design',
       category: 'Online',
       date: 'Jan 17, 2026',
@@ -251,15 +347,22 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     },
     {
       id: 17,
+      slug: 'protopitch',
       title: 'ProtoPitch',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: protoPitchImg,
-      description: 'UI/UX design and prototyping challenge',
+      description: 'UI/UX design sprint and prototype pitching battle',
       icon: Palette,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
     },
     {
       id: 18,
+      slug: 'cvworkshop',
       title: 'CV (Computer Vision) Workshop',
       category: 'Workshops',
       date: 'Jan 17, 2026',
@@ -269,24 +372,27 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     },
     {
       id: 19,
+      slug: 'blockchain',
       title: 'Inside a Blockchain',
       category: 'Workshops',
       date: 'Jan 17, 2026',
-      image: gallery2Img,
+      image: blockchainImg,
       description: 'Understand transactions, blocks & hashes',
       icon: Link,
     },
     {
       id: 20,
+      slug: 'cloudquest',
       title: 'Cloud Quest',
       category: 'Workshops',
       date: 'Jan 17, 2026',
-      image: gallery3Img,
+      image: cloudQuestImg,
       description: 'Beginner-friendly Azure/AWS workshop',
       icon: Cloud,
     },
     {
       id: 21,
+      slug: 'hackinggpt',
       title: 'Hacking GPT',
       category: 'Workshops',
       date: 'Jan 17, 2026',
@@ -296,21 +402,41 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     },
     {
       id: 22,
+      slug: 'agenticai',
       title: 'Agentic AI',
       category: 'Workshops',
       date: 'Jan 17, 2026',
-      image: gallery4Img,
+      image: agenticAiImg,
       description: 'Build an AI that can act, not just chat',
       icon: Bot,
     },
     {
       id: 23,
+      slug: 'ideathon',
       title: 'Ideathon',
       category: 'Technical',
       date: 'Jan 16, 2026',
       image: ideathonImg,
       description: 'Ideate, innovate, and inspire solutions',
       icon: Sparkles,
+      rewards: {
+        winner: '₹1500',
+        runner: '₹1000'
+      }
+    },
+    {
+      id: 24,
+      slug: 'techtradewars',
+      title: 'Tech Trade Wars',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: blockchainImg, // Using blockchainImg as a temporary placeholder instead of gallery2
+      description: 'Strategic battle of technical knowledge and trading',
+      icon: TrendingUp,
+      rewards: {
+        winner: '₹1500',
+        runner: '₹1000'
+      }
     },
   ];
 
