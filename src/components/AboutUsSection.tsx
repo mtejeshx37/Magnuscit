@@ -3,8 +3,8 @@ import { useState } from 'react';
 // Importing images from the gallery folder
 import galleryImg1 from '../assets/gallery/_MG_0004_2_(8).jpg';
 import galleryImg2 from '../assets/gallery/_MG_0007.jpg';
-import galleryImg3 from '../assets/gallery/_MG_0052.jpg';
-import galleryImg3b from '../assets/gallery/_MG_0009.jpg';
+import galleryImg3 from '../assets/gallery/_MG_0052.JPG';
+import galleryImg3b from '../assets/gallery/_MG_0009.JPG';
 import galleryImg4 from '../assets/gallery/IMG_0885.jpg';
 import galleryImg5 from '../assets/gallery/IMG_0967.jpg';
 import galleryImg6 from '../assets/gallery/IMG_0958.jpg';
