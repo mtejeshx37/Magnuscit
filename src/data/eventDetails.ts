@@ -5,7 +5,7 @@ export const eventDetailsData = {
     id: 7,
     title: 'PROMPT PIXEL',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `An innovative event where participants type creative prompts and extract critical information from AI-generated visuals and tackle a series of engaging tasks and navigate to their final destination.
 
 General rules:
@@ -60,14 +60,14 @@ Judging Criteria:
       'Only one submission per task/prompt is allowed unless stated otherwise.',
       'Organizers reserve the right to modify rules or round structure if required.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Anu Krina (8778296891) ,Kanika M(8667509641)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
   8: {
     id: 8,
     title: 'PODCAST MONOLOGUE',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `PODCAST MONOLOGUE:
 
 Rules:
@@ -123,14 +123,14 @@ NOTE:
       'The participants will be provided with a laptop for their preparation.',
       'Participants will be given certain constraints/tasks randomly assigned by the organizers during each round.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Shreya M (9384605252), Shweta K T S (9789055914)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe11empF-2fIwwWBoVZTTxc3XY6RuKBwppsicvXYcSvds8nKg/viewform?usp=publish-editor',
   },
   9: {
     id: 9,
     title: 'TECHIE XO',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `Techie XO is a high-energy technical event that blends the classic XO (Tic-Tac-Toe) game with technical and logical problem-solving. Participants compete one-on-one, where each move on the board is earned by correctly answering technical or logic-based questions. Success depends on a combination of game strategy, technical knowledge, and quick analytical thinking, making Techie XO an engaging and competitive test of both skill and intellect.
 
 Game Format:
@@ -157,27 +157,29 @@ Final Round Special Rules:
 ● If the final match ends in a draw and both teams have answered the same number of questions correctly, tie-breaker questions will be asked.
 ● In a tie-breaker, the participant who answers correctly gets a chance to remove one opponent’s mark and place their own mark in that position.`,
     registrationRules: [
-      'Each team consists of 2 players.',
-      'Both players will compete separately in different groups during the initial rounds.',
-      'Both teammates are allowed to play together in the final round.',
-      'A maximum of 32 registrations will be accepted.',
-      'Early registration teams may receive advantages.',
-      'A total of 3–4 knockout rounds will be conducted before the final round.',
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
-      'Arguments, disputes, or misuse of technology are strictly prohibited.',
-      'Use of external assistance, devices, or unfair means is not allowed.',
-      'The decision of the organizers is final and binding.',
-      'No changes or appeals will be entertained.',
+      'Each team must have 2 members; both members play separately in initial rounds and may play together in the final.',
+      'Only 16 teams (32 players) are allowed to register.',
+      'The event follows a knockout format (losing players/teams will be eliminated each round).',
+      'Questions will be asked to all participants, and the buzzer decides who answers first.',
+      'Only the player who answers correctly can place their mark on the XO board.',
+      'All questions will be based on technical topics such as AI, Cybersecurity, Programming, and Logical Reasoning.',
+      'Unfair means (mobile/internet/AI tools/notes) are strictly prohibited and the organizers’ decision is final.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Rahul R (8939650849), Latheesh Saran S(6382235520)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdjn5Iev8EzOypPFyFFwzt8LepeJ0fS71Dkv7N38F4WXVK_dg/viewform?usp=dialog',
   },
   10: {
     id: 10,
     title: 'TECH TAMASHA',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `Tech Tamasha is an exciting multi-round technical event designed to test participants’ tech knowledge, observation skills, creativity, and quick thinking through engaging and entertaining challenges. The event emphasizes thinking beyond the screen, combining knowledges, brings technology to life with thrilling rounds. It’s a stage where innovation meets excitement in a competitive yet fun atmosphere.
 
 Team Format
@@ -231,14 +233,14 @@ The final round determines the winner of Tech Tamasha`,
       'Judges’ decision is final.',
       'Any rule violation will lead to disqualification.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Madhumitha S (9677649110), Dharun (9655115397)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSda54Zq4UWy5Be92FVe3gr_QyRBvKFfRhjGlE1DuoOnqhQdtQ/viewform?usp=publish-editor',
   },
   11: {
     id: 11,
     title: 'LOGIC RUSH',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `Logic Rush is a fast-paced one-on-one aptitude challenge where two players compete by solving six questions. Each correct answer gives a player the chance to burst their opponent’s balloon, inside every balloon is a dare, and that the opponent has to do it. The game continues in this solve-and-burst format, and the player with the most balloons left at the end emerges as the winner.
 
 ROUND 1:
@@ -254,13 +256,15 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
-      'Event is time-bound for all rounds.',
-      'No mobile phones or external help allowed.',
-      'No discussion with other teams during the event.',
-      'Judges’ decision is final.',
-      'Any rule violation will lead to disqualification.',
+      'Format: 1 vs 1 Battle.',
+      'The Goal: Solve questions to burst balloons & reveal dares.',
+      'Topics: Logical reasoning, riddles, lines & angles, and speed.',
+      'Strictly Offline: No mobile phones or external help allowed.',
+      'Silence: No discussions with other teams during the event.',
+      'Timing: All rounds are strictly time-bound.',
+      'Fair Play: The decisions made by the judges are final. Violation = Disqualification',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Rakshana P (8668194010), Latheesh Saran S(6382235520)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdBKPP3JrfybRIaautugMxf5GpPdt50cXFboM6fnye8sOu7yg/viewform?usp=publish-editor',
   },
   12: {
@@ -279,14 +283,14 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     eventRules: [
       'Rules will be updated soon.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Eashwar Kumar T (9655771179), Latheesh Saran S (6382235520) ',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdiHiwLYrlM1ICuEum-dB-Y_kf6scaehGCFlCj41kiQmOTFFA/viewform?usp=publish-editor',
   },
   13: {
     id: 13,
     title: 'CODE EUPHORIA',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `This coding event is to test participants’ problem-solving skills, logical thinking, and coding efficiency. It is going to be held at HackerRank platform. There are two main rounds that evaluate their ability to analyse problems and implement optimal solutions under time constraints. Participants who crack the round 1 will be eligible for round 2. Winner will get an internship opportunity at a reputed organization. Certificates will be provided to all participants.
 
 Round 1: Preliminary Coding Round (Timeline: 1.30 hrs)
@@ -325,14 +329,14 @@ Requirements:
       'Use of mobile phones, internet search, or external help is strictly prohibited unless stated otherwise.',
       'AI-based code generation tools are not permitted during the contest.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Kavya M (9043102445), Pavithra R (8939897569)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeHejC7wNrgbZDDRh4gmxks3rs1T9WgPfCdiUB9VSqWkTHPeQ/viewform?usp=publish-editor',
   },
   14: {
     id: 14,
     title: 'LIFE OF WORDS (POETRY)',
     type: 'ONLINE',
-    price: '₹200',
+    price: '',
     description: 'Participants craft and share their original poems. This event offers a platform for poets to showcase their talent and connect with an audience through the power of words.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -351,7 +355,7 @@ Requirements:
     id: 15,
     title: 'EXPOSURE (PHOTOGRAPHY)',
     type: 'ONLINE',
-    price: '₹200',
+    price: '',
     description: 'Participants showcase their creativity by capturing stunning photographs based on a given theme. This event provides an excellent platform for photographers to display their talent and share their unique perspectives.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -370,7 +374,7 @@ Requirements:
     id: 16,
     title: 'POSTER DESIGN',
     type: 'ONLINE',
-    price: '₹200',
+    price: '',
     description: 'Participants showcase their creativity by designing visually appealing posters of their choice. This event provides a platform for designers to express ideas freely through colors, typography, and layout, highlighting the power of visual communication.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -389,7 +393,7 @@ Requirements:
     id: 17,
     title: 'PROTOPITCH',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: `ProtoPitch– AI Automation
 Challenge
 ProtoPitch is an innovation-driven event where participants design and pitch a working prototype using n8n, a powerful low-code automation tool. The event focuses on transforming real-world problems into automated and AI-enabled solutions through visual workflows.
@@ -418,29 +422,28 @@ General Rules
 • Any form of misconduct leads to disqualification
 • Participants must follow event coordinator instructions`,
     registrationRules: [
-      'Participants can take part individually or in teams (2–3 members).',
-      'Only one submission per team / participant.',
+      'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
-      'Participants can take part individually or in teams (2–3 members).',
-      'Only one submission per team / participant.',
-      'All designs must be created during the event time.',
-      'Only n8n is allowed.',
-      'Pitch time: 2–3 minutes per team.',
-      'Explanation must include: Problem understanding, Target users, Design solution.',
-      'Judges’ decision will be final.',
-      'Any form of misconduct leads to disqualification.',
-      'Participants must follow event coordinator instructions.',
+      'Team Size: Solo or 2-3 members.',
+      'Tools: Only the use of n8n is allowed.',
+      'Live Build: Everything must be created during the event.',
+      'The Pitch: 2-3 minutes to explain the Problem, User, and Solution.',
+      'One Entry: Only one submission per team.',
+      'Fair Play: The decisions made by the judges are final. Misconduct = Disqualification.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Pragyasree K (9080144211), Latheesh Saran S (6382235520)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
   },
   18: {
     id: 18,
     title: 'CV (COMPUTER VISION) WORKSHOP',
     type: 'WORKSHOP',
-    price: '₹200',
+    price: '₹150',
     description: `Workshop Overview:
 This is a hands-on Computer Vision workshop focused on building intuition and implementing vision models from scratch rather than just using black-box libraries. Participants will learn how computers see images, understand core vision concepts, explore modern CNNs and Vision Transformers, compare popular deep learning frameworks, and build working computer vision models using TinyGrad. The workshop bridges theory, architecture-level understanding, and practical implementation.
 
@@ -481,6 +484,8 @@ This workshop is designed for learners who want to truly understand computer vis
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
       'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
 
     contact: 'Latheesh Saran: +916382235520',
@@ -490,7 +495,7 @@ This workshop is designed for learners who want to truly understand computer vis
     id: 19,
     title: 'INSIDE A BLOCKCHAIN',
     type: 'WORKSHOP',
-    price: '₹200',
+    price: '₹250',
     description: `Workshop Objective:
 This workshop explains how blockchain works internally by focusing on transactions, blocks, and hashing. Participants will manually simulate a mini blockchain to understand immutability and trust.
 
@@ -516,6 +521,9 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
 
     contact: 'Latheesh Saran: +916382235520',
@@ -525,7 +533,7 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     id: 20,
     title: 'CLOUD QUEST',
     type: 'WORKSHOP',
-    price: '₹200',
+    price: '₹250',
     description: `Overview:
 Cloud computing powers everyday applications like Google Drive, Netflix, and Instagram. This workshop introduces absolute beginners to cloud computing using AWS / Microsoft Azure through teamwork, live demonstrations, and engaging challenges — no prior cloud knowledge required.
 
@@ -556,6 +564,9 @@ Participants will understand core cloud concepts, observe real cloud deployments
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
 
     contact: 'Latheesh Saran: +916382235520',
@@ -565,7 +576,7 @@ Participants will understand core cloud concepts, observe real cloud deployments
     id: 21,
     title: 'HACKING GPT',
     type: 'WORKSHOP',
-    price: '₹200',
+    price: '₹250',
     description: `Workshop Write-Up:
 Large Language Models like GPT are often seen as intelligent, safe, and reliable systems. But under the hood, they are predictive machines driven by prompts, patterns, and probabilities—and that makes them hackable in non-traditional ways.
 This workshop dives into the concept of hacking GPT, not by exploiting servers or writing malware, but by manipulating behavior through language itself. Participants will explore how carefully crafted prompts can bypass restrictions, influence outputs, extract unintended information, or cause the model to behave in unsafe or misleading ways.
@@ -588,6 +599,9 @@ Key Takeaways:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
 
     contact: 'Latheesh Saran: +916382235520',
@@ -623,9 +637,31 @@ Takeaways:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
 
     contact: 'Latheesh Saran: +916382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+  },
+  23: {
+    id: 23,
+    title: 'IDEATHON',
+    type: 'TECHNICAL',
+    price: '',
+    description: `Ideathon invites you to ideate, innovate, and inspire. Pitch creative solutions to real-world problems across technology, healthcare, finance, and social impact. This event encourages participants to think critically, collaborate effectively, and design ideas that are practical, impactful, and socially responsible. Whether you’re solving everyday challenges or reimagining future systems, Ideathon is the perfect platform to turn your ideas into meaningful innovations.`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
+    ],
+    eventRules: [
+      'Rules will be updated soon.',
+    ],
+    contact: '',
+    registrationLink: '',
   },
 };

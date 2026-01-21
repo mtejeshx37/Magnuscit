@@ -143,11 +143,15 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           >
             CONTACT US!!
           </h2>
-          <div className="flex items-center gap-3">
-            <Phone className="w-5 h-5 text-[#D500F9]" />
-            <span className="text-white text-xl" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-              {event.contact}
-            </span>
+          <div className="flex items-start gap-3">
+            <Phone className="w-5 h-5 text-[#D500F9] mt-1" />
+            <div className="flex flex-col gap-1">
+              {event.contact.split(',').map((contact, index) => (
+                <span key={index} className="text-white text-xl" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                  {contact.trim()}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -169,7 +173,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
               style={{ fontFamily: 'VT323, monospace' }}
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <span className="relative">REGISTER NOW</span>
+              <span className="relative">REGISTER NOW {event.price}</span>
             </motion.a>
           ) : inCart ? (
             <motion.div

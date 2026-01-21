@@ -14,6 +14,7 @@ import gallery1Img from '../assets/gallery_1.jpg';
 import gallery2Img from '../assets/gallery_2.jpg';
 import gallery3Img from '../assets/gallery_3.jpg';
 import gallery4Img from '../assets/gallery_4.jpg';
+import ideathonImg from '../assets/ideathon.jpg';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot } from 'lucide-react';
 
@@ -301,6 +302,15 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       image: gallery4Img,
       description: 'Build an AI that can act, not just chat',
       icon: Bot,
+    },
+    {
+      id: 23,
+      title: 'Ideathon',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: ideathonImg,
+      description: 'Ideate, innovate, and inspire solutions',
+      icon: Sparkles,
     },
   ];
 
