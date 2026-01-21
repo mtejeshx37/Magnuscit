@@ -237,17 +237,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          {event.type.toUpperCase() === 'WORKSHOP' ? (
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-16 py-5 bg-gradient-to-r from-[#D500F9] to-[#9000FF] rounded-2xl shadow-2xl shadow-[#D500F9]/60 hover:shadow-[#D500F9]/80 transition-all duration-300 text-black text-xl group relative overflow-hidden neon-glow cursor-default"
-              style={{ fontFamily: 'VT323, monospace' }}
-            >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <span className="relative">REGISTER NOW</span>
-            </motion.div>
-          ) : event.registrationLink ? (
+          {event.registrationLink ? (
             <motion.a
               href={event.registrationLink}
               target="_blank"
@@ -258,8 +248,18 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
               style={{ fontFamily: 'VT323, monospace' }}
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <span className="relative">REGISTER NOW {event.price}</span>
+              <span className="relative">REGISTER NOW {event.price ? `• ${event.price}` : ''}</span>
             </motion.a>
+          ) : event.type.toUpperCase() === 'WORKSHOP' ? (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-16 py-5 bg-gradient-to-r from-[#D500F9] to-[#9000FF] rounded-2xl shadow-2xl shadow-[#D500F9]/60 hover:shadow-[#D500F9]/80 transition-all duration-300 text-black text-xl group relative overflow-hidden neon-glow cursor-default"
+              style={{ fontFamily: 'VT323, monospace' }}
+            >
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="relative">REGISTER NOW</span>
+            </motion.div>
           ) : inCart ? (
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}

@@ -518,7 +518,7 @@ This workshop is designed for learners who want to truly understand computer vis
     ],
 
     contact: 'Latheesh Saran: +916382235520',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdGTTrO7dEf27iOqipBzqtBEIqldQZPCtS5q1dKj2Lz5MjJsQ/viewform?usp=dialog',
   },
   19: {
     id: 19,
@@ -557,12 +557,12 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     ],
 
     contact: 'Latheesh Saran: +916382235520',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    registrationLink: 'https://forms.gle/QDMVgTMghaEaw36v6',
   },
   20: {
     id: 20,
     slug: 'cloudquest',
-    title: 'CLOUD QUEST',
+    title: 'CLOUD QUEST AZURE',
     type: 'WORKSHOP',
     price: '₹250',
     description: `Overview:
@@ -601,7 +601,7 @@ Participants will understand core cloud concepts, observe real cloud deployments
     ],
 
     contact: 'Latheesh Saran: +916382235520',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc00J_gUbMfGiOqlZM8P6ANTom6P0vliP8ctu-4BH5u0xCXig/viewform?usp=dialog',
   },
   21: {
     id: 21,
@@ -637,7 +637,7 @@ Key Takeaways:
     ],
 
     contact: 'Latheesh Saran: +916382235520',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    registrationLink: ' https://forms.gle/GMCbtS4vG7VDhhLdA',
   },
   22: {
     id: 22,
@@ -676,7 +676,7 @@ Takeaways:
     ],
 
     contact: 'Latheesh Saran: +916382235520',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    registrationLink: 'https://forms.gle/hBVVUkSvvvDxgDX17',
   },
   23: {
     id: 23,
@@ -725,6 +725,27 @@ Takeaways:
       winner: '₹1500',
       runner: '₹1000'
     },
+  },
+  25: {
+    id: 25,
+    slug: 'adyaai',
+    title: 'ADYA AI',
+    type: 'WORKSHOP',
+    price: '₹250',
+    description: `Building an AI product usually requires a team of backend engineers, DevOps specialists, and UI designers. But what if you could do it all yourself—in minutes?
+
+Enter Vanij, the all-in-one no-code AI development platform. In this session, we will dismantle the barriers to entry for AI innovation. You will move past simple chatbots and learn how to orchestrate complex AI workflows, build full-stack applications, and even deploy your own fine-tuned models without writing a single line of infrastructure code. 
+
+Whether you want to build a final year project or launch the next big SaaS, this workshop will hand you the keys to the factory.`,
+    registrationRules: [
+      'Only college students are permitted to participate.',
+      'A valid college ID is mandatory.',
+      'Participants must wear the registration throughout the day.',
+      'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
+      'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
+    ],
+    contact: 'Latheesh Saran: +916382235520',
+    registrationLink: 'https://forms.gle/ZeQnDusWfRBJXLe17',
   },
 };
 

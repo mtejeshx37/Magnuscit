@@ -16,6 +16,7 @@ import blockchainImg from '../assets/blockchain_new.jpg';
 import cloudQuestImg from '../assets/cloud_quest_new.jpg';
 import agenticAiImg from '../assets/agentic_ai_new.jpg';
 import ideathonImg from '../assets/ideathon.jpg';
+import adyaAiImg from '../assets/adya_ai.png';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot, Trophy, TrendingUp } from 'lucide-react';
 
@@ -383,7 +384,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
     {
       id: 20,
       slug: 'cloudquest',
-      title: 'Cloud Quest',
+      title: 'Cloud Quest Azure',
       category: 'Workshops',
       date: 'Jan 17, 2026',
       image: cloudQuestImg,
@@ -437,6 +438,17 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
         winner: '₹1500',
         runner: '₹1000'
       }
+    },
+    {
+      id: 25,
+      slug: 'adyaai',
+      title: 'ADYA AI',
+      category: 'Workshops',
+      date: 'Jan 17, 2026',
+      image: adyaAiImg,
+      description: 'The all-in-one no-code AI development platform',
+      icon: Bot,
+      aiRecommended: true,
     },
   ];
 
