@@ -1,22 +1,22 @@
 import { motion, useInView } from 'motion/react';
-import logicRushImg from '../assets/logic_rush.jpg';
-import exposureImg from '../assets/exposure.jpg';
-import posterDesignImg from '../assets/poster_design.jpg';
-import promptPixelImg from '../assets/prompt_pixel.jpg';
-import podcastMonologueImg from '../assets/podcast_monologue.jpg';
-import techieXoImg from '../assets/techie_xo.jpg';
-import techTamashaImg from '../assets/tech_tamasha.jpg';
-import accuracyArenaImg from '../assets/accuracy_arena.jpg';
-import codeEuphoriaImg from '../assets/code_euphoria.jpg';
-import lifeOfWordsImg from '../assets/life_of_words.jpg';
-import protoPitchImg from '../assets/protopitch.jpg';
-import gallery1Img from '../assets/gallery_1.jpg';
-import gallery4Img from '../assets/gallery_4.jpg';
-import blockchainImg from '../assets/blockchain_new.jpg';
-import cloudQuestImg from '../assets/cloud_quest_new.jpg';
-import agenticAiImg from '../assets/agentic_ai_new.jpg';
-import ideathonImg from '../assets/ideathon.jpg';
-import adyaAiImg from '../assets/adya_ai.png';
+import logicRushImg from '../assets/logic_rush.webp';
+import exposureImg from '../assets/exposure.webp';
+import posterDesignImg from '../assets/poster_design.webp';
+import promptPixelImg from '../assets/prompt_pixel.webp';
+import podcastMonologueImg from '../assets/podcast_monologue.webp';
+import techieXoImg from '../assets/techie_xo.webp';
+import techTamashaImg from '../assets/tech_tamasha.webp';
+import accuracyArenaImg from '../assets/accuracy_arena.webp';
+import codeEuphoriaImg from '../assets/code_euphoria.webp';
+import lifeOfWordsImg from '../assets/life_of_words.webp';
+import protoPitchImg from '../assets/protopitch.webp';
+import gallery1Img from '../assets/gallery_1.webp';
+import gallery4Img from '../assets/gallery_4.webp';
+import blockchainImg from '../assets/blockchain_new.webp';
+import cloudQuestImg from '../assets/cloud_quest_new.webp';
+import agenticAiImg from '../assets/agentic_ai_new.webp';
+import ideathonImg from '../assets/ideathon.webp';
+import adyaAiImg from '../assets/adya_ai.webp';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot, Trophy, TrendingUp } from 'lucide-react';
 
@@ -64,7 +64,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.3), ease: 'easeOut' }}
       viewport={{ once: true }}
       className="group relative cursor-pointer"
       onClick={() => {

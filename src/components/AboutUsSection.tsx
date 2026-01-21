@@ -1,15 +1,15 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
 // Importing images from the gallery folder
-import galleryImg1 from '../assets/gallery/_MG_0004_2_(8).jpg';
-import galleryImg2 from '../assets/gallery/_MG_0007.jpg';
-import galleryImg3 from '../assets/gallery/_MG_0052.JPG';
-import galleryImg3b from '../assets/gallery/_MG_0009.JPG';
-import galleryImg4 from '../assets/gallery/IMG_0885.jpg';
-import galleryImg5 from '../assets/gallery/IMG_0967.jpg';
-import galleryImg6 from '../assets/gallery/IMG_0958.jpg';
-import galleryImg7 from '../assets/gallery/IMG_2017.jpg';
-import galleryImg8 from '../assets/gallery/IMG_2111.jpg';
+import galleryImg1 from '../assets/gallery/_MG_0004_2_(8).webp';
+import galleryImg2 from '../assets/gallery/_MG_0007.webp';
+import galleryImg3 from '../assets/gallery/_MG_0052.JPG.webp';
+import galleryImg3b from '../assets/gallery/_MG_0009.JPG.webp';
+import galleryImg4 from '../assets/gallery/IMG_0885.webp';
+import galleryImg5 from '../assets/gallery/IMG_0967.webp';
+import galleryImg6 from '../assets/gallery/IMG_0958.webp';
+import galleryImg7 from '../assets/gallery/IMG_2017.webp';
+import galleryImg8 from '../assets/gallery/IMG_2111.webp';
 
 // 9 Images for the 9-grid layout
 const GALLERY_IMAGES = [

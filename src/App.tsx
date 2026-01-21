@@ -3,17 +3,20 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
-import { TimelineSection } from './components/TimelineSection';
-import { CTASection } from './components/CTASection';
-import { VenueSection } from './components/VenueSection';
+const AboutUsSection = lazy(() => import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection })));
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
 import { CustomCursor } from './components/CustomCursor';
-import { AboutUsSection } from './components/AboutUsSection';
 import { eventSlugMap } from './data/eventDetails';
 import { useParams, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+
+// Lazy load heavy home page sections
+const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
+const CTASection = lazy(() => import('./components/CTASection').then(m => ({ default: m.CTASection })));
+const VenueSection = lazy(() => import('./components/VenueSection').then(m => ({ default: m.VenueSection })));
+
 
 // Lazy load route components
 const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));

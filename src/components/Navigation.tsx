@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import magnusLogo from '../assets/dcd52a646246e269b48a4c5ca73dde025ecb3e39.jpg';
+import magnusLogo from '../assets/dcd52a646246e269b48a4c5ca73dde025ecb3e39.webp';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
