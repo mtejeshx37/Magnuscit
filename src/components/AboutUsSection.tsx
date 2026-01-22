@@ -79,7 +79,7 @@ const GalleryImage = ({ src, alt, className }: { src: string, alt: string, class
 
 export function AboutUsSection() {
     return (
-        <div id="about-us" className="min-h-screen bg-[#050505] relative py-20 overflow-hidden">
+        <div id="about-us" className="min-h-screen bg-[#050505] relative py-20 overflow-hidden scroll-mt-[130px]">
             <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 min-h-screen">
 
                 {/* Content Column */}

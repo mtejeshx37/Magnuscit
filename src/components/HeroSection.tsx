@@ -34,7 +34,7 @@ export function HeroSection() {
   const formatNumber = (num: number) => String(num).padStart(2, '0');
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32" id="home">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-0 scroll-mt-[130px]" id="home">
       {/* Background Image */}
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -52,7 +52,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 container mx-auto px-0 py-0 flex flex-col items-center justify-center min-h-screen pb-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

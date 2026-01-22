@@ -50,11 +50,11 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-32">
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-[130px]">
       <DisclaimerTicker />
       <HeroSection />
       <PrimeDirectivesSection />
-      <div id="events" className="content-visibility-auto">
+      <div id="events" className="content-visibility-auto scroll-mt-[130px]">
         <EventsSection
           onEventSelect={handleEventSelect}
           onConferenceSelect={handleConferenceSelect}

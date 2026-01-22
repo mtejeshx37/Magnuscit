@@ -29,9 +29,9 @@ export function PrimeDirectivesSection() {
     };
 
     return (
-        <div id="prime-directives" className="py-20 bg-[#050505] overflow-hidden relative min-h-screen flex flex-col justify-center">
+        <div id="prime-directives" className="scroll-mt-[130px] -mt-30 pt-0 pb-10 bg-[#050505] overflow-hidden relative flex flex-col justify-center">
             {/* Header */}
-            <div className="container mx-auto px-4 mb-20 text-center relative z-10">
+            <div className="container mx-auto px-4 mb-10 text-center relative z-10">
                 <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}

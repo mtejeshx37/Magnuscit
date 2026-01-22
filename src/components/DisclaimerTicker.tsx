@@ -8,7 +8,7 @@ export function DisclaimerTicker() {
 
   return (
     <div
-      className="relative w-full z-40 bg-black/95 backdrop-blur-md
+      className="fixed top-[80px] left-0 right-0 z-40 bg-black/95 backdrop-blur-md
                  border-b border-cyan-400/30 py-2.5 overflow-hidden whitespace-nowrap
                  shadow-[0_6px_40px_rgba(0,229,255,0.15)]"
       style={{

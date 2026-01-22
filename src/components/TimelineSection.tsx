@@ -79,7 +79,7 @@ export function TimelineSection() {
   return (
     <section
       ref={timelineRef}
-      className="relative py-32 overflow-hidden bg-[#050505]"
+      className="relative py-32 overflow-hidden bg-[#050505] scroll-mt-[130px]"
       id="schedule"
     >
       {/* Background Effects */}
