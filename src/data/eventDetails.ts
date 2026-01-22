@@ -297,7 +297,7 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     slug: 'accuracyarena',
     title: 'ACCURACY ARENA',
     type: 'TECHNICAL',
-    price: '₹200',
+    price: '',
     description: 'Accuracy Arena is a structured machine learning competition in which participants are provided with a dataset and are required to design, train, and optimize a predictive model. The objective is to achieve the highest possible accuracy based on a predefined evaluation metric. Submissions will be assessed on a standardized test dataset, and the participant or team with the best-performing model will be declared the winner and awarded prizes.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -345,12 +345,7 @@ Winner Selection Criteria:
 ➢ Submission time
 ➢ Clean and readable code
 ➢ Edge Case Handling
-➢ Fewer wrong submissions
-
-Requirements:
-➢ Paper & Pen
-➢ Stable internet connection
-➢ Certificates for participants`,
+➢ Fewer wrong submissions`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
