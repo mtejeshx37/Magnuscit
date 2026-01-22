@@ -51,6 +51,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-32">
+      <DisclaimerTicker />
       <HeroSection />
       <PrimeDirectivesSection />
       <div id="events" className="content-visibility-auto">
@@ -124,7 +125,6 @@ export default function App() {
     <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
       <CustomCursor />
       <Navigation />
-      <DisclaimerTicker />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<EventsListPage />} />

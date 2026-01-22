@@ -1,3 +1,5 @@
+import { Variable } from "lucide-react"
+
 export const eventDetailsData = {
 
 
@@ -7,44 +9,44 @@ export const eventDetailsData = {
     title: 'PROMPT PIXEL',
     type: 'TECHNICAL',
     price: '',
-    description: `An innovative event where participants type creative prompts and extract critical information from AI-generated visuals and tackle a series of engaging tasks and navigate to their final destination.
+    description: `An innovative event where participants type creative prompts and extract critical information from AI-generated visuals and tackle a series of engaging tasks and navigate to their final destination.`,
 
-General rules:
-• PROMPT PIXEL is an individual event unless specified otherwise.
-• Participants must use only the AI tool/platform announced by the organizers.
-• Use of external tools, pre-written prompts, mobile phones, internet access, or browsing is strictly prohibited.
-• Copying, plagiarism, or any form of malpractice will result in immediate disqualification.
-• Participants must follow the instructions of judges and event coordinators at all times.
-• Judges’ decisions are final and binding.
-• Time limits are strict for all rounds; no extra time will be provided.
-• Only one submission per task/prompt is allowed unless stated otherwise.
-• Editing or resubmitting content after submission is not permitted.
-• Participants must ensure their work is original and relevant to the given task.
-• Any violation of rules at any stage of the event may lead to disqualification.
-• Organizers reserve the right to modify rules or round structure if required.
+// General rules:
+// • PROMPT PIXEL is an individual event unless specified otherwise.
+// • Participants must use only the AI tool/platform announced by the organizers.
+// • Use of external tools, pre-written prompts, mobile phones, internet access, or browsing is strictly prohibited.
+// • Copying, plagiarism, or any form of malpractice will result in immediate disqualification.
+// • Participants must follow the instructions of judges and event coordinators at all times.
+// • Judges’ decisions are final and binding.
+// • Time limits are strict for all rounds; no extra time will be provided.
+// • Only one submission per task/prompt is allowed unless stated otherwise.
+// • Editing or resubmitting content after submission is not permitted.
+// • Participants must ensure their work is original and relevant to the given task.
+// • Any violation of rules at any stage of the event may lead to disqualification.
+// • Organizers reserve the right to modify rules or round structure if required.
 
-Round 1: Prompt Genesis
-Description:
-Participants are provided with a scenario. They must analyze it, craft an appropriate AI prompt, and generate the most accurate and relevant output.
+// Round 1: Prompt Genesis
+// Description:
+// Participants are provided with a scenario. They must analyze it, craft an appropriate AI prompt, and generate the most accurate and relevant output.
 
-Round 2: Pixel Hunt
-Description:
-A complex image containing multiple visual elements will be displayed for 20 seconds. Participants must quickly observe the details and write a precise prompt to recreate the image.
+// Round 2: Pixel Hunt
+// Description:
+// A complex image containing multiple visual elements will be displayed for 20 seconds. Participants must quickly observe the details and write a precise prompt to recreate the image.
 
-Round 3: One Prompt, Three Outputs
-Description:
-Participants are given a single base prompt. Using creative prompt variations, they must generate three visually different images while maintaining the same core idea.
+// Round 3: One Prompt, Three Outputs
+// Description:
+// Participants are given a single base prompt. Using creative prompt variations, they must generate three visually different images while maintaining the same core idea.
 
-Round 4: Storyboard Showdown (Final Round – Winner Selection)
-Description:
-Participants must create a storyboard using AI-generated visuals based on a given theme or prompt. Judging will be based on creativity, coherence, storytelling, and prompt effectiveness.
+// Round 4: Storyboard Showdown (Final Round – Winner Selection)
+// Description:
+// Participants must create a storyboard using AI-generated visuals based on a given theme or prompt. Judging will be based on creativity, coherence, storytelling, and prompt effectiveness.
 
-Judging Criteria:
-• Prompt clarity & structure
-• Creativity & originality
-• Accuracy to the given task
-• Visual consistency & storytelling
-• Effective use of AI tools`,
+// Judging Criteria:
+// • Prompt clarity & structure
+// • Creativity & originality
+// • Accuracy to the given task
+// • Visual consistency & storytelling
+// • Effective use of AI tools`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -61,7 +63,7 @@ Judging Criteria:
       'Only one submission per task/prompt is allowed unless stated otherwise.',
       'Organizers reserve the right to modify rules or round structure if required.',
     ],
-    contact: 'Anu Krina (8778296891) ,Kanika M(8667509641)',
+    contact: 'Anu Krina : +91 8778296891 ,Kanika M : +91 8667509641',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
     rewards: {
       first: '₹1500',
@@ -75,46 +77,53 @@ Judging Criteria:
     title: 'PODCAST MONOLOGUE',
     type: 'TECHNICAL',
     price: '',
-    description: `PODCAST MONOLOGUE:
+    description: `Spin It, Speak It, Win It!
+Step up to the mic and turn ideas into captivating solo podcasts!
+Spin the wheel, pick your concept, and deliver your talk under the clock fast thinking and creativity are your weapons.
+Each round challenges your clarity, spontaneity, and technical flair.
+No scripts, no retakes just pure talent and quick wit!
+From research to improve, show how brilliantly you can think and speak on your feet.
+Speak bold, think sharp, and let your voice take the spotlight!`,
 
-Rules:
-1. There are a total of 3 rounds in the game where players participate individually.
-2. The time given for preparation and the actual speech timings will vary among the rounds.
-3. The participants will be given 5 main topics and under each topic there will be 5 differing concepts related to it, which the participants will be speaking about.
-4. Participants' access to the internet will be allowed or restricted based on each round's rules.
-5. The participants will be provided with a laptop for the span of their preparation time and they will not be allowed to use their own devices.
-6. In addition to presenting their monologue, participants will be given certain constraints/tasks randomly assigned by the organizers during each round. These tasks must be followed simultaneously while delivering the monologue.
-The nature and difficulty of these tasks will vary from round to round and may be grouped based on the round (for example, performance-based, vocal, physical, or stylistic constraints). Exact tasks for each round will be revealed on the spot.
+// Rules:
+// Format: Individual participation across 3 rounds.
+// Equipment: Laptops are provided for preparation but personal devices are not allowed.
+// Tasks: You must perform a random constraint/task while delivering your monologue.
+// Variable Permissions:
+// ·	Round 1: Internet & AI tools allowed.
+// ·	Round 2: Internet allowed but AI tools prohibited.
+// ·	Round 3: No Internet and No AI tools.
+// Timing: Strict adherence to preparation and speaking limits (1-2 mins) is required to avoid point deductions.
 
-Game structure:
+// Game structure:
 
-Round 1:
-➢ Each participant can choose their own topic and then they will spin a wheel to pick a concept from that topic.
-➢ Each participant will have 3 minutes to prepare for the round after picking the concept.
-➢ Access to the internet and AI Tools is permitted in this round.
-➢ After preparation, they have to speak for exactly a minute.
+// Round 1:
+// ➢ Each participant can choose their own topic and then they will spin a wheel to pick a concept from that topic.
+// ➢ Each participant will have 3 minutes to prepare for the round after picking the concept.
+// ➢ Access to the internet and AI Tools is permitted in this round.
+// ➢ After preparation, they have to speak for exactly a minute.
 
-Round 2:
-➢ Each participant will be allotted a topic randomly by the organizers and then they will spin a wheel to pick a concept from that topic.
-➢ Each participant will have 3 minutes to prepare for the round after picking the concept.
-➢ Access to the internet is allowed but AI Tools is prohibited in this round.
-➢ After preparation, they have to speak for exactly a minute
+// Round 2:
+// ➢ Each participant will be allotted a topic randomly by the organizers and then they will spin a wheel to pick a concept from that topic.
+// ➢ Each participant will have 3 minutes to prepare for the round after picking the concept.
+// ➢ Access to the internet is allowed but AI Tools is prohibited in this round.
+// ➢ After preparation, they have to speak for exactly a minute
 
-Round 3:
-➢ Each participant can choose their own topic (even the one they already chose) and then they will spin a wheel to pick a concept from that topic.
-➢ Each participant will have 2 minutes to prepare for the round after picking the concept.
-➢ Access to the internet and AI Tools are both not allowed in this round.
-➢ After preparation, they have to speak for exactly two minutes
+// Round 3:
+// ➢ Each participant can choose their own topic (even the one they already chose) and then they will spin a wheel to pick a concept from that topic.
+// ➢ Each participant will have 2 minutes to prepare for the round after picking the concept.
+// ➢ Access to the internet and AI Tools are both not allowed in this round.
+// ➢ After preparation, they have to speak for exactly two minutes
 
-Judging Criteria:
-Participants will be judged on both:
-• The quality of their monologue (clarity, creativity, structure, engagement, and relevance to the topic)
-• How effectively they complete and incorporate the assigned task/constraint while speaking
-Failure to follow the assigned task may result in point deductions.
+// Judging Criteria:
+// Participants will be judged on both:
+// • The quality of their monologue (clarity, creativity, structure, engagement, and relevance to the topic)
+// • How effectively they complete and incorporate the assigned task/constraint while speaking
+// Failure to follow the assigned task may result in point deductions.
 
-NOTE:
-● Points will be taken off if the participant does not stick to the time limit.
-● The elimination in each round and the no. of slots will be based on the initial intake count.`,
+// NOTE:
+// ● Points will be taken off if the participant does not stick to the time limit.
+// ● The elimination in each round and the no. of slots will be based on the initial intake count.`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -123,14 +132,14 @@ NOTE:
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
-      'There are a total of 3 rounds in the game where players participate individually.',
-      'The time given for preparation and the actual speech timings will vary among the rounds.',
-      'The participants will be given 5 main topics and under each topic there will be 5 differing concepts related to it.',
-      'Participants\' access to the internet will be allowed or restricted based on each round\'s rules.',
-      'The participants will be provided with a laptop for their preparation.',
-      'Participants will be given certain constraints/tasks randomly assigned by the organizers during each round.',
+      'Format: Individual participation across 3 rounds.',
+      'Equipment: Laptops are provided for preparation but personal devices are not allowed.',
+      'Tasks: You must perform a random constraint/task while delivering your monologue.',
+      'Variable Permissions:·	Round 1: Internet & AI tools allowed. ·	Round 2: Internet allowed but AI tools prohibited.·	Round 3: No Internet and No AI tools.',
+'Timing: Strict adherence to preparation and speaking limits (1-2 mins) is required to avoid point deductions.',
+
     ],
-    contact: 'Shreya M (9384605252), Shweta K T S (9789055914)',
+    contact: 'Shreya M : +91 9384605252, Shweta K T S : +91 9789055914',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe11empF-2fIwwWBoVZTTxc3XY6RuKBwppsicvXYcSvds8nKg/viewform?usp=publish-editor',
     rewards: {
       winner: '₹1500',
@@ -143,31 +152,32 @@ NOTE:
     title: 'TECHIE XO',
     type: 'TECHNICAL',
     price: '',
-    description: `Techie XO is a high-energy technical event that blends the classic XO (Tic-Tac-Toe) game with technical and logical problem-solving. Participants compete one-on-one, where each move on the board is earned by correctly answering technical or logic-based questions. Success depends on a combination of game strategy, technical knowledge, and quick analytical thinking, making Techie XO an engaging and competitive test of both skill and intellect.
+    description: `Techie XO is a high-energy technical event that blends the classic XO (Tic-Tac-Toe) game with technical and logical problem-solving. Participants compete one-on-one, where each move on the board is earned by correctly answering technical or logic-based questions. Success depends on a combination of game strategy, technical knowledge, and quick analytical thinking, making Techie XO an engaging and competitive test of both skill and intellect. `
 
-Game Format:
-● All rounds follow a knockout format.
-● For each round, questions will be announced or displayed to all participants simultaneously.
-● Turns will be decided using a buzzer system.
-● Only the participant who correctly answers a question gets the chance to place their mark on the XO board.
-● If a participant answers incorrectly, the opponent gets a chance to answer and place the mark if their answer is correct.
-● If both participants answer incorrectly or do not answer, the turn is skipped.
+// Game Format:
+// ● All rounds follow a knockout format.
+// ● For each round, questions will be announced or displayed to all participants simultaneously.
+// ● Turns will be decided using a buzzer system.
+// ● Only the participant who correctly answers a question gets the chance to place their mark on the XO board.
+// ● If a participant answers incorrectly, the opponent gets a chance to answer and place the mark if their answer is correct.
+// ● If both participants answer incorrectly or do not answer, the turn is skipped.
 
-Board & Questions:
-● All preliminary rounds use a 3×3 XO board (9 questions).
-● The final round uses a 4×4 XO board (16 questions).
-● All questions are strictly based on technical knowledge.
+// Board & Questions:
+// ● All preliminary rounds use a 3×3 XO board (9 questions).
+// ● The final round uses a 4×4 XO board (16 questions).
+// ● All questions are strictly based on technical knowledge.
 
-Match Decisions:
-● If a match ends in a draw, the participant who has answered the highest number of questions correctly will qualify.
-● A leaderboard is maintained based on the number of moves used to win a game.
-● Participants who win using the least number of moves will rank higher on the leaderboard.
+// Match Decisions:
+// ● If a match ends in a draw, the participant who has answered the highest number of questions correctly will qualify.
+// ● A leaderboard is maintained based on the number of moves used to win a game.
+// ● Participants who win using the least number of moves will rank higher on the leaderboard.
 
-Final Round Special Rules:
-● Before each question in the final round, the team must decide which teammate will answer.
-● Only one question in the final round allows both teammates to answer together.
-● If the final match ends in a draw and both teams have answered the same number of questions correctly, tie-breaker questions will be asked.
-● In a tie-breaker, the participant who answers correctly gets a chance to remove one opponent’s mark and place their own mark in that position.`,
+// Final Round Special Rules:
+// ● Before each question in the final round, the team must decide which teammate will answer.
+// ● Only one question in the final round allows both teammates to answer together.
+// ● If the final match ends in a draw and both teams have answered the same number of questions correctly, tie-breaker questions will be asked.
+// ● In a tie-breaker, the participant who answers correctly gets a chance to remove one opponent’s mark and place their own mark in that position.`
+,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -198,42 +208,42 @@ Final Round Special Rules:
     title: 'TECH TAMASHA',
     type: 'TECHNICAL',
     price: '',
-    description: `Tech Tamasha is an exciting multi-round technical event designed to test participants’ tech knowledge, observation skills, creativity, and quick thinking through engaging and entertaining challenges. The event emphasizes thinking beyond the screen, combining knowledges, brings technology to life with thrilling rounds. It’s a stage where innovation meets excitement in a competitive yet fun atmosphere.
+    description: `Tech Tamasha is an exciting multi-round technical event designed to test participants’ tech knowledge, observation skills, creativity, and quick thinking through engaging and entertaining challenges. The event emphasizes thinking beyond the screen, combining knowledges, brings technology to life with thrilling rounds. It’s a stage where innovation meets excitement in a competitive yet fun atmosphere.`,
 
-Team Format
-Participants compete in teams (2 members per team).
-Each round eliminates teams based on performance.
+// Team Format
+// Participants compete in teams (2 members per team).
+// Each round eliminates teams based on performance.
 
-Round 1: Tech Logo Identification
-Time-Based Round
-Participants will be shown various technology-related logos on the screen.
-They must identify each logo correctly within a limited time.
-Scoring is based on the number of correct answers.
+// Round 1: Tech Logo Identification
+// Time-Based Round
+// Participants will be shown various technology-related logos on the screen.
+// They must identify each logo correctly within a limited time.
+// Scoring is based on the number of correct answers.
 
-Round 2: Tech Audio & Jumbled Words
-Dual Challenge Round
-⦁ Tech Audio Guessing: Participants listen to short technology-related audio clips and identify them correctly.
-⦁ Jumbled Words: Participants solve scrambled technical terms within the given time.
+// Round 2: Tech Audio & Jumbled Words
+// Dual Challenge Round
+// ⦁ Tech Audio Guessing: Participants listen to short technology-related audio clips and identify them correctly.
+// ⦁ Jumbled Words: Participants solve scrambled technical terms within the given time.
 
-Round 3: Pick, Draw & Guess
-Final & Fun Round
-One participant from the team picks a random technical term from a box and draws clues related to it.
-The other participant must guess the correct technical term based only on the drawing.
-RULES: No words, letters, numbers, or verbal hints are allowed.
+// Round 3: Pick, Draw & Guess
+// Final & Fun Round
+// One participant from the team picks a random technical term from a box and draws clues related to it.
+// The other participant must guess the correct technical term based only on the drawing.
+// RULES: No words, letters, numbers, or verbal hints are allowed.
 
-GENERAL RULES
-⦁ Team size: 2 participants.
-⦁ Event is time-bound for all rounds.
-⦁ No mobile phones or external help allowed.
-⦁ Answers must be given within the allotted time.
-⦁ No discussion with other teams during the event.
-⦁ In Round 3, no words, letters, numbers, or verbal hints are allowed while drawing.
-⦁ Judges’ decision is final.
-⦁ Any rule violation will lead to disqualification.
+// GENERAL RULES
+// ⦁ Team size: 2 participants.
+// ⦁ Event is time-bound for all rounds.
+// ⦁ No mobile phones or external help allowed.
+// ⦁ Answers must be given within the allotted time.
+// ⦁ No discussion with other teams during the event.
+// ⦁ In Round 3, no words, letters, numbers, or verbal hints are allowed while drawing.
+// ⦁ Judges’ decision is final.
+// ⦁ Any rule violation will lead to disqualification.
 
-Winning Criteria
-Teams with the highest scores and fastest correct answers advance.
-The final round determines the winner of Tech Tamasha`,
+// Winning Criteria
+// Teams with the highest scores and fastest correct answers advance.
+// The final round determines the winner of Tech Tamasha`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -248,7 +258,7 @@ The final round determines the winner of Tech Tamasha`,
       'Communication: No discussion with other teams is permitted.',
       'Elimination: Teams are eliminated after each round based on scores and speed.',
     ],
-    contact: 'Madhumitha S (9677649110), Dharun (9655115397)',
+    contact: 'Madhumitha S : +91 9677649110, Dharun : +91 9655115397',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSda54Zq4UWy5Be92FVe3gr_QyRBvKFfRhjGlE1DuoOnqhQdtQ/viewform?usp=publish-editor',
     rewards: {
       first: '₹1500',
@@ -262,13 +272,13 @@ The final round determines the winner of Tech Tamasha`,
     title: 'LOGIC RUSH',
     type: 'TECHNICAL',
     price: '',
-    description: `Logic Rush is a fast-paced one-on-one aptitude challenge where two players compete by solving six questions. Each correct answer gives a player the chance to burst their opponent’s balloon, inside every balloon is a dare, and that the opponent has to do it. The game continues in this solve-and-burst format, and the player with the most balloons left at the end emerges as the winner.
+    description: `Logic Rush is a fast-paced one-on-one aptitude challenge where two players compete by solving six questions. Each correct answer gives a player the chance to burst their opponent’s balloon, inside every balloon is a dare, and that the opponent has to do it. The game continues in this solve-and-burst format, and the player with the most balloons left at the end emerges as the winner.`,
 
-ROUND 1:
-Participants face medium‑level questions from topics like logical reasoning, lines and angles, riddles, and distance & speed. Matches are played in a one‑vs‑one format, with each player answering six questions. At the end of each match, the winner blasts the opponent’s balloon, revealing a dare. Balloon counts are tracked to decide who moves forward.
+// ROUND 1:
+// Participants face medium‑level questions from topics like logical reasoning, lines and angles, riddles, and distance & speed. Matches are played in a one‑vs‑one format, with each player answering six questions. At the end of each match, the winner blasts the opponent’s balloon, revealing a dare. Balloon counts are tracked to decide who moves forward.
 
-ROUND 2:
-Qualified teams from Round 1 face harder questions in the same topics. Again, matches are one‑vs‑one, with each player answering six questions. Winners continue to blast balloons, and the balloon count is used to determine the overall winner. The event concludes at the end of Round 2, where the final winner is announced.`,
+// ROUND 2:
+// Qualified teams from Round 1 face harder questions in the same topics. Again, matches are one‑vs‑one, with each player answering six questions. Winners continue to blast balloons, and the balloon count is used to determine the overall winner. The event concludes at the end of Round 2, where the final winner is announced.`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -314,7 +324,7 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
       'Documentation: Participants must document their strategy on a pipeline design sheet, which carries evaluation weightage.',
       'Submission: Final trained model files must be submitted within the time limit.',
     ],
-    contact: 'Eashwar Kumar T (9655771179), Latheesh Saran S (6382235520) ',
+    contact: 'Eashwar Kumar T : +91 9655771179, Latheesh Saran S : +91 6382235520 ',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdiHiwLYrlM1ICuEum-dB-Y_kf6scaehGCFlCj41kiQmOTFFA/viewform?usp=publish-editor',
     rewards: {
       internship: 'Exclusive Internship Opportunity for Top Performers',
@@ -328,26 +338,24 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     title: 'CODE EUPHORIA',
     type: 'TECHNICAL',
     price: '',
-    description: `This coding event is to test participants’ problem-solving skills, logical thinking, and coding efficiency. It is going to be held at HackerRank platform. There are two main rounds that evaluate their ability to analyse problems and implement optimal solutions under time constraints. Participants who crack the round 1 will be eligible for round 2. Winner will get an internship opportunity at a reputed organization. Certificates will be provided to all participants.
+    description: `This coding event is to test participants’ problem-solving skills, logical thinking, and coding efficiency. It is going to be held at HackerRank platform. There are two main rounds that evaluate their ability to analyse problems and implement optimal solutions under time constraints. Participants who crack the round 1 will be eligible for round 2. Winner will get an internship opportunity at a reputed organization. Certificates will be provided to all participants.`,
 
-Round 1: Preliminary Coding Round (Timeline: 1.30 hrs)
-Participants will be given four coding problems:
-➢ 2 Easy-level questions
-➢ 2 Medium-level questions
+// Round 1: Preliminary Coding Round (Timeline: 1.30 hrs)
+// Participants will be given four coding problems:
+// ➢ 2 Easy-level questions
+// ➢ 2 Medium-level questions
 
-Round 2: Final Coding Round (Timeline: 1.15 hrs)
-➢ 1 Medium-level question
-➢ 1 Hard-level question
+// Round 2: Final Coding Round (Timeline: 1.15 hrs)
+// ➢ 1 Medium-level question
+// ➢ 1 Hard-level question
 
-Winner Selection Criteria:
-➢ Optimal solution approach
-➢ Code efficiency
-➢ Submission time
-➢ Clean and readable code
-➢ Edge Case Handling
-➢ Fewer wrong submissions
-
-`,
+// Winner Selection Criteria:
+// ➢ Optimal solution approach
+// ➢ Code efficiency
+// ➢ Submission time
+// ➢ Clean and readable code
+// ➢ Edge Case Handling
+// ➢ Fewer wrong submissions
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
@@ -408,7 +416,7 @@ Winner Selection Criteria:
     eventRules: [
       'Rules will be updated soon.',
     ],
-    contact: 'Latheesh Saran: +916382235520',
+    contact: 'Latheesh Saran: +91 6382235520',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfTPXk5DLiM9YAEjPQE0mgkAo160mHM4wN9rvL2l4HR5Tbg7g/viewform?usp=publish-editor',
   },
   16: {
