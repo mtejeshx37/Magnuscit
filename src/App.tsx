@@ -11,6 +11,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { eventSlugMap } from './data/eventDetails';
 import { useParams, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { DisclaimerTicker } from './components/DisclaimerTicker';
 
 // Lazy load heavy home page sections
 //const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
@@ -49,8 +50,7 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden">
-      <Navigation />
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-32">
       <HeroSection />
       <PrimeDirectivesSection />
       <div id="events" className="content-visibility-auto">
@@ -86,11 +86,10 @@ function EventDetailPage() {
   };
 
   return (
-    <>
-      <Navigation />
+    <div className="pt-32">
       <EventDetail event={eventData} onBack={handleBackToEvents} />
       <Footer />
-    </>
+    </div>
   );
 }
 
@@ -108,8 +107,7 @@ function EventsListPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-20">
-      <Navigation />
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-32">
       <div className="container mx-auto px-4 py-12">
         <EventsSection
           onEventSelect={handleEventSelect}
@@ -125,6 +123,8 @@ export default function App() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
       <CustomCursor />
+      <Navigation />
+      <DisclaimerTicker />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<EventsListPage />} />

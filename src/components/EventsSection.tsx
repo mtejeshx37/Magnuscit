@@ -17,6 +17,7 @@ import cloudQuestImg from '../assets/cloud_quest_new.webp';
 import agenticAiImg from '../assets/agentic_ai_new.webp';
 import ideathonImg from '../assets/ideathon.webp';
 import adyaAiImg from '../assets/adya_ai.webp';
+import freeTagImg from '../assets/free_tag.png';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot, Trophy, TrendingUp } from 'lucide-react';
 
@@ -75,12 +76,21 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
         }
       }}
     >
+      {/* FREE Tag for Technical and Online Events */}
+      {(event.category === 'Technical' || event.category === 'Online') && (
+        <div className="absolute -top-4 -right-4 z-30 w-16 h-16 md:w-20 md:h-20 drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">
+          <img src={freeTagImg} alt="FREE" className="w-full h-full object-contain" />
+        </div>
+      )}
+
       {/* AI Recommended Badge */}
-      {event.aiRecommended && (
+      {event.aiRecommended && event.category !== 'Technical' && event.category !== 'Online' && (
         <div className="absolute -top-3 -right-3 z-20">
-          <div className="bg-gradient-to-r from-[#7000FF] to-[#9000FF] px-4 py-2 rounded-full border-2 border-[#7000FF] shadow-lg shadow-[#7000FF]/50 flex items-center gap-2 neon-glow">
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
+          {/* <div className="bg-gradient-to-r from-[#7000FF] to-[#9000FF] px-4 py-2 rounded-full border-2 border-[#7000FF] shadow-lg shadow-[#7000FF]/50 flex items-center gap-2 neon-glow">
+            <span className="text-white text-sm" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+              FREE
+            </span>
+          </div> */}
         </div>
       )}
 

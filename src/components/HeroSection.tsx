@@ -34,7 +34,7 @@ export function HeroSection() {
   const formatNumber = (num: number) => String(num).padStart(2, '0');
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="home">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32" id="home">
       {/* Background Image */}
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
