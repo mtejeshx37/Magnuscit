@@ -48,7 +48,7 @@ Judging Criteria:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -118,7 +118,7 @@ NOTE:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -171,7 +171,7 @@ Final Round Special Rules:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -237,7 +237,7 @@ The final round determines the winner of Tech Tamasha`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -272,7 +272,7 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -297,12 +297,12 @@ Qualified teams from Round 1 face harder questions in the same topics. Again, ma
     slug: 'accuracyarena',
     title: 'ACCURACY ARENA',
     type: 'TECHNICAL',
-    price: '',
+    price: '₹200',
     description: 'Accuracy Arena is a structured machine learning competition in which participants are provided with a dataset and are required to design, train, and optimize a predictive model. The objective is to achieve the highest possible accuracy based on a predefined evaluation metric. Submissions will be assessed on a standardized test dataset, and the participant or team with the best-performing model will be declared the winner and awarded prizes.',
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -345,11 +345,13 @@ Winner Selection Criteria:
 ➢ Submission time
 ➢ Clean and readable code
 ➢ Edge Case Handling
-➢ Fewer wrong submissions`,
+➢ Fewer wrong submissions
+
+`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -379,7 +381,7 @@ Winner Selection Criteria:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -399,7 +401,7 @@ Winner Selection Criteria:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -419,7 +421,7 @@ Winner Selection Criteria:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -439,7 +441,7 @@ Winner Selection Criteria:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -509,7 +511,7 @@ This workshop is designed for learners who want to truly understand computer vis
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -548,7 +550,7 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -592,7 +594,7 @@ Participants will understand core cloud concepts, observe real cloud deployments
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -628,7 +630,7 @@ Key Takeaways:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -667,7 +669,7 @@ Takeaways:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -685,15 +687,15 @@ Takeaways:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
     eventRules: [
       'Rules will be updated soon.',
     ],
-    contact: '',
-    registrationLink: '',
+    contact: 'Gauri Sudharsini P (8668000187) , Ananya I (7358372007)',
+    registrationLink: 'https://forms.gle/6oZqLZJZJZJZJZJZJ',
     rewards: {
       winner: '₹1500',
       runner: '₹1000'
@@ -709,7 +711,7 @@ Takeaways:
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],
@@ -717,7 +719,7 @@ Takeaways:
       'Rules will be revealed on the spot.',
     ],
     contact: 'Latheesh Saran S (6382235520)',
-    registrationLink: '',
+    registrationLink: 'https://forms.gle/qUdQTqVdDbAD6gbz8on',
     rewards: {
       winner: '₹1500',
       runner: '₹1000'
@@ -737,7 +739,7 @@ Whether you want to build a final year project or launch the next big SaaS, this
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
-      'Participants must wear the registration throughout the day.',
+      'Participants must wear the registration band throughout the day.',
       'Prior registration is mandatory to attend any event/workshops, either online or on-spot.',
       'Re-entry is not allowed, and the fee paid for any event/workshops is non-refundable.',
     ],

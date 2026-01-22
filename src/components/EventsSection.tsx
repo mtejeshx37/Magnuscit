@@ -80,9 +80,6 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
         <div className="absolute -top-3 -right-3 z-20">
           <div className="bg-gradient-to-r from-[#7000FF] to-[#9000FF] px-4 py-2 rounded-full border-2 border-[#7000FF] shadow-lg shadow-[#7000FF]/50 flex items-center gap-2 neon-glow">
             <Sparkles className="w-4 h-4 text-white" />
-            <span className="text-white text-sm" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-              AI Pick
-            </span>
           </div>
         </div>
       )}
