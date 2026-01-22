@@ -11,7 +11,7 @@ export const HeroSection = () => {
                 {/* Badge */}
                 <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium border border-blue-100">
                     <Sparkles className="w-4 h-4" />
-                    <span>National Conference • February 02, 2026 • Confirmation of Paper: Jan 31, 2026 • Chennai, India</span>
+                    <span>National Conference on Artificial Intelligence • February 02, 2026 • Chennai, India</span>
                 </div>
 
                 {/* Main Heading */}

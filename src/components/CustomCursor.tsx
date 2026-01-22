@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { useLocation } from 'react-router-dom';
 
 export function CustomCursor() {
+  const location = useLocation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [hoveredElementBounds, setHoveredElementBounds] = useState({
@@ -12,11 +14,15 @@ export function CustomCursor() {
   });
   const [isVisible, setIsVisible] = useState(false);
 
+  const isConferencePage = location.pathname.startsWith('/conference');
+
   useEffect(() => {
-    // Hide cursor on mobile/touch devices
+    // Hide cursor on mobile/touch devices or conference pages
     const isMobile = () => window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
 
-    if (isMobile()) {
+    if (isMobile() || isConferencePage) {
+      setIsVisible(false);
+      document.body.classList.remove('custom-cursor-enabled');
       return;
     }
 
@@ -60,9 +66,9 @@ export function CustomCursor() {
       window.removeEventListener('mouseover', handleMouseOver);
       document.body.classList.remove('custom-cursor-enabled');
     };
-  }, []);
+  }, [isConferencePage]);
 
-  if (!isVisible) return null;
+  if (!isVisible || isConferencePage) return null;
 
   const width = isHovering ? hoveredElementBounds.width : 32;
   const height = isHovering ? hoveredElementBounds.height : 32;

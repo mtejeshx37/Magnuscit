@@ -58,7 +58,7 @@ export function HackathonDetail() {
         ],
 
         contact: 'Latheesh Saran: +916382235520',
-        registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc_hackathon_registration/viewform'
+        registrationLink: 'https://athera-hackathon.vercel.app/'
     };
 
     return (
