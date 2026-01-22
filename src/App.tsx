@@ -13,7 +13,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
 // Lazy load heavy home page sections
-const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
+//const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
 const CTASection = lazy(() => import('./components/CTASection').then(m => ({ default: m.CTASection })));
 const VenueSection = lazy(() => import('./components/VenueSection').then(m => ({ default: m.VenueSection })));
 
@@ -59,9 +59,9 @@ function Home() {
           onConferenceSelect={handleConferenceSelect}
         />
       </div>
-      <div className="content-visibility-auto">
+      {/*<div className="content-visibility-auto">
         <TimelineSection />
-      </div>
+      </div>*/}
       <CTASection />
       <div className="content-visibility-auto">
         <AboutUsSection />

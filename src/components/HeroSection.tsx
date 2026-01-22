@@ -195,7 +195,7 @@ export function HeroSection() {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
+          {/*<motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -219,7 +219,7 @@ export function HeroSection() {
                 <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               </span>
             </motion.button>
-          </motion.div>
+          </motion.div>*/}
         </motion.div>
       </div>
     </div>
