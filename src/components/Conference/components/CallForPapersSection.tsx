@@ -67,7 +67,7 @@ export const CallForPapersSection = () => {
 
                         <div className="mt-auto bg-amber-50 text-amber-900 p-3 rounded-lg text-sm font-medium border border-amber-100 flex items-start gap-2">
                             <span className="text-amber-600 text-lg">★</span>
-                            <span className="mt-0.5">Cost will be 14k only to top 5 papers</span>
+                            <span className="mt-0.5">Amount: Rs.14,000 (only for top 5 papers)</span>
                         </div>
                     </div>
 
@@ -128,13 +128,13 @@ export const CallForPapersSection = () => {
                         </ul>
                         <div className="mt-auto bg-amber-50 text-amber-900 p-3 rounded-lg text-sm font-medium border border-amber-100 flex items-start gap-2">
                             <span className="text-amber-600 text-lg">★</span>
-                            <span className="mt-0.5">Cost will be 1.75k</span>
+                            <span className="mt-0.5">Amount: Rs. 1,750</span>
                         </div>
                     </div>
                 </div>
 
                 <p className="text-gray-600 leading-relaxed">
-                    The conference is hybrid, paper can be presented in online or offline.
+                    The conference is hybrid, paper can be presented online or offline.
                 </p>
             </div>
 
