@@ -48,7 +48,7 @@ export function Navigation() {
     { label: 'Home', href: '/#home' },
     { label: 'Prime Directives', href: '/#prime-directives' },
     { label: 'About Us', href: '/#about-us' },
-    { label: 'Schedule', href: '/#schedule' },
+    //{ label: 'Schedule', href: '/#schedule' },
     { label: 'Events', href: '/events' },
   ];
 

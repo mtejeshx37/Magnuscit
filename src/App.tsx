@@ -1,5 +1,5 @@
 import { Suspense, lazy, useLayoutEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
@@ -90,7 +90,7 @@ function EventDetailPage() {
   };
 
   return (
-    <div className="pt-32">
+    <div className="pt-[90]">
       <EventDetail event={eventData} onBack={handleBackToEvents} />
       <Footer />
     </div>
@@ -128,7 +128,7 @@ export default function App() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
       <CustomCursor />
-      <Navigation />
+      <ConditionalNavigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<EventsListPage />} />
@@ -139,4 +139,13 @@ export default function App() {
       </Routes>
     </Suspense>
   );
+}
+
+function ConditionalNavigation() {
+  const location = useLocation();
+  // Don't show the main navigation on the conference app page
+  if (location.pathname === '/conference') {
+    return null;
+  }
+  return <Navigation />;
 }
