@@ -511,17 +511,6 @@ What You will Learn:
 ● Understanding TinyGrad’s internal architecture.
 ● Building and training vision models from scratch using TinyGrad.
 
-Agenda:
-0 to 10 min: Introduction to Computer Vision & workshop setup.
-10 to 25 min: How computers see images: pixels, channels, and representations.
-25 to 45 min: Core vision theory: filters, convolution, feature extraction & CNN intuition.
-45 to 65 min: From theory to practice: neural networks for vision (hands-on walkthrough).
-65 to 85 min: Evolution of vision models: CNNs to Vision Transformers (practical insights).
-85 to 100 min: Framework comparison: PyTorch vs TensorFlow vs TinyGrad (with examples).
-100 to 120 min: TinyGrad architecture explained and code walkthrough.
-120 to 145 min: Building a computer vision model from scratch using TinyGrad.
-145 to 150 min: Wrap-up, learning roadmap & next steps.
-
 Takeaways:
 ● Strong intuition of how computer vision systems work.
 ● Clear understanding of CNNs and Vision Transformers.
@@ -553,13 +542,6 @@ This workshop is designed for learners who want to truly understand computer vis
     price: '₹250',
     description: `Workshop Objective:
 This workshop explains how blockchain works internally by focusing on transactions, blocks, and hashing. Participants will manually simulate a mini blockchain to understand immutability and trust.
-
-session Breakdown:
-1. Theory Session (45 mins): Transactions, blocks, hashes, and chaining
-2. Live Demo (30 mins): Hash generation and block linking
-3. Hands-On Session (60 mins): Build a mini blockchain manually
-4. Concept Reinforcement (15 mins): Real-world relevance
-5. Wrap-Up & Q&A (20 mins): Career scope and recap
 
 Hands-On Activity Overview:
 Participants will create transactions, generate hashes using SHA-256, combine them into blocks, link blocks using previous hashes, and test tampering to observe immutability.
@@ -606,14 +588,6 @@ Technical Concepts Covered (Beginner Level):
 • Networking – Secure communication between cloud resources
 • Database – Managing structured data in the cloud
 • AI & Machine Learning – Introduction to cloud-powered AI services such as chatbots, image recognition, and voice assistants
-
-Workshop Structure (2.5 – 3 Hours):
-• Icebreaker: Cloud in daily life
-• Cloud basics using college-life analogies
-• Live AWS/Azure platform walkthrough
-• Team-based cloud challenges
-• Simulation games & quizzes
-• Cloud careers & certification roadmap
 
 Learning Outcomes:
 Participants will understand core cloud concepts, observe real cloud deployments, collaborate on problem-solving tasks, and gain clarity on cloud career paths.`,
@@ -681,11 +655,6 @@ What You’ll Learn:
 3. Chatbots vs AI Agents: Clearly distinguish between a chatbot and an AI agent using simple examples and visual thinking.
 4. Core Building Blocks of an AI Agent: Explore the basic components of an agent: instructions, tools, decision flow, and simple memory.
 5. Build Your First AI Agent: Create a small but functional AI agent that can act, not just respond.
-
-Agenda (1.5-Hour Workshop):
-0:00 – 0:15 | Warm-Up & Introduction
-0:15 – 1:00 | Understanding Agentic AI
-1:00 – 1:30 | Hands-On: Build Your First Agent
 
 Takeaways:
 - A clear understanding of what Agentic AI is and why it matters
