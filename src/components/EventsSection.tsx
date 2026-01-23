@@ -17,7 +17,7 @@ import cloudQuestImg from '../assets/cloud_quest_new.webp';
 import agenticAiImg from '../assets/agentic_ai_new.webp';
 import ideathonImg from '../assets/ideathon.webp';
 import adyaAiImg from '../assets/adya_ai.webp';
-import freeTagImg from '../assets/free_tag.png';
+import techTradeWarsImg from '../assets/tech_trade_wars_auction.png';
 import { useState, useRef } from 'react';
 import { Sparkles, Code, Users, Cpu, Award, Camera, Palette, Feather, Eye, Link, Cloud, ShieldAlert, Bot, Trophy, TrendingUp } from 'lucide-react';
 
@@ -76,13 +76,6 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
         }
       }}
     >
-      {/* FREE Tag for Technical and Online Events 
-      {(event.category === 'Technical' || event.category === 'Online') && (
-        <div className="absolute -top-4 -right-4 z-30 w-16 h-16 md:w-20 md:h-20 drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">
-          <img src={freeTagImg} alt="FREE" className="w-full h-full object-contain" />
-        </div>
-      )} */}
-
       {/* AI Recommended Badge */}
       {event.aiRecommended && event.category !== 'Technical' && event.category !== 'Online' && (
         <div className="absolute -top-3 -right-3 z-20">
@@ -221,79 +214,6 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
 
 
     {
-      id: 7,
-      slug: 'promptpixel',
-      title: 'Prompt Pixel',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: promptPixelImg,
-      description: 'AI visuals and creative prompting challenge',
-      icon: Sparkles,
-      rewards: {
-        first: '₹1500',
-        second: '₹1000',
-        third: '₹750'
-      }
-    },
-    {
-      id: 8,
-      slug: 'podcastmonologue',
-      title: 'Podcast Monologue',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: podcastMonologueImg,
-      description: 'Spontaneous speaking on random tech topics',
-      icon: Users,
-      rewards: {
-        winner: '₹1500',
-        runner: '₹1000'
-      }
-    },
-    {
-      id: 9,
-      slug: 'techiexo',
-      title: 'Techie XO',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: techieXoImg,
-      description: 'Strategic XO game powered by tech trivia',
-      icon: Code,
-      rewards: {
-        first: '₹1500',
-        second: '₹1000',
-        third: '₹750'
-      }
-    },
-    {
-      id: 10,
-      slug: 'techtamasha',
-      title: 'Tech Tamasha',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: techTamashaImg,
-      description: 'Multi-round tech ecosystem challenge',
-      icon: Users,
-      rewards: {
-        first: '₹1500',
-        second: '₹1000',
-        third: '₹750'
-      }
-    },
-    {
-      id: 11,
-      slug: 'logicrush',
-      title: 'Logic Rush',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: logicRushImg,
-      description: 'Fast-paced aptitude and logic battle',
-      icon: Cpu,
-      rewards: {
-        winner: '₹2000',
-        runner: '₹1500'
-      }
-    },
-    {
       id: 12,
       slug: 'accuracyarena',
       title: 'Accuracy Arena',
@@ -324,34 +244,18 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       }
     },
     {
-      id: 14,
-      slug: 'lifeofwords',
-      title: 'Life of Words (Poetry)',
-      category: 'Online',
-      date: 'Jan 17, 2026',
-      image: lifeOfWordsImg,
-      description: 'Craft and share original poems',
-      icon: Feather, // Using Feather for writing/poetry
-    },
-    {
-      id: 15,
-      slug: 'exposure',
-      title: 'Exposure (Photography)',
-      category: 'Online',
-      date: 'Jan 17, 2026',
-      image: exposureImg,
-      description: 'Photography contest on a given theme',
-      icon: Camera,
-    },
-    {
-      id: 16,
-      slug: 'posterdesign',
-      title: 'Poster Design',
-      category: 'Online',
-      date: 'Jan 17, 2026',
-      image: posterDesignImg,
-      description: 'Creative poster design competition',
-      icon: Palette,
+      id: 23,
+      slug: 'ideathon',
+      title: 'Ideathon',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: ideathonImg,
+      description: 'Ideate, innovate, and inspire solutions',
+      icon: Sparkles,
+      rewards: {
+        winner: '₹1500',
+        runner: '₹1000'
+      }
     },
     {
       id: 17,
@@ -366,6 +270,93 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
         first: '₹1500',
         second: '₹1000',
         third: '₹750'
+      }
+    },
+    {
+      id: 11,
+      slug: 'logicrush',
+      title: 'Logic Rush',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: logicRushImg,
+      description: 'Fast-paced aptitude and logic battle',
+      icon: Cpu,
+      rewards: {
+        winner: '₹2000',
+        runner: '₹1500'
+      }
+    },
+    {
+      id: 8,
+      slug: 'podcastmonologue',
+      title: 'Podcast Monologue',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: podcastMonologueImg,
+      description: 'Spontaneous speaking on random tech topics',
+      icon: Users,
+      rewards: {
+        winner: '₹1500',
+        runner: '₹1000'
+      }
+    },
+    {
+      id: 7,
+      slug: 'promptpixel',
+      title: 'Prompt Pixel',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: promptPixelImg,
+      description: 'AI visuals and creative prompting challenge',
+      icon: Sparkles,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
+    },
+    {
+      id: 10,
+      slug: 'techtamasha',
+      title: 'Tech Tamasha',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: techTamashaImg,
+      description: 'Multi-round tech ecosystem challenge',
+      icon: Users,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
+    },
+    {
+      id: 9,
+      slug: 'techiexo',
+      title: 'Techie XO',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: techieXoImg,
+      description: 'Strategic XO game powered by tech trivia',
+      icon: Code,
+      rewards: {
+        first: '₹1500',
+        second: '₹1000',
+        third: '₹750'
+      }
+    },
+    {
+      id: 24,
+      slug: 'techtradewars',
+      title: 'Tech Trade Wars',
+      category: 'Technical',
+      date: 'Jan 16, 2026',
+      image: techTradeWarsImg,
+      description: 'Strategic battle of technical knowledge and trading',
+      icon: TrendingUp,
+      rewards: {
+        winner: '₹1500',
+        runner: '₹1000'
       }
     },
     {
@@ -419,34 +410,6 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       icon: Bot,
     },
     {
-      id: 23,
-      slug: 'ideathon',
-      title: 'Ideathon',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: ideathonImg,
-      description: 'Ideate, innovate, and inspire solutions',
-      icon: Sparkles,
-      rewards: {
-        winner: '₹1500',
-        runner: '₹1000'
-      }
-    },
-    {
-      id: 24,
-      slug: 'techtradewars',
-      title: 'Tech Trade Wars',
-      category: 'Technical',
-      date: 'Jan 16, 2026',
-      image: blockchainImg, // Using blockchainImg as a temporary placeholder instead of gallery2
-      description: 'Strategic battle of technical knowledge and trading',
-      icon: TrendingUp,
-      rewards: {
-        winner: '₹1500',
-        runner: '₹1000'
-      }
-    },
-    {
       id: 25,
       slug: 'adyaai',
       title: 'ADYA AI',
@@ -456,6 +419,36 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       description: 'The all-in-one no-code AI development platform',
       icon: Bot,
       aiRecommended: true,
+    },
+    {
+      id: 14,
+      slug: 'lifeofwords',
+      title: 'Life of Words (Poetry)',
+      category: 'Online',
+      date: 'Jan 17, 2026',
+      image: lifeOfWordsImg,
+      description: 'Craft and share original poems',
+      icon: Feather, // Using Feather for writing/poetry
+    },
+    {
+      id: 15,
+      slug: 'exposure',
+      title: 'Exposure (Photography)',
+      category: 'Online',
+      date: 'Jan 17, 2026',
+      image: exposureImg,
+      description: 'Photography contest on a given theme',
+      icon: Camera,
+    },
+    {
+      id: 16,
+      slug: 'posterdesign',
+      title: 'Poster Design',
+      category: 'Online',
+      date: 'Jan 17, 2026',
+      image: posterDesignImg,
+      description: 'Creative poster design competition',
+      icon: Palette,
     },
   ];
 
