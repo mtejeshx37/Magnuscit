@@ -61,13 +61,30 @@ export function PrimeDirectivesSection() {
     );
 }
 
+// Strict mobile detection hook - separate code path from generic responsive scaling
+function useMobileDetection() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return isMobile;
+}
 
 function FloatingCard({ event, color, delay, navigate }: { event: any, color: string, delay: number, navigate: any }) {
     const Icon = event.icon;
     const [text, setText] = useState("INITIATE_PROTOCOL");
     const [isHovering, setIsHovering] = useState(false);
+    const isMobile = useMobileDetection();
 
-    // Binary Decode Effect
+    // Binary Decode Effect - PRESERVED EXACTLY
     useEffect(() => {
         let interval: NodeJS.Timeout;
         if (isHovering) {
@@ -112,6 +129,11 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
         }
     };
 
+    // STRICT SEPARATION: Explicit platform-specific styling
+    const containerStyle = isMobile
+        ? {} // Mobile: No transform scaling to prevent overflow
+        : { transform: 'scale(1.3)' }; // Desktop: Preserve exact pixel-identical layout
+
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -132,7 +154,7 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
                 }
             }}
             className="w-full md:w-[48%] lg:w-[650px] relative group"
-            style={{ transform: 'scale(1.3)' }}
+            style={containerStyle}
         >
             {/* Breathing Glow Effect */}
             <motion.div
@@ -205,13 +227,26 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
                     <div className="flex items-center gap-4">
                         <button
                             onClick={handleClick}
-                            className="px-8 py-4 bg-gradient-to-r from-[#00D1FF] to-[#BD00FF] text-black rounded-full font-mono font-bold text-lg tracking-wider flex items-center gap-3 shadow-[0_0_20px_rgba(0,209,255,0.3)] hover:shadow-[0_0_30px_rgba(189,0,255,0.5)] hover:scale-105 transition-all duration-300 group/btn"
+                            className="px-6 py-3 bg-black text-white rounded-lg font-mono font-bold text-base tracking-wider flex items-center gap-2.5 transition-all duration-300 group/btn border-2"
+                            style={{
+                                // Whole button glows - border AND surface
+                                boxShadow: isHovering
+                                    ? `0 0 20px ${color}, inset 0 0 15px ${color}40`
+                                    : 'none',
+                                borderColor: isHovering ? color : 'rgba(255,255,255,0.2)'
+                            }}
+                            // Desktop: hover
                             onMouseEnter={() => setIsHovering(true)}
                             onMouseLeave={() => setIsHovering(false)}
+                            // Mobile: tap/active/focus
+                            onTouchStart={() => setIsHovering(true)}
+                            onTouchEnd={() => setIsHovering(false)}
+                            onFocus={() => setIsHovering(true)}
+                            onBlur={() => setIsHovering(false)}
                         >
-                            <Terminal className="w-5 h-5" />
-                            <span>{text}</span>
-                            <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                            <Terminal className="w-5 h-5" style={{ filter: isHovering ? `drop-shadow(0 0 4px ${color})` : 'none' }} />
+                            <span style={{ textShadow: isHovering ? `0 0 10px ${color}` : 'none' }}>{text}</span>
+                            <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" style={{ filter: isHovering ? `drop-shadow(0 0 4px ${color})` : 'none' }} />
                         </button>
                     </div>
                 </div>
