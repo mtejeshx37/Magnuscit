@@ -227,13 +227,14 @@ function FloatingCard({ event, color, delay, navigate }: { event: any, color: st
                     <div className="flex items-center gap-4">
                         <button
                             onClick={handleClick}
-                            className="px-6 py-3 bg-black text-white rounded-lg font-mono font-bold text-base tracking-wider flex items-center gap-2.5 transition-all duration-300 group/btn border-2"
+                            className="cursor-target px-6 py-3 text-white rounded-lg font-mono font-bold text-base tracking-wider flex items-center gap-2.5 transition-all duration-300 group/btn border-2"
                             style={{
-                                // Whole button glows - border AND surface
+                                // Button surface glows from within
+                                backgroundColor: isHovering ? `${color}30` : `${color}15`,
                                 boxShadow: isHovering
-                                    ? `0 0 20px ${color}, inset 0 0 15px ${color}40`
-                                    : 'none',
-                                borderColor: isHovering ? color : 'rgba(255,255,255,0.2)'
+                                    ? `0 0 25px ${color}, inset 0 0 20px ${color}60`
+                                    : `0 0 10px ${color}40, inset 0 0 10px ${color}20`,
+                                borderColor: isHovering ? color : `${color}40`
                             }}
                             // Desktop: hover
                             onMouseEnter={() => setIsHovering(true)}

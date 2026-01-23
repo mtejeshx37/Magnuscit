@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
@@ -7,9 +7,9 @@ const AboutUsSection = lazy(() => import('./components/AboutUsSection').then(m =
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
-import { CustomCursor } from './components/CustomCursor';
+import TargetCursor from './components/TargetCursor';
 import { eventSlugMap } from './data/eventDetails';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { DisclaimerTicker } from './components/DisclaimerTicker';
 
@@ -21,6 +21,7 @@ const VenueSection = lazy(() => import('./components/VenueSection').then(m => ({
 
 // Lazy load route components
 const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));
+
 const ConferenceDetail = lazy(() => import('./components/ConferenceDetail').then(module => ({ default: module.ConferenceDetail })));
 const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp'));
 
@@ -120,10 +121,33 @@ function EventsListPage() {
   );
 }
 
+// Wrapper to conditionally render TargetCursor based on route
+function CursorWrapper() {
+  const location = useLocation();
+
+  // Disable cursor on Conference and Hackathon pages
+  const isCursorDisabled =
+    location.pathname === '/conference' ||
+    location.pathname === '/hackathon';
+
+  if (isCursorDisabled) {
+    return null;
+  }
+
+  return (
+    <TargetCursor
+      spinDuration={2}
+      hideDefaultCursor
+      parallaxOn
+      hoverDuration={0.2}
+    />
+  );
+}
+
 export default function App() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
-      <CustomCursor />
+      <CursorWrapper />
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />

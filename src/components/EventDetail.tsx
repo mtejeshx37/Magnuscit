@@ -56,7 +56,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={onBack}
-          className="mb-8 flex items-center gap-2 px-6 py-3 glass-strong rounded-2xl border border-[#D500F9]/30 hover:border-[#D500F9]/60 transition-all text-white group"
+          className="cursor-target mb-8 flex items-center gap-2 px-6 py-3 glass-strong rounded-2xl border border-[#D500F9]/30 hover:border-[#D500F9]/60 transition-all text-white group"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           <span style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Back to Events</span>
@@ -244,7 +244,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="cursor-pointer inline-flex items-center gap-3 px-16 py-5 bg-gradient-to-r from-[#D500F9] to-[#9000FF] rounded-2xl shadow-2xl shadow-[#D500F9]/60 hover:shadow-[#D500F9]/80 transition-all duration-300 text-black text-xl group relative overflow-hidden neon-glow"
+              className="cursor-target cursor-pointer inline-flex items-center gap-3 px-16 py-5 bg-gradient-to-r from-[#D500F9] to-[#9000FF] rounded-2xl shadow-2xl shadow-[#D500F9]/60 hover:shadow-[#D500F9]/80 transition-all duration-300 text-black text-xl group relative overflow-hidden neon-glow"
               style={{ fontFamily: 'VT323, monospace' }}
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

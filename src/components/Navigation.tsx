@@ -109,7 +109,7 @@ export function Navigation() {
               <a
                 key={link.label}
                 href={link.href}
-                className="cursor-pointer text-white/80 hover:text-[#00D1FF] transition-colors duration-300 relative group text-sm uppercase tracking-widest"
+                className="cursor-target cursor-pointer text-white/80 hover:text-[#00D1FF] transition-colors duration-300 relative group text-sm uppercase tracking-widest"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
                 {link.label}
@@ -122,7 +122,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <motion.a
               href="#prime-directives"
-              className="relative px-6 py-2 overflow-hidden group flex items-center justify-center font-bold tracking-widest text-[#BD00FF]"
+              className="cursor-target relative px-6 py-2 overflow-hidden group flex items-center justify-center font-bold tracking-widest text-[#BD00FF]"
               style={{ fontFamily: 'JetBrains Mono, monospace', border: '1px solid transparent' }}
               onMouseEnter={() => setIsHoveringRegister(true)}
               onMouseLeave={() => setIsHoveringRegister(false)}
@@ -165,7 +165,7 @@ export function Navigation() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-white/80 hover:text-[#00D1FF] transition-colors duration-300 py-3 text-center tracking-widest border-b border-white/5"
+                  className="cursor-target block text-white/80 hover:text-[#00D1FF] transition-colors duration-300 py-3 text-center tracking-widest border-b border-white/5"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                 >
@@ -174,7 +174,7 @@ export function Navigation() {
               ))}
               <a
                 href="#prime-directives"
-                className="block text-[#BD00FF] font-bold hover:text-white transition-colors duration-300 py-3 text-center tracking-widest bg-[#BD00FF]/10 mt-4"
+                className="cursor-target block text-[#BD00FF] font-bold hover:text-white transition-colors duration-300 py-3 text-center tracking-widest bg-[#BD00FF]/10 mt-4"
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}
               >

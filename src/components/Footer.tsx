@@ -42,7 +42,7 @@ export function Footer() {
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="glass w-12 h-12 rounded-xl flex items-center justify-center border border-[#D500F9]/20 hover:border-[#D500F9]/50 transition-all duration-300 group"
+                  className="glass w-12 h-12 rounded-xl flex items-center justify-center border border-[#D500F9]/20 hover:border-[#D500F9]/50 transition-all duration-300 group cursor-target"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5 text-[#94A3B8] group-hover:text-[#D500F9] transition-colors" />
