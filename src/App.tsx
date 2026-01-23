@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
+import { Suspense, lazy, useEffect, useLayoutEffect, useState } from 'react';
 import { Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
@@ -9,6 +9,7 @@ import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
 import TargetCursor from './components/TargetCursor';
 import { eventSlugMap } from './data/eventDetails';
+import { PremiumLoader } from './components/PremiumLoader';
 import { DisclaimerTicker } from './components/DisclaimerTicker';
 
 // Lazy load heavy home page sections
@@ -148,18 +149,26 @@ function CursorWrapper() {
 }
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
-      <CursorWrapper />
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<EventsListPage />} />
-        <Route path="/conference-details" element={<ConferenceDetail />} />
-        <Route path="/conference" element={<ConferenceApp />} />
-        <Route path="/hackathon" element={<HackathonDetail />} />
-        <Route path="/:eventSlug" element={<EventDetailPage />} />
-      </Routes>
+      {isLoading ? (
+        <PremiumLoader onComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <CursorWrapper />
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<EventsListPage />} />
+            <Route path="/conference-details" element={<ConferenceDetail />} />
+            <Route path="/conference" element={<ConferenceApp />} />
+            <Route path="/hackathon" element={<HackathonDetail />} />
+            <Route path="/:eventSlug" element={<EventDetailPage />} />
+          </Routes>
+        </>
+      )}
     </Suspense>
   );
 }
