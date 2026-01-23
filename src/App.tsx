@@ -1,5 +1,5 @@
-import { Suspense, lazy } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
+import { Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
@@ -9,8 +9,6 @@ import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
 import TargetCursor from './components/TargetCursor';
 import { eventSlugMap } from './data/eventDetails';
-import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 import { DisclaimerTicker } from './components/DisclaimerTicker';
 
 // Lazy load heavy home page sections
@@ -27,20 +25,24 @@ const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp')
 
 function Home() {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
+  useLayoutEffect(() => {
+    const lastEvent = sessionStorage.getItem('lastClickedEvent');
+    if (lastEvent) {
+      const element = document.getElementById(lastEvent);
       if (element) {
+        // Use a short timeout to ensure the DOM is fully rendered
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+          element.scrollIntoView({ behavior: 'auto', block: 'center' });
+          sessionStorage.removeItem('lastClickedEvent');
+        }, 50);
       }
     }
-  }, [location.hash]);
+  }, []);
+
 
   const handleEventSelect = (slug: string) => {
+    sessionStorage.setItem('lastClickedEvent', slug);
     navigate(`/${slug}`);
     window.scrollTo(0, 0);
   };
@@ -84,7 +86,7 @@ function EventDetailPage() {
   }
 
   const handleBackToEvents = () => {
-    navigate('/events');
+    navigate(-1);
   };
 
   return (
@@ -99,6 +101,7 @@ function EventsListPage() {
   const navigate = useNavigate();
 
   const handleEventSelect = (slug: string) => {
+    sessionStorage.setItem('lastClickedEvent', slug);
     navigate(`/${slug}`);
     window.scrollTo(0, 0);
   };

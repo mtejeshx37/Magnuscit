@@ -59,7 +59,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           className="cursor-target mb-8 flex items-center gap-2 px-6 py-3 glass-strong rounded-2xl border border-[#D500F9]/30 hover:border-[#D500F9]/60 transition-all text-white group"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          <span style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Back to Events</span>
+          <span style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Back to Content</span>
         </motion.button>
 
         {/* Event Title & Type */}
