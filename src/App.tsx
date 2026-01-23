@@ -53,7 +53,7 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-[130px]">
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-[90px]">
       <DisclaimerTicker />
       <HeroSection />
       <PrimeDirectivesSection />
@@ -90,7 +90,7 @@ function EventDetailPage() {
   };
 
   return (
-    <div className="pt-[90]">
+    <div>
       <EventDetail event={eventData} onBack={handleBackToEvents} />
       <Footer />
     </div>
@@ -112,8 +112,8 @@ function EventsListPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-32">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-24">
+      <div className="container mx-auto px-4 pb-12">
         <EventsSection
           onEventSelect={handleEventSelect}
           onConferenceSelect={handleConferenceSelect}

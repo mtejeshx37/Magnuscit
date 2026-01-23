@@ -460,7 +460,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
   const filters: EventCategory[] = ['All', 'Technical', 'Workshops', 'Online'];
 
   return (
-    <div className="py-20 relative overflow-hidden">
+    <div className="py-10 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[#050505]" />
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#D500F9]/5 rounded-full blur-3xl" />
