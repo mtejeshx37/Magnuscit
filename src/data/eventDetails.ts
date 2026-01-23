@@ -493,7 +493,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
       'Participants who fail to follow the rules or any sort of plagiarism will be disqualified.',
     ],
     contact: 'Pragyasree K +91 9080144211 , Latheesh Saran S +91 6382235520',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScyezhlhsYnf_CNHzj8tXf_0s1a3S3VDaQ44eLvM9R1jCo-UA/viewform?usp=publish-editor',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdytOVnR_Fw8k7-KDWxS3X6u7JA0vji5K7NDUOh_n99oMS4ww/viewform?usp=publish-editor',
     rewards: {
       first: '₹1500',
       second: '₹1000',
