@@ -62,6 +62,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
 
   return (
     <motion.div
+      id={event.slug}
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
