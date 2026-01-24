@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { ArrowLeft, Phone, ShoppingCart, Check, Trophy, TrendingUp } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { ClosedEventModal } from './ClosedEventModal';
+import { useState } from 'react';
 
 interface EventDetailProps {
   event: {
@@ -13,6 +15,7 @@ interface EventDetailProps {
     eventRules?: string[];
     contact: string;
     registrationLink?: string;
+    isClosed?: boolean;
     rewards?: {
       winner?: string;
       runner?: string;
@@ -26,6 +29,7 @@ interface EventDetailProps {
 }
 
 export function EventDetail({ event, onBack }: EventDetailProps) {
+  const [showClosedModal, setShowClosedModal] = useState(!!event.isClosed);
   const { addToCart, isInCart } = useCart();
   const inCart = isInCart(event.id);
 
@@ -237,7 +241,14 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          {event.registrationLink ? (
+          {event.isClosed ? (
+            <div
+              className="inline-flex items-center gap-3 px-16 py-5 bg-gray-600/50 rounded-2xl shadow-none text-white/50 text-xl cursor-not-allowed opacity-70"
+              style={{ fontFamily: 'VT323, monospace' }}
+            >
+              <span className="relative">REGISTRATION CLOSED</span>
+            </div>
+          ) : event.registrationLink ? (
             <motion.a
               href={event.registrationLink}
               target="_blank"
@@ -285,6 +296,12 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           )}
         </motion.div>
       </div>
-    </div>
+
+      <ClosedEventModal
+        isOpen={showClosedModal}
+        onClose={() => setShowClosedModal(false)}
+        event={event}
+      />
+    </div >
   );
 }
