@@ -22,6 +22,7 @@ const VenueSection = lazy(() => import('./components/VenueSection').then(m => ({
 const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));
 const ConferenceDetail = lazy(() => import('./components/ConferenceDetail').then(module => ({ default: module.ConferenceDetail })));
 const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp'));
+const AdminQRTool = lazy(() => import('./components/AdminQRTool').then(m => ({ default: m.AdminQRTool })));
 
 function Home() {
   const navigate = useNavigate();
@@ -136,6 +137,7 @@ export default function App() {
         <Route path="/conference" element={<ConferenceApp />} />
         <Route path="/hackathon" element={<HackathonDetail />} />
         <Route path="/:eventSlug" element={<EventDetailPage />} />
+        <Route path="/admin/qr" element={<AdminQRTool />} />
       </Routes>
     </Suspense>
   );

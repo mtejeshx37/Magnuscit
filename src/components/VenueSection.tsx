@@ -1,4 +1,4 @@
-import { MapPin, Building2, Navigation as NavigationIcon } from 'lucide-react';
+      import { MapPin, Building2, Navigation as NavigationIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function VenueSection() {

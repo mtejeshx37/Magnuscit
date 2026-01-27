@@ -254,6 +254,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       description: 'Ideate, innovate, and inspire solutions',
       icon: Sparkles,
       rewards: {
+        internship: 'Exclusive Internship Opportunity for Top Performers',
         winner: '₹1500',
         runner: '₹1000'
       }
