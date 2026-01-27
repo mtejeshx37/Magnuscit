@@ -508,7 +508,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     slug: 'cvworkshop',
     title: 'CV (COMPUTER VISION) WORKSHOP',
     type: 'WORKSHOP',
-    price: '₹150',
+    price: '₹100',
     isClosed: false,
     description: `Workshop Overview:
 This is a hands-on Computer Vision workshop focused on building intuition and implementing vision models from scratch rather than just using black-box libraries. Participants will learn how computers see images, understand core vision concepts, explore modern CNNs and Vision Transformers, compare popular deep learning frameworks, and build working computer vision models using TinyGrad. The workshop bridges theory, architecture-level understanding, and practical implementation.
@@ -551,7 +551,7 @@ This workshop is designed for learners who want to truly understand computer vis
     slug: 'blockchain',
     title: 'INSIDE A BLOCKCHAIN',
     type: 'WORKSHOP',
-    price: '₹250',
+    price: '₹100',
     isClosed: false,
     description: `Workshop Objective:
 This workshop explains how blockchain works internally by focusing on transactions, blocks, and hashing. Participants will manually simulate a mini blockchain to understand immutability and trust.
@@ -584,7 +584,8 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     slug: 'cloudquest',
     title: 'CLOUD QUEST AZURE',
     type: 'WORKSHOP',
-    price: '₹250',
+    price: 'FREE',
+    priceNote: 'First 30 applicants FREE',
     isClosed: false,
     description: `Overview:
 Cloud computing powers everyday applications like Google Drive, Netflix, and Instagram. This workshop introduces absolute beginners to cloud computing using AWS / Microsoft Azure through teamwork, live demonstrations, and engaging challenges — no prior cloud knowledge required.
@@ -621,7 +622,7 @@ Participants will understand core cloud concepts, observe real cloud deployments
     slug: 'hackinggpt',
     title: 'HACKING GPT',
     type: 'WORKSHOP',
-    price: '₹250',
+    price: '₹100',
     isClosed: false,
     description: `Workshop Write-Up:
 Large Language Models like GPT are often seen as intelligent, safe, and reliable systems. But under the hood, they are predictive machines driven by prompts, patterns, and probabilities—and that makes them hackable in non-traditional ways.
@@ -658,7 +659,7 @@ Key Takeaways:
     slug: 'agenticai',
     title: 'AGENTIC AI',
     type: 'WORKSHOP',
-    price: '₹200',
+    price: '₹100',
     isClosed: false,
     description: `Workshop Overview:
 Chatbots are impressive — they can answer questions, write text, and hold conversations. But what if AI could do more than just reply? What if it could take actions, use tools, make decisions, and work toward goals?

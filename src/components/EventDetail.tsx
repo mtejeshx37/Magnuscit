@@ -10,6 +10,7 @@ interface EventDetailProps {
     title: string;
     type: string;
     price: string;
+    priceNote?: string;
     description: string;
     registrationRules: string[];
     eventRules?: string[];
@@ -34,7 +35,9 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
   const inCart = isInCart(event.id);
 
   // Extract numeric value from price string (e.g., "₹150" -> 150)
-  const priceValue = parseInt(event.price.replace(/[^\d]/g, ''));
+  const priceValue = (event.price.toUpperCase().includes('FREE') || (event.priceNote && event.priceNote.toUpperCase().includes('FREE')))
+    ? 0
+    : parseInt(event.price.replace(/[^\d]/g, '')) || 0;
 
   const handleAddToCart = () => {
     addToCart({
@@ -291,7 +294,10 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               <ShoppingCart className="w-6 h-6 relative" />
-              <span className="relative">REGISTER NOW • {event.price}</span>
+              <div className="flex flex-col items-center">
+                <span className="relative">REGISTER NOW • {event.price}</span>
+                {event.priceNote && <span className="text-[14px] opacity-70 leading-tight">{event.priceNote}</span>}
+              </div>
             </motion.button>
           )}
         </motion.div>

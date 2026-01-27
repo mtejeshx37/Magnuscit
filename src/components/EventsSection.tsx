@@ -31,6 +31,8 @@ interface Event {
   date: string;
   image: string;
   description: string;
+  price?: string;
+  priceNote?: string;
   aiRecommended?: boolean;
   icon: typeof Code;
   rewards?: {
@@ -133,6 +135,11 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
                 {event.title}
               </h3>
               <p className="text-[#94A3B8] text-lg mb-6">{event.description}</p>
+              {event.priceNote && (
+                <p className="text-[#D500F9] text-sm font-bold mb-4 uppercase tracking-wider neon-text">
+                  {event.priceNote}
+                </p>
+              )}
 
               {/* Rewards Display */}
               {event.rewards && (
@@ -390,6 +397,8 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       date: 'Jan 17, 2026',
       image: cloudQuestImg,
       description: 'Beginner-friendly Azure/AWS workshop',
+      price: '₹100',
+      priceNote: 'First 30 applicants FREE',
       icon: Cloud,
     },
     {
