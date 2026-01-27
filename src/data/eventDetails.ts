@@ -584,8 +584,8 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     slug: 'cloudquest',
     title: 'CLOUD QUEST AZURE',
     type: 'WORKSHOP',
-    price: 'FREE',
-    priceNote: 'First 30 applicants FREE',
+    price: '₹50',
+    priceNote: '',
     isClosed: false,
     description: `Overview:
 Cloud computing powers everyday applications like Google Drive, Netflix, and Instagram. This workshop introduces absolute beginners to cloud computing using AWS / Microsoft Azure through teamwork, live demonstrations, and engaging challenges — no prior cloud knowledge required.

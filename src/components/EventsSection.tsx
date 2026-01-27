@@ -397,8 +397,8 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       date: 'Jan 17, 2026',
       image: cloudQuestImg,
       description: 'Beginner-friendly Azure/AWS workshop',
-      price: '₹100',
-      priceNote: 'First 30 applicants FREE',
+      price: '₹50',
+      priceNote: '',
       icon: Cloud,
     },
     {
