@@ -7,6 +7,7 @@ import { useState } from 'react';
 interface EventDetailProps {
   event: {
     id: number;
+    slug: string;
     title: string;
     type: string;
     price: string;
@@ -78,21 +79,37 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
         >
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
             <h1
-              className="text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#D500F9] via-[#7000FF] to-[#D500F9]"
+              className={`text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r ${event.slug === 'adyaai' ? 'from-[#00F0FF] via-white to-[#00F0FF]' : 'from-[#D500F9] via-[#7000FF] to-[#D500F9]'}`}
               style={{ fontFamily: 'VT323, monospace', fontWeight: 900 }}
             >
               {event.title}
             </h1>
-            <div className="inline-block px-8 py-4 bg-gradient-to-r from-[#7000FF] to-[#9000FF] rounded-2xl shadow-lg shadow-[#7000FF]/50 neon-glow">
+            <div className={`inline-block px-8 py-4 bg-gradient-to-r ${event.slug === 'adyaai' ? 'from-[#00F0FF] to-[#0080FF]' : 'from-[#7000FF] to-[#9000FF]'} rounded-2xl shadow-lg ${event.slug === 'adyaai' ? 'shadow-[#00F0FF]/50' : 'shadow-[#7000FF]/50'} neon-glow`}>
               <span className="text-white text-2xl" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                 {event.type}
               </span>
             </div>
           </div>
 
-          <p className="text-lg text-[#94A3B8] leading-relaxed whitespace-pre-wrap">
-            {event.description}
-          </p>
+          <div className="text-lg text-[#94A3B8] leading-relaxed">
+            {(event.slug === 'adyaai' || event.id === 25) ? (
+              <div className="space-y-8">
+                <p className="whitespace-pre-wrap">{event.description.split(/ADYA AI is free/i)[0].trim()}</p>
+                <div className="my-12 p-10 glass-strong rounded-[2.5rem] border-2 border-[#00F0FF]/60 relative overflow-hidden shadow-[0_0_40px_rgba(0,240,255,0.3)] group/price">
+                  <div className="absolute inset-0 bg-[#00F0FF]/5 animate-pulse" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#00F0FF]/20 via-transparent to-[#00F0FF]/20 blur-xl opacity-50" />
+                  <h2
+                    className="relative block text-[#00F0FF] text-3xl md:text-5xl font-black text-center uppercase tracking-tighter leading-tight neon-glow-text"
+                    style={{ fontFamily: 'VT323, monospace', textShadow: '0 0 20px rgba(0,240,255,0.8)' }}
+                  >
+                    This workshop is free to attend for everyone though the fee to attend the magnus event is ₹100.
+                  </h2>
+                </div>
+              </div>
+            ) : (
+              <p className="whitespace-pre-wrap">{event.description}</p>
+            )}
+          </div>
         </motion.div>
 
         {/* Rewards & Recognition Section */}
@@ -120,9 +137,9 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
                   </div>
 
                   {event.rewards.internship && (
-                    <div className="flex items-center gap-3 text-[#00D9FF] bg-[#00D9FF]/10 px-4 py-2 rounded-xl border border-[#00D9FF]/20 w-fit mb-6">
-                      <TrendingUp className="w-5 h-5" />
-                      <span className="font-bold tracking-wide uppercase text-sm">
+                    <div className="flex items-center gap-4 text-[#00F0FF] bg-[#00F0FF]/5 px-8 py-6 rounded-[2rem] border border-[#00F0FF]/40 w-fit mb-8 shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+                      <TrendingUp className="w-8 h-8 flex-shrink-0" />
+                      <span className="font-bold tracking-wider uppercase text-2xl text-center leading-tight max-w-[400px]" style={{ fontFamily: 'VT323, monospace', textShadow: '0 0 15px #BD00FF' }}>
                         {event.rewards.internship}
                       </span>
                     </div>
@@ -262,7 +279,17 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
               style={{ fontFamily: 'VT323, monospace' }}
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <span className="relative">REGISTER NOW {event.price ? `• ${event.price}` : ''}</span>
+              <div className="flex flex-col items-center relative">
+                <span className="relative">REGISTER NOW {event.price ? `• ${event.price}` : ''}</span>
+                {event.priceNote && (
+                  <span
+                    className={`text-[16px] font-bold leading-tight mt-1 ${event.slug === 'adyaai' ? 'text-[#00F0FF] bg-[#00F0FF]/10 border-[#00F0FF]/30' : 'text-[#FF1CF7] bg-[#FF1CF7]/10 border-[#FF1CF7]/30'} px-3 py-1 rounded-lg border neon-glow-text`}
+                    style={{ fontFamily: 'VT323, monospace' }}
+                  >
+                    {event.priceNote}
+                  </span>
+                )}
+              </div>
             </motion.a>
           ) : event.type.toUpperCase() === 'WORKSHOP' ? (
             <motion.div
@@ -296,7 +323,14 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
               <ShoppingCart className="w-6 h-6 relative" />
               <div className="flex flex-col items-center">
                 <span className="relative">REGISTER NOW • {event.price}</span>
-                {event.priceNote && <span className="text-[14px] opacity-70 leading-tight">{event.priceNote}</span>}
+                {event.priceNote && (
+                  <span
+                    className={`text-[16px] font-bold leading-tight mt-1 ${event.slug === 'adyaai' ? 'text-[#00F0FF] bg-[#00F0FF]/10 border-[#00F0FF]/30' : 'text-[#FF1CF7] bg-[#FF1CF7]/10 border-[#FF1CF7]/30'} px-3 py-1 rounded-lg border neon-glow-text`}
+                    style={{ fontFamily: 'VT323, monospace' }}
+                  >
+                    {event.priceNote}
+                  </span>
+                )}
               </div>
             </motion.button>
           )}

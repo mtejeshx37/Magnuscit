@@ -1,5 +1,5 @@
 import citLogo from '../../../assets/logos/cit-logo.png';
-import magnusLogo from '../../../assets/logos/magnus-new.jpg';
+import magnusLogo from '../../../assets/logos/magnus-v2.jpg';
 
 export const Navbar = () => {
     const navItems = [

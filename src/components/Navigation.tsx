@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import magnusLogo from '../assets/dcd52a646246e269b48a4c5ca73dde025ecb3e39.webp';
+const logo = "/logo-v2.png";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -69,7 +69,7 @@ export function Navigation() {
           >
             <div className="relative w-12 h-12 flex items-center justify-center">
               <img
-                src={magnusLogo}
+                src={logo}
                 alt="Magnus Logo"
                 className="w-full h-full object-contain"
                 style={{

@@ -754,13 +754,15 @@ Takeaways:
     slug: 'adyaai',
     title: 'ADYA AI',
     type: 'WORKSHOP',
-    price: 'FREE',
+    priceNote: 'ADYA AI is free, whereas Magnus registration costs ₹50.',
     isClosed: false,
     description: `Building an AI product usually requires a team of backend engineers, DevOps specialists, and UI designers. But what if you could do it all yourself—in minutes?
 
 Enter Vanij, the all-in-one no-code AI development platform. In this session, we will dismantle the barriers to entry for AI innovation. You will move past simple chatbots and learn how to orchestrate complex AI workflows, build full-stack applications, and even deploy your own fine-tuned models without writing a single line of infrastructure code. 
 
-Whether you want to build a final year project or launch the next big SaaS, this workshop will hand you the keys to the factory.`,
+Whether you want to build a final year project or launch the next big SaaS, this workshop will hand you the keys to the factory.
+
+ADYA AI is free, whereas Magnus registration costs ₹50.`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',
