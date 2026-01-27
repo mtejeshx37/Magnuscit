@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /favicon.png
+Allow: /logo.png
+Allow: /logo-v2.png
+
+Sitemap: https://www.magnuscit.in/sitemap.xml
