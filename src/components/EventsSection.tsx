@@ -255,8 +255,9 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       icon: Sparkles,
       rewards: {
         internship: 'Exclusive Internship Opportunity for Top Performers',
-        winner: '₹1500',
-        runner: '₹1000'
+        first: '₹2500',
+        second: '₹1500',
+        third: '₹750'
       }
     },
     {
