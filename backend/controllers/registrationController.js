@@ -33,8 +33,19 @@ const registerUser = async (req, res) => {
         // Save to get the ID
         const savedRegistration = await newRegistration.save();
 
-        // Update QR data to be the ID or a combination of ID and other data
-        const uniqueQrData = savedRegistration._id.toString();
+        // Update QR data to be a rich JSON object
+        const qrPayload = {
+            app: "MAGNUS 2026",
+            action: "CHECK_IN",
+            user: {
+                id: savedRegistration._id.toString(),
+                name: savedRegistration.name,
+                email: savedRegistration.email
+            },
+            timestamp: new Date().toISOString()
+        };
+
+        const uniqueQrData = JSON.stringify(qrPayload);
         savedRegistration.qrData = uniqueQrData;
 
         // Generate QR Code URL just in case we want to store it (optional)
