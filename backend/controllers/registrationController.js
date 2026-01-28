@@ -1,136 +1,194 @@
 const Registration = require('../models/Registration');
-const { sendWelcomeEmailInternal } = require('./emailController');
+const { sendWelcomeEmailInternal, sendODLetterEmail } = require('./emailController');
+const { generateODLetter } = require('../utils/generateODLetter');
 const QRCode = require('qrcode');
 
-// @desc    Register a new user
-// @route   POST /api/registrations
-// @access  Public
+/* ======================================================
+   REGISTER USER (SERVERLESS SAFE)
+====================================================== */
 const registerUser = async (req, res) => {
-    const { name, email, eventId } = req.body;
+  const { name, email, eventId, eventName, eventDate } = req.body;
 
-    // Basic validation
-    if (!name || !email) {
-        return res.status(400).json({ message: 'Name and Email are required.' });
-    }
+  if (!name || !email) {
+    return res.status(400).json({ message: 'Name and Email are required.' });
+  }
+
+  try {
+    // Create registration record
+    const newRegistration = new Registration({
+      name,
+      email,
+      eventId,
+      eventName: eventName || 'MAGNUS 2026',
+      eventDate: eventDate || 'February 2nd, 2026',
+      qrData: 'temp'
+    });
+
+    const savedRegistration = await newRegistration.save();
+
+    // Generate unique QR payload
+    const qrPayload = {
+      app: "MAGNUS 2026",
+      action: "CHECK_IN",
+      user: {
+        id: savedRegistration._id.toString(),
+        name: savedRegistration.name,
+        email: savedRegistration.email
+      },
+      timestamp: new Date().toISOString()
+    };
+
+    const uniqueQrData = JSON.stringify(qrPayload);
+    savedRegistration.qrData = uniqueQrData;
+
+    // Generate OD Letter PDF as Buffer (no disk writes)
+    let odPdfBuffer = null;
 
     try {
-        // Check if user already registered for this event (optional logic)
-        // const existingRegistration = await Registration.findOne({ email, eventId });
-        // if (existingRegistration) {
-        //     return res.status(400).json({ message: 'User already registered for this event.' });
-        // }
+      odPdfBuffer = await generateODLetter({
+        studentName: name,
+        eventName: savedRegistration.eventName,
+        eventDate: savedRegistration.eventDate
+      });
+      console.log('✅ OD Letter generated (buffer)');
+    } catch (err) {
+      console.error("❌ OD generation failed:", err.message);
+    }
 
-        // Create initial QR data -> Can be unique ID or just email provided
-        // For now, let's use a temporary placeholder or generate a new Object ID first
+    await savedRegistration.save();
 
-        const newRegistration = new Registration({
-            name,
-            email,
-            eventId,
-            qrData: 'temp-placeholder'
-        });
+    // Send Email with attachments
+    try {
+      if (odPdfBuffer) {
+        await sendODLetterEmail(
+          name,
+          email,
+          uniqueQrData,
+          odPdfBuffer
+        );
+        savedRegistration.emailSent = true;
+        savedRegistration.odLetterSent = true;
+        console.log('✅ OD Letter email sent');
+      } else {
+        await sendWelcomeEmailInternal(name, email, uniqueQrData);
+        savedRegistration.emailSent = true;
+        savedRegistration.odLetterSent = false;
+        console.log('✅ Welcome email sent');
+      }
 
-        // Save to get the ID
-        const savedRegistration = await newRegistration.save();
+      await savedRegistration.save();
+    } catch (emailErr) {
+      console.error("❌ Email sending failed:", emailErr.message);
+      savedRegistration.emailSent = false;
+      savedRegistration.odLetterSent = false;
+      await savedRegistration.save();
+    }
 
-        // Update QR data to be a rich JSON object
-        const qrPayload = {
+    res.status(201).json({
+      message: 'Registration successful. Check your email for OD letter and QR code.',
+      registration: {
+        id: savedRegistration._id,
+        name: savedRegistration.name,
+        email: savedRegistration.email,
+        emailSent: savedRegistration.emailSent,
+        odLetterSent: savedRegistration.odLetterSent
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Registration error:', error);
+    res.status(500).json({ message: 'Server Error', error: error.message });
+  }
+};
+
+/* ======================================================
+   BULK SEND EMAILS (SERVERLESS SAFE)
+====================================================== */
+const sendBulkEmails = async (req, res) => {
+  try {
+    // Find users who haven't received emails
+    const pendingUsers = await Registration.find({ emailSent: { $ne: true } });
+
+    if (pendingUsers.length === 0) {
+      return res.json({
+        message: 'No pending users found',
+        sent: 0
+      });
+    }
+
+    let sent = 0;
+    let failed = 0;
+    const BATCH_SIZE = 50; // Process max 50 at a time (stay under timeout limits)
+
+    // Process in batches
+    const usersToProcess = pendingUsers.slice(0, BATCH_SIZE);
+    const totalPending = pendingUsers.length;
+
+    for (const user of usersToProcess) {
+      try {
+        // Generate QR data if missing
+        let qrData = user.qrData;
+
+        if (!qrData) {
+          const qrPayload = {
             app: "MAGNUS 2026",
             action: "CHECK_IN",
             user: {
-                id: savedRegistration._id.toString(),
-                name: savedRegistration.name,
-                email: savedRegistration.email
+              id: user._id.toString(),
+              name: user.name,
+              email: user.email
             },
             timestamp: new Date().toISOString()
-        };
-
-        const uniqueQrData = JSON.stringify(qrPayload);
-        savedRegistration.qrData = uniqueQrData;
-
-        // Generate QR Code URL just in case we want to store it (optional)
-        const qrCodeUrl = await QRCode.toDataURL(uniqueQrData);
-        savedRegistration.qrCodeUrl = qrCodeUrl;
-
-        await savedRegistration.save();
-
-        // Send Welcome Email
-        // We run this asynchronously. We can await it if we want to ensure email sent before response.
-        // For better UX during registration, usually we await unless we have a job queue.
-        try {
-            await sendWelcomeEmailInternal(name, email, uniqueQrData);
-            savedRegistration.emailSent = true;
-            await savedRegistration.save();
-        } catch (emailError) {
-            console.error('Failed to send welcome email during registration:', emailError);
-            // We still return success for registration, but maybe log this or return a warning?
-            // For now, let's proceed as success but log error.
+          };
+          qrData = JSON.stringify(qrPayload);
+          user.qrData = qrData;
+          await user.save();
         }
 
-        res.status(201).json({
-            message: 'Registration successful. Please check your email for the QR code.',
-            registration: {
-                id: savedRegistration._id,
-                name: savedRegistration.name,
-                email: savedRegistration.email,
-                qrData: savedRegistration.qrData,
-                emailSent: savedRegistration.emailSent
-            }
+        // Generate OD Letter PDF as Buffer
+        const odPdfBuffer = await generateODLetter({
+          studentName: user.name,
+          eventName: user.eventName,
+          eventDate: user.eventDate
         });
 
-    } catch (error) {
-        console.error('Error during registration:', error);
-        res.status(500).json({ message: 'Server Error', error: error.message });
+        // Send email with PDF buffer
+        await sendODLetterEmail(
+          user.name,
+          user.email,
+          qrData,
+          odPdfBuffer
+        );
+
+        user.emailSent = true;
+        user.odLetterSent = true;
+        await user.save();
+
+        console.log(`✅ Email sent to ${user.email}`);
+        sent++;
+
+        // Rate limiting
+        await new Promise(r => setTimeout(r, 1000));
+      } catch (err) {
+        console.error(`❌ Failed for ${user.email}:`, err.message);
+        failed++;
+      }
     }
+
+    res.json({
+      message: 'Bulk send completed (batch)',
+      batchSize: BATCH_SIZE,
+      sent,
+      failed,
+      processedThisBatch: sent + failed,
+      totalPending: totalPending,
+      remaining: totalPending - BATCH_SIZE,
+      note: totalPending > BATCH_SIZE ? `Run endpoint again to send next batch` : 'All emails sent!'
+    });
+  } catch (error) {
+    console.error('❌ Bulk send error:', error);
+    res.status(500).json({ message: 'Bulk send failed', error: error.message });
+  }
 };
 
-// @desc    Send bulk emails to users who haven't received them
-// @route   POST /api/registrations/bulk-send
-// @access  Public (should be protected)
-const sendBulkEmails = async (req, res) => {
-    try {
-        // Find users where emailSent is false (or undefined)
-        const users = await Registration.find({ emailSent: { $ne: true } });
-        console.log(`Found ${users.length} users pending email.`);
-
-        let sentCount = 0;
-        let failedCount = 0;
-
-        for (const user of users) {
-            try {
-                // Ensure we have QR data. If somehow missing, regenerate using ID
-                const qrData = user.qrData || user._id.toString();
-
-                await sendWelcomeEmailInternal(user.name, user.email, qrData);
-                console.log(`Email sent to: ${user.email}`);
-
-                user.emailSent = true;
-                await user.save();
-                sentCount++;
-
-                // 1 second delay to prevent blocking
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
-            } catch (err) {
-                console.error(`Failed to send to ${user.email}:`, err.message);
-                failedCount++;
-            }
-        }
-
-        res.json({
-            message: 'Bulk email process completed.',
-            totalProcessed: users.length,
-            successfullySent: sentCount,
-            failed: failedCount
-        });
-
-    } catch (error) {
-        console.error('Error in bulk send:', error);
-        res.status(500).json({ message: 'Server Error', error: error.message });
-    }
-};
-
-module.exports = {
-    registerUser,
-    sendBulkEmails
-};
+module.exports = { registerUser, sendBulkEmails };
