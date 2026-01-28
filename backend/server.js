@@ -1,11 +1,6 @@
 const express = require('express');
-const path = require('path');
 const dotenv = require('dotenv');
-
-// Load .env from backend directory explicitly
-const envPath = path.join(__dirname, '.env');
-dotenv.config({ path: envPath });
-
+dotenv.config();
 const connectDB = require('./config/db');
 
 connectDB();
@@ -26,9 +21,6 @@ app.use('/api/email', emailRoutes);
 
 const registrationRoutes = require('./routes/registrationRoutes');
 app.use('/api/registrations', registrationRoutes);
-
-const adminRoutes = require('./routes/adminRoutes');
-app.use('/api/admin', adminRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running...');
