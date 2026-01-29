@@ -1,16 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const registrationSchema = mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    eventId: { type: String, required: false }, // Optional, to link to a specific event if needed
-    qrData: { type: String, required: true },
-    qrCodeUrl: { type: String }, // Optional: store the data URL if we want to save it directly
-    emailSent: { type: Boolean, default: false }
-}, {
-    timestamps: true,
-});
+const registrationSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  eventId: { type: String, required: true },
 
-const Registration = mongoose.model('Registration', registrationSchema);
+  college: String,
+  eventName: String,
 
-module.exports = Registration;
+  // generated later
+  qrData: { type: String, default: null },
+
+  qrGenerated: { type: Boolean, default: false },
+  odGenerated: { type: Boolean, default: false },
+  emailSent: { type: Boolean, default: false },
+
+  source: { type: String, default: "google-form" }
+}, { timestamps: true });
+
+module.exports =
+  mongoose.models.Registration ||
+  mongoose.model("Registration", registrationSchema);

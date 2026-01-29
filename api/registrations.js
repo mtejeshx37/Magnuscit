@@ -1,16 +1,31 @@
-const mongoose = require('mongoose');
+const connectDB = require("../backend/config/db");
+const Registration = require("../backend/models/Registration");
 
-const registrationSchema = mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    eventId: { type: String, required: false }, // Optional, to link to a specific event if needed
-    qrData: { type: String, required: true },
-    qrCodeUrl: { type: String }, // Optional: store the data URL if we want to save it directly
-    emailSent: { type: Boolean, default: false }
-}, {
-    timestamps: true,
-});
+module.exports = async function handler(req, res) {
+  try {
+    if (req.method !== "POST") {
+      return res.status(405).json({ message: "Method not allowed" });
+    }
 
-const Registration = mongoose.model('Registration', registrationSchema);
+    await connectDB();
 
-module.exports = Registration;
+    const { name, email, eventId, college, eventName } = req.body || {};
+
+    if (!name || !email || !eventId) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    await Registration.create({
+      name,
+      email,
+      eventId,
+      college,
+      eventName
+    });
+
+    return res.status(201).json({ success: true });
+  } catch (err) {
+    console.error("Registration API error:", err);
+    return res.status(500).json({ error: err.message });
+  }
+};
