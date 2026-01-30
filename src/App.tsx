@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
+import { TitleSponsorSection } from './components/TitleSponsorSection';
 const AboutUsSection = lazy(() => import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection })));
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
@@ -57,6 +58,7 @@ function Home() {
     <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-[90px]">
       <DisclaimerTicker />
       <HeroSection />
+      <TitleSponsorSection />
       <PrimeDirectivesSection />
       <div id="events" className="content-visibility-auto scroll-mt-[130px]">
         <EventsSection

@@ -53,7 +53,7 @@ export function AdminQRTool() {
             // Use a small timeout to simulate network delay
             await new Promise(resolve => setTimeout(resolve, 1500));
 
-            const response = await fetch('http://localhost:5000/api/email/send-welcome', {
+            const response = await fetch('/api/email/send-welcome', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
