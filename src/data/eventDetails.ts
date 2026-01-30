@@ -695,7 +695,7 @@ Takeaways:
     title: 'IDEATHON',
     type: 'TECHNICAL',
     price: '',
-    isClosed: false,
+    isClosed: true,
     description: `Ideathon invites you to ideate, innovate, and inspire. Pitch creative solutions to real-world problems across technology, healthcare, finance, and social impact. This event encourages participants to think critically, collaborate effectively, and design ideas that are practical, impactful, and socially responsible. Whether you’re solving everyday challenges or reimagining future systems, Ideathon is the perfect platform to turn your ideas into meaningful innovations.`,
     registrationRules: [
       'Only college students are permitted to participate.',
