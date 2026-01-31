@@ -7,6 +7,7 @@ export const eventDetailsData = {
     title: 'PROMPT PIXEL',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: `An innovative event where participants type creative prompts and extract critical information from AI-generated visuals and tackle a series of engaging tasks and navigate to their final destination.`,
 
     // General rules:
@@ -75,6 +76,7 @@ export const eventDetailsData = {
     title: 'PODCAST MONOLOGUE',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: `Spin It, Speak It, Win It!
 Step up to the mic and turn ideas into captivating solo podcasts!
 Spin the wheel, pick your concept, and deliver your talk under the clockâ€”fast thinking and creativity are your weapons.
@@ -150,6 +152,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'TECHIE XO',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: `Techie XO is a high-energy technical event that blends the classic XO (Tic-Tac-Toe) game with technical and logical problem-solving. Participants compete one-on-one, where each move on the board is earned by correctly answering technical or logic-based questions. Success depends on a combination of game strategy, technical knowledge, and quick analytical thinking, making Techie XO an engaging and competitive test of both skill and intellect.`,
 
     // Game Format:
@@ -205,6 +208,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'TECH TAMASHA',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: `Tech Tamasha is an exciting multi-round technical event designed to test participants’ tech knowledge, observation skills, creativity, and quick thinking through engaging and entertaining challenges. The event emphasizes thinking beyond the screen, combining knowledges, brings technology to life with thrilling rounds. It’s a stage where innovation meets excitement in a competitive yet fun atmosphere.`,
 
     // Team Format
@@ -269,6 +273,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'LOGIC RUSH',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: `Logic Rush is a fast-paced one-on-one aptitude challenge where two players compete by solving six questions. Each correct answer gives a player the chance to burst their opponent’s balloon, inside every balloon is a dare, and that the opponent has to do it. The game continues in this solve-and-burst format, and the player with the most balloons left at the end emerges as the winner.`,
 
     // ROUND 1:
@@ -305,6 +310,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'ACCURACY ARENA',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: 'Accuracy Arena is a structured machine learning competition in which participants are provided with a dataset and are required to design, train, and optimize a predictive model. The objective is to achieve the highest possible accuracy based on a predefined evaluation metric. Submissions will be assessed on a standardized test dataset, and the participant or team with the best-performing model will be declared the winner and awarded prizes.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -335,6 +341,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'CODE EUPHORIA',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: `This coding event is to test participants’ problem-solving skills, logical thinking, and coding efficiency. It is going to be held at HackerRank platform. There are two main rounds that evaluate their ability to analyse problems and implement optimal solutions under time constraints. Participants who crack the round 1 will be eligible for round 2. Winner will get an internship opportunity at a reputed organization. Certificates will be provided to all participants.`,
 
     // Round 1: Preliminary Coding Round (Timeline: 1.30 hrs)
@@ -363,12 +370,12 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
       'Re-entry is not allowed, and the fee paid for workshops are non-refundable.',
     ],
     eventRules: [
-      'Format: Individual participation only of 4-hour duration.',
-      'Environment: All work must be done on organizer-provided systems using the T4 GPU engine.',
-      'Resources: Only provided datasets and initial code are allowed; external data/code is prohibited.',
-      'No AI Tools: Use of AI for code generation, debugging, or model design is strictly banned.',
-      'Documentation: Participants must document their strategy on a pipeline design sheet, which carries evaluation weightage.',
-      'Submission: Final trained model files must be submitted within the time limit',
+      'Participants must follow the instructions given by coordinators at all times.',
+      'Participants may code in any of the programming languages.',
+      'They must code individually.',
+      'Any form of plagiarism, copying, or unfair means will result in immediate disqualification.',
+      'Use of mobile phones, internet search, or external help is strictly prohibited unless stated otherwise.',
+      'AI-based code generation tools are not permitted during the contest.',
     ],
     contact: 'Kavya M +91 9043102445 , Pavithra R +91 8939897569',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeHejC7wNrgbZDDRh4gmxks3rs1T9WgPfCdiUB9VSqWkTHPeQ/viewform?usp=publish-editor',
@@ -384,6 +391,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'LIFE OF WORDS (POETRY)',
     type: 'ONLINE',
     price: '',
+    isClosed: false,
     description: 'Participants craft and share their original poems. This event offers a platform for poets to showcase their talent and connect with an audience through the power of words.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -413,6 +421,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'EXPOSURE (PHOTOGRAPHY)',
     type: 'ONLINE',
     price: '',
+    isClosed: false,
     description: 'Participants showcase their creativity by capturing stunning photographs based on a given theme. This event provides an excellent platform for photographers to display their talent and share their unique perspectives.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -444,6 +453,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'POSTER DESIGN',
     type: 'ONLINE',
     price: '',
+    isClosed: false,
     description: 'Participants showcase their creativity by designing visually appealing posters of their choice. This event provides a platform for designers to express ideas freely through colors, typography, and layout, highlighting the power of visual communication.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -471,6 +481,7 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     title: 'PROTOPITCH',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: 'ProtoPitch is a hands-on design challenge aimed at testing students creativity, problem-solving skills, and UI/UX thinking through rapid prototyping. Participants will use Figma to design a website based on a given real-world problem statement. The event encourages innovation,teamwork, and effective visual communication under time constraints.This event is ideal for students interested in design, product thinking, UI/UX, and technology,regardless of prior professional experience.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -497,7 +508,8 @@ Speak bold, think sharp, and let your voice take the spotlight!`,
     slug: 'cvworkshop',
     title: 'CV (COMPUTER VISION) WORKSHOP',
     type: 'WORKSHOP',
-    price: '₹150',
+    price: '₹100',
+    isClosed: false,
     description: `Workshop Overview:
 This is a hands-on Computer Vision workshop focused on building intuition and implementing vision models from scratch rather than just using black-box libraries. Participants will learn how computers see images, understand core vision concepts, explore modern CNNs and Vision Transformers, compare popular deep learning frameworks, and build working computer vision models using TinyGrad. The workshop bridges theory, architecture-level understanding, and practical implementation.
 
@@ -510,17 +522,6 @@ What You will Learn:
 ● Differences between PyTorch, TensorFlow, and TinyGrad.
 ● Understanding TinyGrad’s internal architecture.
 ● Building and training vision models from scratch using TinyGrad.
-
-Agenda:
-0 to 10 min: Introduction to Computer Vision & workshop setup.
-10 to 25 min: How computers see images: pixels, channels, and representations.
-25 to 45 min: Core vision theory: filters, convolution, feature extraction & CNN intuition.
-45 to 65 min: From theory to practice: neural networks for vision (hands-on walkthrough).
-65 to 85 min: Evolution of vision models: CNNs to Vision Transformers (practical insights).
-85 to 100 min: Framework comparison: PyTorch vs TensorFlow vs TinyGrad (with examples).
-100 to 120 min: TinyGrad architecture explained and code walkthrough.
-120 to 145 min: Building a computer vision model from scratch using TinyGrad.
-145 to 150 min: Wrap-up, learning roadmap & next steps.
 
 Takeaways:
 ● Strong intuition of how computer vision systems work.
@@ -550,16 +551,10 @@ This workshop is designed for learners who want to truly understand computer vis
     slug: 'blockchain',
     title: 'INSIDE A BLOCKCHAIN',
     type: 'WORKSHOP',
-    price: '₹250',
+    price: '₹100',
+    isClosed: false,
     description: `Workshop Objective:
 This workshop explains how blockchain works internally by focusing on transactions, blocks, and hashing. Participants will manually simulate a mini blockchain to understand immutability and trust.
-
-session Breakdown:
-1. Theory Session (45 mins): Transactions, blocks, hashes, and chaining
-2. Live Demo (30 mins): Hash generation and block linking
-3. Hands-On Session (60 mins): Build a mini blockchain manually
-4. Concept Reinforcement (15 mins): Real-world relevance
-5. Wrap-Up & Q&A (20 mins): Career scope and recap
 
 Hands-On Activity Overview:
 Participants will create transactions, generate hashes using SHA-256, combine them into blocks, link blocks using previous hashes, and test tampering to observe immutability.
@@ -589,7 +584,9 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     slug: 'cloudquest',
     title: 'CLOUD QUEST AZURE',
     type: 'WORKSHOP',
-    price: '₹250',
+    price: '₹100',
+    priceNote: '',
+    isClosed: false,
     description: `Overview:
 Cloud computing powers everyday applications like Google Drive, Netflix, and Instagram. This workshop introduces absolute beginners to cloud computing using AWS / Microsoft Azure through teamwork, live demonstrations, and engaging challenges — no prior cloud knowledge required.
 
@@ -606,14 +603,6 @@ Technical Concepts Covered (Beginner Level):
 • Networking – Secure communication between cloud resources
 • Database – Managing structured data in the cloud
 • AI & Machine Learning – Introduction to cloud-powered AI services such as chatbots, image recognition, and voice assistants
-
-Workshop Structure (2.5 – 3 Hours):
-• Icebreaker: Cloud in daily life
-• Cloud basics using college-life analogies
-• Live AWS/Azure platform walkthrough
-• Team-based cloud challenges
-• Simulation games & quizzes
-• Cloud careers & certification roadmap
 
 Learning Outcomes:
 Participants will understand core cloud concepts, observe real cloud deployments, collaborate on problem-solving tasks, and gain clarity on cloud career paths.`,
@@ -633,7 +622,8 @@ Participants will understand core cloud concepts, observe real cloud deployments
     slug: 'hackinggpt',
     title: 'HACKING GPT',
     type: 'WORKSHOP',
-    price: '₹250',
+    price: '₹100',
+    isClosed: false,
     description: `Workshop Write-Up:
 Large Language Models like GPT are often seen as intelligent, safe, and reliable systems. But under the hood, they are predictive machines driven by prompts, patterns, and probabilities—and that makes them hackable in non-traditional ways.
 This workshop dives into the concept of hacking GPT, not by exploiting servers or writing malware, but by manipulating behavior through language itself. Participants will explore how carefully crafted prompts can bypass restrictions, influence outputs, extract unintended information, or cause the model to behave in unsafe or misleading ways.
@@ -669,7 +659,8 @@ Key Takeaways:
     slug: 'agenticai',
     title: 'AGENTIC AI',
     type: 'WORKSHOP',
-    price: '₹200',
+    price: '₹100',
+    isClosed: false,
     description: `Workshop Overview:
 Chatbots are impressive — they can answer questions, write text, and hold conversations. But what if AI could do more than just reply? What if it could take actions, use tools, make decisions, and work toward goals?
 That’s where Agentic AI comes in. In this beginner-friendly workshop, you’ll be introduced to the world of AI agents — systems that go beyond chatting and actually act. You’ll learn how modern AI agents think, plan, and interact with tools, and by the end of the session, you’ll build your very first AI agent.
@@ -681,11 +672,6 @@ What You’ll Learn:
 3. Chatbots vs AI Agents: Clearly distinguish between a chatbot and an AI agent using simple examples and visual thinking.
 4. Core Building Blocks of an AI Agent: Explore the basic components of an agent: instructions, tools, decision flow, and simple memory.
 5. Build Your First AI Agent: Create a small but functional AI agent that can act, not just respond.
-
-Agenda (1.5-Hour Workshop):
-0:00 – 0:15 | Warm-Up & Introduction
-0:15 – 1:00 | Understanding Agentic AI
-1:00 – 1:30 | Hands-On: Build Your First Agent
 
 Takeaways:
 - A clear understanding of what Agentic AI is and why it matters
@@ -709,6 +695,7 @@ Takeaways:
     title: 'IDEATHON',
     type: 'TECHNICAL',
     price: '',
+    isClosed: true,
     description: `Ideathon invites you to ideate, innovate, and inspire. Pitch creative solutions to real-world problems across technology, healthcare, finance, and social impact. This event encourages participants to think critically, collaborate effectively, and design ideas that are practical, impactful, and socially responsible. Whether you’re solving everyday challenges or reimagining future systems, Ideathon is the perfect platform to turn your ideas into meaningful innovations.`,
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -725,8 +712,10 @@ Takeaways:
     contact: 'Gauri Sudharsini P +91 8668000187 , Ananya I +91 7358372007',
     registrationLink: 'https://forms.gle/BgAG4c4EN1naqsCk6',
     rewards: {
-      winner: '₹1500',
-      runner: '₹1000'
+      internship: 'Exclusive Internship Opportunity for Top Performers',
+      first: '₹2500',
+      second: '₹1500',
+      third: '₹750',
     },
   },
   24: {
@@ -735,6 +724,7 @@ Takeaways:
     title: 'TECH TRADE WARS',
     type: 'TECHNICAL',
     price: '',
+    isClosed: false,
     description: 'TechTrade-Wars is a highly technical auction-based event where teams compete to build the best franchise team through a real auction-style bidding process, similar to professional franchise auctions. The event blends technical intelligence, speed, and strategy, making it both competitive and highly engaging. The unique twist of TechTrade-Wars is that bidding success depends on technical knowledge. Teams can secure players only by answering technology-in-sports based technical questions,ensuring that technical skills play the most important role throughout the event.',
     registrationRules: [
       'Only college students are permitted to participate.',
@@ -764,12 +754,15 @@ Takeaways:
     slug: 'adyaai',
     title: 'ADYA AI',
     type: 'WORKSHOP',
-    price: 'FREE',
+    priceNote: 'ADYA AI is free, whereas Magnus registration costs ₹50.',
+    isClosed: false,
     description: `Building an AI product usually requires a team of backend engineers, DevOps specialists, and UI designers. But what if you could do it all yourself—in minutes?
 
 Enter Vanij, the all-in-one no-code AI development platform. In this session, we will dismantle the barriers to entry for AI innovation. You will move past simple chatbots and learn how to orchestrate complex AI workflows, build full-stack applications, and even deploy your own fine-tuned models without writing a single line of infrastructure code. 
 
-Whether you want to build a final year project or launch the next big SaaS, this workshop will hand you the keys to the factory.`,
+Whether you want to build a final year project or launch the next big SaaS, this workshop will hand you the keys to the factory.
+
+ADYA AI is free, whereas Magnus registration costs ₹50.`,
     registrationRules: [
       'Only college students are permitted to participate.',
       'A valid college ID is mandatory.',

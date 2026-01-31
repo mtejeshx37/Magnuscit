@@ -1,9 +1,10 @@
-import { Suspense, lazy, useEffect, useLayoutEffect, useState } from 'react';
+import { Suspense, lazy, useLayoutEffect, useState } from 'react';
 import { Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
+
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
-const AboutUsSection = lazy(() => import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection })));
+import { TitleSponsorSection } from './components/TitleSponsorSection';
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
@@ -12,17 +13,28 @@ import { eventSlugMap } from './data/eventDetails';
 import { PremiumLoader } from './components/PremiumLoader';
 import { DisclaimerTicker } from './components/DisclaimerTicker';
 
-// Lazy load heavy home page sections
-//const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
-const CTASection = lazy(() => import('./components/CTASection').then(m => ({ default: m.CTASection })));
-const VenueSection = lazy(() => import('./components/VenueSection').then(m => ({ default: m.VenueSection })));
+// Lazy-loaded sections
+const AboutUsSection = lazy(() =>
+  import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection }))
+);
+const CTASection = lazy(() =>
+  import('./components/CTASection').then(m => ({ default: m.CTASection }))
+);
+const VenueSection = lazy(() =>
+  import('./components/VenueSection').then(m => ({ default: m.VenueSection }))
+);
 
-
-// Lazy load route components
-const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));
-
-const ConferenceDetail = lazy(() => import('./components/ConferenceDetail').then(module => ({ default: module.ConferenceDetail })));
+// Lazy-loaded routes
+const HackathonDetail = lazy(() =>
+  import('./components/HackathonDetail').then(m => ({ default: m.HackathonDetail }))
+);
+const ConferenceDetail = lazy(() =>
+  import('./components/ConferenceDetail').then(m => ({ default: m.ConferenceDetail }))
+);
 const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp'));
+const AdminQRTool = lazy(() =>
+  import('./components/AdminQRTool').then(m => ({ default: m.AdminQRTool }))
+);
 
 function Home() {
   const navigate = useNavigate();
@@ -32,7 +44,6 @@ function Home() {
     if (lastEvent) {
       const element = document.getElementById(lastEvent);
       if (element) {
-        // Use a short timeout to ensure the DOM is fully rendered
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'auto', block: 'center' });
           sessionStorage.removeItem('lastClickedEvent');
@@ -40,7 +51,6 @@ function Home() {
       }
     }
   }, []);
-
 
   const handleEventSelect = (slug: string) => {
     sessionStorage.setItem('lastClickedEvent', slug);
@@ -54,9 +64,10 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-[130px]">
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-[90px]">
       <DisclaimerTicker />
       <HeroSection />
+      <TitleSponsorSection />
       <PrimeDirectivesSection />
       <div id="events" className="content-visibility-auto scroll-mt-[130px]">
         <EventsSection
@@ -64,9 +75,6 @@ function Home() {
           onConferenceSelect={handleConferenceSelect}
         />
       </div>
-      {/*<div className="content-visibility-auto">
-        <TimelineSection />
-      </div>*/}
       <CTASection />
       <div className="content-visibility-auto">
         <AboutUsSection />
@@ -83,16 +91,16 @@ function EventDetailPage() {
   const eventData = eventSlug ? eventSlugMap[eventSlug] : null;
 
   if (!eventData) {
-    return <div className="min-h-screen bg-[#050505] text-white flex items-center justify-center">Event not found</div>;
+    return (
+      <div className="min-h-screen bg-[#050505] text-white flex items-center justify-center">
+        Event not found
+      </div>
+    );
   }
 
-  const handleBackToEvents = () => {
-    navigate(-1);
-  };
-
   return (
-    <div className="pt-32">
-      <EventDetail event={eventData} onBack={handleBackToEvents} />
+    <div>
+      <EventDetail event={eventData} onBack={() => navigate(-1)} />
       <Footer />
     </div>
   );
@@ -113,8 +121,8 @@ function EventsListPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-32">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-[#050505] overflow-x-hidden pt-24">
+      <div className="container mx-auto px-4 pb-12">
         <EventsSection
           onEventSelect={handleEventSelect}
           onConferenceSelect={handleConferenceSelect}
@@ -125,18 +133,15 @@ function EventsListPage() {
   );
 }
 
-// Wrapper to conditionally render TargetCursor based on route
+// Cursor wrapper
 function CursorWrapper() {
   const location = useLocation();
 
-  // Disable cursor on Conference and Hackathon pages
   const isCursorDisabled =
     location.pathname === '/conference' ||
     location.pathname === '/hackathon';
 
-  if (isCursorDisabled) {
-    return null;
-  }
+  if (isCursorDisabled) return null;
 
   return (
     <TargetCursor
@@ -165,6 +170,7 @@ export default function App() {
             <Route path="/conference-details" element={<ConferenceDetail />} />
             <Route path="/conference" element={<ConferenceApp />} />
             <Route path="/hackathon" element={<HackathonDetail />} />
+            <Route path="/admin/qr" element={<AdminQRTool />} />
             <Route path="/:eventSlug" element={<EventDetailPage />} />
           </Routes>
         </>

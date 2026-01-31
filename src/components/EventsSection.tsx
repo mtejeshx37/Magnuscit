@@ -31,6 +31,8 @@ interface Event {
   date: string;
   image: string;
   description: string;
+  price?: string;
+  priceNote?: string;
   aiRecommended?: boolean;
   icon: typeof Code;
   rewards?: {
@@ -125,7 +127,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
               group-hover:translate-y-0`}
           >
             <div className="text-center">
-              <event.icon className="w-12 h-12 text-[#D500F9] mx-auto mb-4" />
+              <event.icon className={`w-12 h-12 mx-auto mb-4 ${event.slug === 'adyaai' ? 'text-[#00F0FF]' : 'text-[#D500F9]'}`} />
               <h3
                 className="text-3xl mb-4 text-white"
                 style={{ fontFamily: 'VT323, monospace' }}
@@ -133,15 +135,26 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
                 {event.title}
               </h3>
               <p className="text-[#94A3B8] text-lg mb-6">{event.description}</p>
+              {event.priceNote && (
+                <p
+                  className={`text-2xl font-black mb-4 uppercase tracking-tighter leading-tight neon-glow-text ${event.slug === 'adyaai' ? 'text-[#00F0FF]' : 'text-[#FF1CF7]'}`}
+                  style={{ fontFamily: 'VT323, monospace', textShadow: event.slug === 'adyaai' ? '0 0 15px rgba(0,240,255,0.8)' : '0 0 15px rgba(255,0,247,0.8)' }}
+                >
+                  {event.priceNote}
+                </p>
+              )}
 
               {/* Rewards Display */}
               {event.rewards && (
                 <div className="flex flex-col gap-2 items-center">
                   {event.rewards.internship && (
-                    <div className="flex items-center gap-2 text-[#00D9FF] font-medium bg-[#00D9FF]/10 px-3 py-1.5 rounded-lg border border-[#00D9FF]/20 text-center">
-                      <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" />
-                      <span className="text-[11px] sm:text-sm uppercase tracking-tight leading-tight whitespace-normal max-w-[220px]">
-                        Exclusive Internship Opportunity for Top Performers
+                    <div
+                      className="flex items-center gap-3 text-[#00F0FF] font-bold bg-[#00F0FF]/5 px-4 py-3 rounded-[1.5rem] border border-[#00F0FF]/40 text-center shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+                      style={{ fontFamily: 'VT323, monospace', textShadow: '0 0 10px rgba(0,240,255,0.5)' }}
+                    >
+                      <TrendingUp className="w-5 h-5 flex-shrink-0" />
+                      <span className="text-sm sm:text-lg uppercase tracking-wider leading-tight whitespace-normal max-w-[220px]">
+                        {event.rewards.internship}
                       </span>
                     </div>
                   )}
@@ -180,9 +193,11 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
           </div>
 
           {/* Border Effect */}
-          <div className={`absolute inset-0 border-2 rounded-2xl pointer-events-none transition-all duration-300 ${event.aiRecommended
-            ? 'border-[#7000FF]/50 group-hover:border-[#D500F9]/80'
-            : 'border-[#D500F9]/30 group-hover:border-[#D500F9]/80'
+          <div className={`absolute inset-0 border-2 rounded-2xl pointer-events-none transition-all duration-300 ${event.slug === 'adyaai'
+            ? 'border-[#00F0FF] shadow-[0_0_20px_rgba(0,240,255,0.3)]'
+            : event.aiRecommended
+              ? 'border-[#7000FF]/50 group-hover:border-[#00F0FF]/80'
+              : 'border-[#00F0FF]/30 group-hover:border-[#00F0FF]/80'
             }`}
             style={{
               clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)',
@@ -254,8 +269,10 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       description: 'Ideate, innovate, and inspire solutions',
       icon: Sparkles,
       rewards: {
-        winner: '₹1500',
-        runner: '₹1000'
+        internship: 'Exclusive Internship Opportunity for Top Performers',
+        first: '₹2500',
+        second: '₹1500',
+        third: '₹750'
       }
     },
     {
@@ -388,6 +405,8 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       date: 'Jan 17, 2026',
       image: cloudQuestImg,
       description: 'Beginner-friendly Azure/AWS workshop',
+      price: '₹50',
+      priceNote: '',
       icon: Cloud,
     },
     {
@@ -419,6 +438,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       image: adyaAiImg,
       description: 'The all-in-one no-code AI development platform',
       icon: Bot,
+      priceNote: 'This workshop is free to attend for everyone though the fee to attend the magnus event is ₹100',
       aiRecommended: true,
     },
     {
@@ -460,7 +480,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
   const filters: EventCategory[] = ['All', 'Technical', 'Workshops', 'Online'];
 
   return (
-    <div className="py-20 relative overflow-hidden">
+    <div className="py-10 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[#050505]" />
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#D500F9]/5 rounded-full blur-3xl" />
