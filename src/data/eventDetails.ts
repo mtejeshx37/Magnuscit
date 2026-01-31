@@ -584,7 +584,7 @@ This workshop provides a strong foundation in blockchain fundamentals and helps 
     slug: 'cloudquest',
     title: 'CLOUD QUEST AZURE',
     type: 'WORKSHOP',
-    price: '₹50',
+    price: '₹100',
     priceNote: '',
     isClosed: false,
     description: `Overview:
