@@ -1,17 +1,23 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 
 export function TitleSponsorSection() {
     const [contentType, setContentType] = useState<'image' | 'video'>('image');
+    const [isMuted, setIsMuted] = useState(false);
 
-    // Auto-rotate content
+    // Auto-rotate content logic
     useEffect(() => {
-        const interval = setInterval(() => {
-            setContentType(prev => prev === 'image' ? 'video' : 'image');
-        }, 5000); // Switch every 5 seconds
+        let timeout: NodeJS.Timeout;
 
-        return () => clearInterval(interval);
-    }, []);
+        if (contentType === 'image') {
+            timeout = setTimeout(() => {
+                setContentType('video');
+            }, 5000); // Display image for 5 seconds before switching to video
+        }
+
+        return () => clearTimeout(timeout);
+    }, [contentType]);
 
     return (
         <section className="py-12 md:py-24 bg-[#050505] relative overflow-hidden flex flex-col items-center justify-center">
@@ -64,9 +70,29 @@ export function TitleSponsorSection() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 1.02 }}
                                         transition={{ duration: 0.4 }}
-                                        className="w-full h-full flex flex-col items-center justify-center"
+                                        className="w-full h-full flex flex-col items-center justify-center relative"
                                     >
-                                        {/* Blank as requested */}
+                                        <video
+                                            autoPlay
+                                            muted={isMuted}
+                                            loop
+                                            playsInline
+                                            className="w-full h-full object-contain"
+                                        >
+                                            <source src="/title_sponsor.mp4" type="video/mp4" />
+                                        </video>
+
+                                        {/* Mute Toggle Button */}
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setIsMuted(!isMuted);
+                                            }}
+                                            className="absolute bottom-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors border border-white/10 backdrop-blur-md z-10"
+                                            title={isMuted ? "Unmute" : "Mute"}
+                                        >
+                                            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                                        </button>
                                     </motion.div>
                                 )}
                             </AnimatePresence>

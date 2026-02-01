@@ -147,7 +147,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
             {cartItems.length > 0 && (
               <div className="relative px-6 py-6 border-t border-[#D500F9]/20 bg-black/50 backdrop-blur-sm">
                 {/* Glow Effect */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#D500F9] to-transparent" />
+
 
                 {/* Total */}
                 <div className="mb-4 flex items-center justify-between">

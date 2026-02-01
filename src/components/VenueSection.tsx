@@ -1,4 +1,4 @@
-      import { MapPin, Building2, Navigation as NavigationIcon } from 'lucide-react';
+import { MapPin, Building2, Navigation as NavigationIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function VenueSection() {
@@ -270,7 +270,7 @@ export function VenueSection() {
       </div>
 
       {/* Bottom Glow Effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-[#D500F9] to-transparent opacity-50" />
+
     </section>
   );
 }

@@ -104,6 +104,8 @@ export function AboutUsSection() {
                             </div>
                         </div>
                     </motion.div>
+
+
                 </div>
 
                 {/* Gallery Column (Desktop: CSS Grid / Mobile: Carousel) */}

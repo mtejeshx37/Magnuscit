@@ -12,6 +12,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { eventSlugMap } from './data/eventDetails';
 import { useParams } from 'react-router-dom';
 import { DisclaimerTicker } from './components/DisclaimerTicker';
+import { SponsorTicker } from './components/SponsorTicker';
 
 // Lazy load heavy home page sections
 //const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
@@ -73,6 +74,7 @@ function Home() {
       <div className="content-visibility-auto">
         <AboutUsSection />
         <VenueSection />
+        <SponsorTicker />
       </div>
       <Footer />
     </div>
