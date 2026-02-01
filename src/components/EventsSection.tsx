@@ -438,7 +438,7 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
       image: adyaAiImg,
       description: 'The all-in-one no-code AI development platform',
       icon: Bot,
-      priceNote: 'This workshop is free to attend for everyone though the fee to attend the magnus event is ₹100',
+      priceNote: 'This workshop is free to attend',
       aiRecommended: true,
     },
     {

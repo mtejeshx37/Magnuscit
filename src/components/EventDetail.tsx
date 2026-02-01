@@ -102,7 +102,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
                     className="relative block text-[#00F0FF] text-3xl md:text-5xl font-black text-center uppercase tracking-tighter leading-tight neon-glow-text"
                     style={{ fontFamily: 'VT323, monospace', textShadow: '0 0 20px rgba(0,240,255,0.8)' }}
                   >
-                    This workshop is free to attend for everyone though the fee to attend the magnus event is ₹100.
+                    This workshop is free to attend.
                   </h2>
                 </div>
               </div>
