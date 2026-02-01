@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-const logo = "/logo-v2.png";
+import magnusLogo from '../assets/logos/magnus-logo-v2.png';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,8 +14,8 @@ export function Navigation() {
     if (isHoveringRegister) {
       let iteration = 0;
       const originalText = "REGISTER";
-      const duration = 700; // 0.7 seconds
-      const totalSteps = originalText.length * 2; // derived from iteration += 1/2
+      const duration = 700;
+      const totalSteps = originalText.length * 2;
       const intervalTime = duration / totalSteps;
 
       interval = setInterval(() => {
@@ -48,7 +48,6 @@ export function Navigation() {
     { label: 'Home', href: '/#home' },
     { label: 'Prime Directives', href: '/#prime-directives' },
     { label: 'About Us', href: '/#about-us' },
-    //{ label: 'Schedule', href: '/#schedule' },
     { label: 'Events', href: '/events' },
   ];
 
@@ -69,11 +68,11 @@ export function Navigation() {
           >
             <div className="relative w-12 h-12 flex items-center justify-center">
               <img
-                src={logo}
+                src={magnusLogo}
                 alt="Magnus Logo"
                 className="w-full h-full object-contain"
                 style={{
-                  filter: 'drop-shadow(0 0 8px rgba(0, 209, 255, 0.6))', // Neon Blue Glow
+                  filter: 'drop-shadow(0 0 8px rgba(0, 209, 255, 0.6))',
                 }}
               />
             </div>
@@ -84,7 +83,7 @@ export function Navigation() {
                   fontFamily: 'Playfair Display, serif',
                   color: '#00D1FF',
                   letterSpacing: '0.05em',
-                  textShadow: '0 0 10px rgba(0, 209, 255, 0.4)'
+                  textShadow: '0 0 10px rgba(0, 209, 255, 0.4)',
                 }}
               >
                 MAGNUS
@@ -95,7 +94,7 @@ export function Navigation() {
                   fontFamily: 'Space Grotesk, sans-serif',
                   fontWeight: 700,
                   color: 'white',
-                  letterSpacing: '0.1em'
+                  letterSpacing: '0.1em',
                 }}
               >
                 2K26
@@ -103,13 +102,13 @@ export function Navigation() {
             </div>
           </motion.div>
 
-          {/* CENTER: Navigation Links (Desktop) */}
+          {/* CENTER: Navigation Links */}
           <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <a
                 key={link.label}
                 href={link.href}
-                className="cursor-pointer text-white/80 hover:text-[#00D1FF] transition-colors duration-300 relative group text-sm uppercase tracking-widest"
+                className="cursor-target text-white/80 hover:text-[#00D1FF] transition-colors duration-300 relative group text-sm uppercase tracking-widest"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
                 {link.label}
@@ -118,21 +117,20 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* RIGHT: Register Button (Desktop) */}
+          {/* RIGHT: Register Button */}
           <div className="hidden md:block">
             <motion.a
               href="#prime-directives"
-              className="relative px-6 py-2 overflow-hidden group flex items-center justify-center font-bold tracking-widest text-[#BD00FF]"
-              style={{ fontFamily: 'JetBrains Mono, monospace', border: '1px solid transparent' }}
+              className="cursor-target relative px-6 py-2 overflow-hidden group flex items-center justify-center font-bold tracking-widest text-[#BD00FF]"
+              style={{ fontFamily: 'JetBrains Mono, monospace' }}
               onMouseEnter={() => setIsHoveringRegister(true)}
               onMouseLeave={() => setIsHoveringRegister(false)}
             >
               <div className="absolute inset-0 border border-transparent bg-gradient-to-r from-[#00D1FF] to-[#BD00FF] opacity-10 group-hover:opacity-20 transition-opacity" />
-              <div className="absolute inset-0 rounded-sm p-[1px] bg-gradient-to-r from-[#00D1FF] to-[#BD00FF] mask-linear-gradient">
-                <div className="h-full w-full bg-black/90"></div>
+              <div className="absolute inset-0 rounded-sm p-[1px] bg-gradient-to-r from-[#00D1FF] to-[#BD00FF]">
+                <div className="h-full w-full bg-black/90" />
               </div>
-              <div className="absolute inset-0 border border-[#00D1FF] opacity-50 group-hover:opacity-100 group-hover:shadow-[0_0_15px_rgba(189,0,255,0.5)] transition-all duration-300 transform skew-x-12 scale-95" />
-
+              <div className="absolute inset-0 border border-[#00D1FF] opacity-50 group-hover:opacity-100 transition-all duration-300 transform skew-x-12 scale-95" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 {registerText}
               </span>
@@ -142,13 +140,9 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-[#00D1FF] transition-colors"
+            className="md:hidden p-2 text-white hover:text-[#00D1FF]"
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {mobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
 
@@ -161,25 +155,16 @@ export function Navigation() {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden pb-6 space-y-4 border-t border-[#00D1FF]/10"
             >
-              {navLinks.map((link) => (
+              {navLinks.map(link => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-white/80 hover:text-[#00D1FF] transition-colors duration-300 py-3 text-center tracking-widest border-b border-white/5"
                   onClick={() => setMobileMenuOpen(false)}
-                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                  className="cursor-target block text-white/80 hover:text-[#00D1FF] py-3 text-center tracking-widest border-b border-white/5"
                 >
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#prime-directives"
-                className="block text-[#BD00FF] font-bold hover:text-white transition-colors duration-300 py-3 text-center tracking-widest bg-[#BD00FF]/10 mt-4"
-                onClick={() => setMobileMenuOpen(false)}
-                style={{ fontFamily: 'JetBrains Mono, monospace' }}
-              >
-                REGISTER
-              </a>
             </motion.div>
           )}
         </AnimatePresence>

@@ -117,7 +117,7 @@ export function AboutUsSection() {
                             return (
                                 <motion.div
                                     key={idx}
-                                    className={`relative border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl rounded-lg ${style.className}`}
+                                    className={`relative border-2 border-[#333333] bg-black cursor-pointer overflow-hidden shadow-2xl rounded-lg ${style.className} cursor-target`}
                                     whileHover={{
                                         scale: 1.05,
                                         zIndex: 50,

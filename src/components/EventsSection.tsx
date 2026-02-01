@@ -70,7 +70,7 @@ function EventCard({ event, index, onEventSelect, onConferenceSelect }: EventCar
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.3), ease: 'easeOut' }}
       viewport={{ once: true }}
-      className="group relative cursor-pointer"
+      className="group relative cursor-pointer cursor-target"
       onClick={() => {
         if (event.id === 'conference') {
           onConferenceSelect();
@@ -552,8 +552,8 @@ export function EventsSection({ onEventSelect, onConferenceSelect }: EventsSecti
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-4 py-2 md:px-6 md:py-3 rounded-2xl transition-all duration-300 ${activeFilter === filter
-                ? 'bg-gradient-to-r from-[#00D9FF] to-[#8B5CF6] text-black shadow-lg'
-                : 'glass border border-[#00D9FF]/20 text-white hover:border-[#00D9FF]/50'
+                ? 'bg-gradient-to-r from-[#00D9FF] to-[#8B5CF6] text-black shadow-lg cursor-target'
+                : 'glass border border-[#00D9FF]/20 text-white hover:border-[#00D9FF]/50 cursor-target'
                 }`}
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',

@@ -1,30 +1,41 @@
-import { Suspense, lazy, useLayoutEffect } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Suspense, lazy, useLayoutEffect, useState } from 'react';
+import { Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
+
 import { HeroSection } from './components/HeroSection';
 import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
 import { EventsSection } from './components/EventsSection';
 import { TitleSponsorSection } from './components/TitleSponsorSection';
-const AboutUsSection = lazy(() => import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection })));
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
 import { EventDetail } from './components/EventDetail';
-import { CustomCursor } from './components/CustomCursor';
+import TargetCursor from './components/TargetCursor';
 import { eventSlugMap } from './data/eventDetails';
-import { useParams } from 'react-router-dom';
+import { PremiumLoader } from './components/PremiumLoader';
 import { DisclaimerTicker } from './components/DisclaimerTicker';
 import { SponsorTicker } from './components/SponsorTicker';
 
-// Lazy load heavy home page sections
-//const TimelineSection = lazy(() => import('./components/TimelineSection').then(m => ({ default: m.TimelineSection })));
-const CTASection = lazy(() => import('./components/CTASection').then(m => ({ default: m.CTASection })));
-const VenueSection = lazy(() => import('./components/VenueSection').then(m => ({ default: m.VenueSection })));
+// Lazy-loaded sections
+const AboutUsSection = lazy(() =>
+  import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection }))
+);
+const CTASection = lazy(() =>
+  import('./components/CTASection').then(m => ({ default: m.CTASection }))
+);
+const VenueSection = lazy(() =>
+  import('./components/VenueSection').then(m => ({ default: m.VenueSection }))
+);
 
-
-// Lazy load route components
-const HackathonDetail = lazy(() => import('./components/HackathonDetail').then(module => ({ default: module.HackathonDetail })));
-const ConferenceDetail = lazy(() => import('./components/ConferenceDetail').then(module => ({ default: module.ConferenceDetail })));
+// Lazy-loaded routes
+const HackathonDetail = lazy(() =>
+  import('./components/HackathonDetail').then(m => ({ default: m.HackathonDetail }))
+);
+const ConferenceDetail = lazy(() =>
+  import('./components/ConferenceDetail').then(m => ({ default: m.ConferenceDetail }))
+);
 const ConferenceApp = lazy(() => import('./components/Conference/ConferenceApp'));
-const AdminQRTool = lazy(() => import('./components/AdminQRTool').then(m => ({ default: m.AdminQRTool })));
+const AdminQRTool = lazy(() =>
+  import('./components/AdminQRTool').then(m => ({ default: m.AdminQRTool }))
+);
 
 function Home() {
   const navigate = useNavigate();
@@ -34,7 +45,6 @@ function Home() {
     if (lastEvent) {
       const element = document.getElementById(lastEvent);
       if (element) {
-        // Use a short timeout to ensure the DOM is fully rendered
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'auto', block: 'center' });
           sessionStorage.removeItem('lastClickedEvent');
@@ -42,7 +52,6 @@ function Home() {
       }
     }
   }, []);
-
 
   const handleEventSelect = (slug: string) => {
     sessionStorage.setItem('lastClickedEvent', slug);
@@ -84,16 +93,16 @@ function EventDetailPage() {
   const eventData = eventSlug ? eventSlugMap[eventSlug] : null;
 
   if (!eventData) {
-    return <div className="min-h-screen bg-[#050505] text-white flex items-center justify-center">Event not found</div>;
+    return (
+      <div className="min-h-screen bg-[#050505] text-white flex items-center justify-center">
+        Event not found
+      </div>
+    );
   }
-
-  const handleBackToEvents = () => {
-    navigate(-1);
-  };
 
   return (
     <div>
-      <EventDetail event={eventData} onBack={handleBackToEvents} />
+      <EventDetail event={eventData} onBack={() => navigate(-1)} />
       <Footer />
     </div>
   );
@@ -126,29 +135,48 @@ function EventsListPage() {
   );
 }
 
-export default function App() {
+// Cursor wrapper
+function CursorWrapper() {
+  const location = useLocation();
+
+  const isCursorDisabled =
+    location.pathname === '/conference' ||
+    location.pathname === '/hackathon';
+
+  if (isCursorDisabled) return null;
+
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
-      <CustomCursor />
-      <ConditionalNavigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<EventsListPage />} />
-        <Route path="/conference-details" element={<ConferenceDetail />} />
-        <Route path="/conference" element={<ConferenceApp />} />
-        <Route path="/hackathon" element={<HackathonDetail />} />
-        <Route path="/:eventSlug" element={<EventDetailPage />} />
-        <Route path="/admin/qr" element={<AdminQRTool />} />
-      </Routes>
-    </Suspense>
+    <TargetCursor
+      spinDuration={2}
+      hideDefaultCursor
+      parallaxOn
+      hoverDuration={0.2}
+    />
   );
 }
 
-function ConditionalNavigation() {
-  const location = useLocation();
-  // Don't show the main navigation on the conference app page
-  if (location.pathname === '/conference') {
-    return null;
-  }
-  return <Navigation />;
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
+      {isLoading ? (
+        <PremiumLoader onComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <CursorWrapper />
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<EventsListPage />} />
+            <Route path="/conference-details" element={<ConferenceDetail />} />
+            <Route path="/conference" element={<ConferenceApp />} />
+            <Route path="/hackathon" element={<HackathonDetail />} />
+            <Route path="/admin/qr" element={<AdminQRTool />} />
+            <Route path="/:eventSlug" element={<EventDetailPage />} />
+          </Routes>
+        </>
+      )}
+    </Suspense>
+  );
 }
