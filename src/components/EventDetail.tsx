@@ -36,9 +36,9 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
   const inCart = isInCart(event.id);
 
   // Extract numeric value from price string (e.g., "₹150" -> 150)
-  const priceValue = (event.price.toUpperCase().includes('FREE') || (event.priceNote && event.priceNote.toUpperCase().includes('FREE')))
+  const priceValue = ((event.price ?? '').toUpperCase().includes('FREE') || (event.priceNote && (event.priceNote ?? '').toUpperCase().includes('FREE')))
     ? 0
-    : parseInt(event.price.replace(/[^\d]/g, '')) || 0;
+    : parseInt((event.price ?? '').replace(/[^\d]/g, '')) || 0;
 
   const handleAddToCart = () => {
     addToCart({
@@ -291,7 +291,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
                 )}
               </div>
             </motion.a>
-          ) : event.type.toUpperCase() === 'WORKSHOP' ? (
+          ) : (event.type ?? '').toUpperCase() === 'WORKSHOP' ? (
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
