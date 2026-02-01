@@ -441,20 +441,17 @@
     }
   }
 
+  .global-cursor-none,
+  .global-cursor-none * {
+    cursor: none !important;
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none;
     font-family: Space Grotesk, sans-serif;
-  }
-
-  html,
-  *,
-  a,
-  button {
-    cursor: none !important;
   }
 
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h1 {
@@ -3186,4 +3183,26 @@ html {
       transparent 0%,
       rgba(255, 255, 255, 0.05) 50%,
       transparent 100%);
+}
+
+/* Mobile Layout Spacing Fix */
+@media (max-width: 768px) {
+
+  /* Reduce vertical gap between DisclaimerTicker and HeroSection on mobile */
+  #home {
+    padding-top: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Adjust hero content container on mobile */
+  #home>.container {
+    padding-top: 6rem !important;
+    padding-bottom: 2rem !important;
+    min-height: calc(100vh - 120px) !important;
+  }
+
+  /* Reduce top margin on event badge */
+  #home .glass-strong.rounded-3xl {
+    margin-top: 0.5rem !important;
+  }
 }

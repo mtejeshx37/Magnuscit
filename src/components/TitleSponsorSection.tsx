@@ -34,9 +34,9 @@ export function TitleSponsorSection() {
                 className="container mx-auto px-4 flex flex-col items-center"
             >
                 {/* Title Header */}
-                {/* Title Header */}
-                <h3 className="mb-8 font-mono text-3xl md:text-5xl font-bold text-[#D500F9] tracking-[0.2em] uppercase drop-shadow-[0_0_15px_rgba(213,0,249,0.5)]">
-                    Title Sponsor
+                <h3 className="mb-8 text-5xl md:text-7xl tracking-[0.2em] uppercase drop-shadow-[0_0_15px_rgba(213,0,249,0.5)]"
+                    style={{ fontFamily: 'VT323, monospace' }}>
+                    <span className="text-white">TITLE</span> <span className="text-[#D500F9]">SPONSOR</span>
                 </h3>
 
                 {/* Sponsor Card (Pure visual, no text as requested, text is above) */}

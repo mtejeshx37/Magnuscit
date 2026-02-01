@@ -2,8 +2,6 @@ import { Suspense, lazy, useLayoutEffect, useState } from 'react';
 import { Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
 
 import { HeroSection } from './components/HeroSection';
-import { PrimeDirectivesSection } from './components/PrimeDirectivesSection';
-import { EventsSection } from './components/EventsSection';
 import { TitleSponsorSection } from './components/TitleSponsorSection';
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
@@ -15,6 +13,12 @@ import { DisclaimerTicker } from './components/DisclaimerTicker';
 import { SponsorTicker } from './components/SponsorTicker';
 
 // Lazy-loaded sections
+const PrimeDirectivesSection = lazy(() =>
+  import('./components/PrimeDirectivesSection').then(m => ({ default: m.PrimeDirectivesSection }))
+);
+const EventsSection = lazy(() =>
+  import('./components/EventsSection').then(m => ({ default: m.EventsSection }))
+);
 const AboutUsSection = lazy(() =>
   import('./components/AboutUsSection').then(m => ({ default: m.AboutUsSection }))
 );
@@ -138,6 +142,16 @@ function EventsListPage() {
 // Cursor wrapper
 function CursorWrapper() {
   const location = useLocation();
+
+  // Disable cursor on Conference and Hackathon pages
+  const isExcludedPage =
+    location.pathname === '/conference' ||
+    location.pathname === '/conference-details' ||
+    location.pathname === '/hackathon';
+
+  if (isExcludedPage) {
+    return null;
+  }
 
   return (
     <TargetCursor

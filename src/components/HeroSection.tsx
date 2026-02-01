@@ -64,7 +64,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex flex-col md:flex-row items-center gap-2 md:gap-3 px-6 py-3 glass-strong rounded-3xl md:rounded-full border border-[#7000FF]/40 mb-8 md:mb-12 max-w-[90vw]"
+            className="inline-flex flex-col md:flex-row items-center gap-2 md:gap-3 px-6 py-3 glass-strong rounded-3xl md:rounded-full border border-[#7000FF]/40 mt-14 md:mt-20 mb-8 md:mb-12 max-w-[90vw]"
           >
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 text-[#D500F9]" />
