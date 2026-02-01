@@ -5,6 +5,7 @@ const sponsors = [
     { type: 'VOUCHER PARTNER', name: 'Gamestry', logo: '/gamestry_logo.png' },
     { type: 'VOUCHER PARTNER', name: 'Green Trends', logo: '/green_trends_logo.png' },
     { type: 'INTERN PARTNER', name: 'Junix', logo: '/junix_logo.png' },
+    { type: 'CERTIFICATE SPONSOR', name: 'Giri Enterprises', logo: '/giri_enterprises_logo.png' },
 ];
 
 export function SponsorTicker() {
@@ -26,7 +27,7 @@ export function SponsorTicker() {
             </div>
             <div
                 className="relative w-full z-40 bg-black/95 backdrop-blur-md
-                 border-t border-b border-cyan-400/30 py-4 overflow-hidden whitespace-nowrap
+                 border-t border-b border-cyan-400/30 py-8 overflow-hidden whitespace-nowrap
                  shadow-[0_-6px_40px_rgba(0,229,255,0.15)]"
                 style={{
                     maskImage:
@@ -74,11 +75,11 @@ export function SponsorTicker() {
                                                 </span>
                                                 <div className="relative group">
                                                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-fuchsia-500 rounded-lg blur opacity-10 group-hover:opacity-100 transition duration-500"></div>
-                                                    <div className="relative bg-white/90 rounded-xl p-2 px-10 flex items-center justify-center min-w-[160px] h-20 hover:bg-white transition-all duration-300">
+                                                    <div className="relative bg-white/90 rounded-xl p-1 px-4 flex items-center justify-center min-w-[180px] h-28 hover:bg-white transition-all duration-300">
                                                         <img
                                                             src={sponsor.logo}
                                                             alt={sponsor.name}
-                                                            className="h-10 w-auto object-contain"
+                                                            className="h-16 w-auto object-contain"
                                                         />
                                                     </div>
                                                 </div>
