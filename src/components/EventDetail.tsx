@@ -92,7 +92,23 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
           </div>
 
           <div className="text-lg text-[#94A3B8] leading-relaxed">
-            <p className="whitespace-pre-wrap">{event.description}</p>
+            {(event.slug === 'adyaai' || event.id === 25) ? (
+              <div className="space-y-8">
+                <p className="whitespace-pre-wrap">{event.description.split(/ADYA AI is free/i)[0].trim()}</p>
+                <div className="my-12 p-10 glass-strong rounded-[2.5rem] border-2 border-[#00F0FF]/60 relative overflow-hidden shadow-[0_0_40px_rgba(0,240,255,0.3)] group/price">
+                  <div className="absolute inset-0 bg-[#00F0FF]/5 animate-pulse" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#00F0FF]/20 via-transparent to-[#00F0FF]/20 blur-xl opacity-50" />
+                  <h2
+                    className="relative block text-[#00F0FF] text-3xl md:text-5xl font-black text-center uppercase tracking-tighter leading-tight neon-glow-text"
+                    style={{ fontFamily: 'VT323, monospace', textShadow: '0 0 20px rgba(0,240,255,0.8)' }}
+                  >
+                    This workshop is free to attend.
+                  </h2>
+                </div>
+              </div>
+            ) : (
+              <p className="whitespace-pre-wrap">{event.description}</p>
+            )}
           </div>
         </motion.div>
 
@@ -275,8 +291,7 @@ export function EventDetail({ event, onBack }: EventDetailProps) {
                 )}
               </div>
             </motion.a>
-
-          ) : event.type.toUpperCase() === 'WORKSHOP' ? (
+          ) : (event.type ?? '').toUpperCase() === 'WORKSHOP' ? (
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
