@@ -139,14 +139,9 @@ function EventsListPage() {
 function CursorWrapper() {
   const location = useLocation();
 
-  const isCursorDisabled =
-    location.pathname === '/conference' ||
-    location.pathname === '/hackathon';
-
-  if (isCursorDisabled) return null;
-
   return (
     <TargetCursor
+      key={location.pathname}
       spinDuration={2}
       hideDefaultCursor
       parallaxOn
