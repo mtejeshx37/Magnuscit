@@ -49,7 +49,7 @@ export function ClosedEventModal({ isOpen, onClose, event }: ClosedEventModalPro
                         {/* Close Button */}
                         <button
                             onClick={onClose}
-                            className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors z-50 cursor-pointer"
+                            className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors z-50 cursor-pointer cursor-target"
                         >
                             <X className="w-6 h-6" />
                         </button>
@@ -106,7 +106,7 @@ export function ClosedEventModal({ isOpen, onClose, event }: ClosedEventModalPro
                             {/* Close Action */}
                             <button
                                 onClick={onClose}
-                                className="mt-8 px-8 py-3 bg-gradient-to-r from-[#D500F9] to-[#7000FF] rounded-xl text-white font-bold tracking-wide shadow-lg shadow-[#D500F9]/25 hover:shadow-[#D500F9]/40 hover:scale-105 transition-all duration-300 cursor-pointer"
+                                className="mt-8 px-8 py-3 bg-gradient-to-r from-[#D500F9] to-[#7000FF] rounded-xl text-white font-bold tracking-wide shadow-lg shadow-[#D500F9]/25 hover:shadow-[#D500F9]/40 hover:scale-105 transition-all duration-300 cursor-pointer cursor-target"
                                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                             >
                                 View Event Details

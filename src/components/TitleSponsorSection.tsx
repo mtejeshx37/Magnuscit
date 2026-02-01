@@ -1,10 +1,23 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
 
 export function TitleSponsorSection() {
     const [contentType, setContentType] = useState<'image' | 'video'>('image');
     const [isMuted, setIsMuted] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const togglePlay = () => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
 
     // Auto-rotate content logic
     useEffect(() => {
@@ -70,10 +83,12 @@ export function TitleSponsorSection() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 1.02 }}
                                         transition={{ duration: 0.4 }}
-                                        className="w-full h-full flex flex-col items-center justify-center relative"
+                                        className="w-full h-full flex flex-col items-center justify-center relative cursor-pointer group/video"
+                                        onClick={togglePlay}
                                     >
                                         <video
-                                            autoPlay
+                                            ref={videoRef}
+                                            autoPlay={isPlaying}
                                             muted={isMuted}
                                             loop
                                             playsInline
@@ -82,7 +97,18 @@ export function TitleSponsorSection() {
                                             <source src="/title_sponsor.mp4" type="video/mp4" />
                                         </video>
 
-                                        {/* Mute Toggle Button */}
+                                        {/* Centered Play/Pause Overlay */}
+                                        <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover/video:opacity-100' : 'opacity-100'}`}>
+                                            <div className="w-16 h-16 md:w-20 md:h-20 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 shadow-lg transform transition-transform duration-200 group-active/video:scale-95">
+                                                {isPlaying ? (
+                                                    <Pause className="w-8 h-8 md:w-10 md:h-10 text-white fill-white" />
+                                                ) : (
+                                                    <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white ml-2" />
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        {/* Mute Toggle Button - Bottom Right */}
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
