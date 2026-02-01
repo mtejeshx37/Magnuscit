@@ -67,17 +67,14 @@ function Home() {
           onConferenceSelect={handleConferenceSelect}
         />
       </div>
-      {/*<div className="content-visibility-auto">
-        <TimelineSection />
-      </div>*/}
+      <SponsorTicker />
       <CTASection />
       <div className="content-visibility-auto">
         <AboutUsSection />
         <VenueSection />
-        <SponsorTicker />
       </div>
       <Footer />
-    </div>
+    </div >
   );
 }
 
